@@ -2,19 +2,6 @@ $font: Nunito;
 $font-weights: 200, 300, 400, 500, 600, 700, 800, 900;
 $bold: 600;
 
-@mixin generate-font-face($weight) {
-  @font-face {
-    font-family: $font;
-    font-style: normal;
-    font-weight: $weight;
-    src: url(../../assets/font/Nunito-#{$weight}.ttf);
-  }
-}
-
-@each $weight in $font-weights {
-  @include generate-font-face($weight);
-}
-
 label,
 fieldset legend {
   display: block;

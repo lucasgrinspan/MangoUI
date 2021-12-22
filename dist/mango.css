@@ -339,7 +339,7 @@ template {
 
 @font-face {
   font-family: "mango-icons";
-  src: url("/assets/font/mango-icons.woff2?b34fe0cd544fa554d6de04591952e48a") format("woff2");
+  src: url("../../assets/font/mango-icons.woff2?b34fe0cd544fa554d6de04591952e48a") format("woff2");
 }
 .icon:before {
   font-family: mango-icons !important;
@@ -390,49 +390,49 @@ template {
   font-family: Nunito;
   font-style: normal;
   font-weight: 200;
-  src: url(/assets/font/Nunito-200.ttf);
+  src: url(../../assets/font/Nunito-200.ttf);
 }
 @font-face {
   font-family: Nunito;
   font-style: normal;
   font-weight: 300;
-  src: url(/assets/font/Nunito-300.ttf);
+  src: url(../../assets/font/Nunito-300.ttf);
 }
 @font-face {
   font-family: Nunito;
   font-style: normal;
   font-weight: 400;
-  src: url(/assets/font/Nunito-400.ttf);
+  src: url(../../assets/font/Nunito-400.ttf);
 }
 @font-face {
   font-family: Nunito;
   font-style: normal;
   font-weight: 500;
-  src: url(/assets/font/Nunito-500.ttf);
+  src: url(../../assets/font/Nunito-500.ttf);
 }
 @font-face {
   font-family: Nunito;
   font-style: normal;
   font-weight: 600;
-  src: url(/assets/font/Nunito-600.ttf);
+  src: url(../../assets/font/Nunito-600.ttf);
 }
 @font-face {
   font-family: Nunito;
   font-style: normal;
   font-weight: 700;
-  src: url(/assets/font/Nunito-700.ttf);
+  src: url(../../assets/font/Nunito-700.ttf);
 }
 @font-face {
   font-family: Nunito;
   font-style: normal;
   font-weight: 800;
-  src: url(/assets/font/Nunito-800.ttf);
+  src: url(../../assets/font/Nunito-800.ttf);
 }
 @font-face {
   font-family: Nunito;
   font-style: normal;
   font-weight: 900;
-  src: url(/assets/font/Nunito-900.ttf);
+  src: url(../../assets/font/Nunito-900.ttf);
 }
 label,
 fieldset legend {

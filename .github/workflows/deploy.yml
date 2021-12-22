@@ -22,21 +22,9 @@ jobs:
     needs: setup
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        env:
-          DOCS_PATH: "docs"
-          ASSETS_PATH: "dist"
-          TARGET_BRANCH: "site"
-      - name: transfer the files
-        run: |
-          # get the files
-          assetFiles=$(find $ASSETS_PATH -type f)
-          docsFiles=$(find $DOCS_PATH -type f)          
-
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'action@github.com'
-          git fetch                                  
-          git checkout $TARGET_BRANCH -- index.html 
-          git add -A
-          git diff-index --quiet HEAD ||  git commit -am "deploying docs"
-          git push origin $TARGET_BRANCH
+      - name: Deploy docs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          commit_message: "deploying docs"

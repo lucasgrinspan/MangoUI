@@ -5,7 +5,7 @@ module.exports = {
   outputDir: "assets/font",
   fontTypes: ["woff2"],
   assetTypes: ["scss"],
-  fontsUrl: "/assets/font",
+  fontsUrl: "../../assets/font",
   pathOptions: {
     scss: "src/tokens/_icons.scss",
   },

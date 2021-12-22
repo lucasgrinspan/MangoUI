@@ -2,7 +2,7 @@ $mango-icons-font: "mango-icons";
 
 @font-face {
   font-family: $mango-icons-font;
-  src: url("/assets/font/mango-icons.woff2?b34fe0cd544fa554d6de04591952e48a") format("woff2");
+  src: url("../../assets/font/mango-icons.woff2?b34fe0cd544fa554d6de04591952e48a") format("woff2");
 }
 
 @mixin use-icon {

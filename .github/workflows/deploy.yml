@@ -19,25 +19,14 @@ jobs:
         run: |
           npm ci
           npm run build
+      - name: prepare artifacts
+        run: |
+          mkdir public
+          mv ./index.html ./public
+          mv ./dist ./public
+          mv ./docs ./public
       - name: "deploying docs"
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
-          destination_dir: docs
-          commit_message: "deploying docs"
-      - name: "deploying assets"
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          destination_dir: dist
-          commit_message: "deploying assets"
-          keep_files: true
-      - name: "deploying index.html"
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./index.html
-          commit_message: "deploying index.html"
-          keep_files: true
+          publish_dir: ./public

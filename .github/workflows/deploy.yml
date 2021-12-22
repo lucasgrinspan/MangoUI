@@ -6,35 +6,27 @@ on:
       - chore/actions
 
 jobs:
-  deploy:
-    name: deploy
+  setup:
     runs-on: ubuntu-latest
     steps:
-      - name: setup node
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v2
+      - name: node setup
+        uses: actions/setup-node@v2
         with:
           node-version: "16"
           cache: "npm"
-      - uses: actions/checkout@v2
-      - run: |
-          npm install
+      - name: installing and building
+        run: |
+          npm ci
           npm run build
-      - name: copy files
-        uses: actions/checkout@v2
-        env:
-          DOCS_PATH: "docs"
-          ASSETS_PATH: "dist"
-          TARGET_BRANCH: "site"
-      - run: |
-          # get the files
-          assetFiles=$(find $ASSETS_PATH -type f)
-          docsFiles=$(find $DOCS_PATH -type f)          
-
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'action@github.com'
-          git fetch                                  
-          git checkout $TARGET_BRANCH                   
-          git checkout ${GITHUB_REF##*/} -- $assetFiles $docsFiles 
-          git add -A
-          git diff-index --quiet HEAD ||  git commit -am "deploying docs"  # commit to the repository (ignore if no modification)
-          git push origin $TARGET_BRANCH # push to remote branch
+      - name: prepare artifacts
+        run: |
+          mkdir public
+          mv ./index.html ./public
+          mv ./dist ./public
+          mv ./docs ./public
+      - name: "deploying docs"
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

@@ -10,12 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: node setup
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "16"
-          cache: "npm"
-      - uses: actions/checkout@v2
-      - run: |
+        uses: actions/setup-node@v2
+          with:
+            node-version: "16"
+            cache: "npm"
+      - name: checkout
+        uses: actions/checkout@v2
+        run: |
           npm install
           npm run build
   deploy:

@@ -17,6 +17,7 @@ input[type="checkbox"] {
       content: "";
       vertical-align: top;
       transition: tokens.$effect-transition;
+      box-sizing: content-box;
 
       margin-right: tokens.$tight;
       border: tokens.$border;
@@ -38,7 +39,9 @@ input[type="checkbox"] {
   }
 
   &:checked + label::before {
-    content: "✓";
+    @include tokens.use-icon;
+    font-size: 1rem;
+    content: tokens.$check;
     background-color: utils.v(primary);
   }
 }

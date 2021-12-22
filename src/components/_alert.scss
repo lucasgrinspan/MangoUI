@@ -15,6 +15,7 @@
   padding: tokens.$cozy;
   display: flex; // needed for the icon variations
   align-items: center;
+  width: 100%;
 
   &::before {
     @extend %with-icon;

@@ -2,7 +2,7 @@ $mango-icons-font: "mango-icons";
 
 @font-face {
   font-family: $mango-icons-font;
-  src: url("/assets/font/mango-icons.woff2?99c838ceec633fa36a0a403d955de0f3") format("woff2");
+  src: url("/assets/font/mango-icons.woff2?b34fe0cd544fa554d6de04591952e48a") format("woff2");
 }
 
 @mixin use-icon {
@@ -10,6 +10,7 @@ $mango-icons-font: "mango-icons";
   font-style: normal;
   font-weight: normal !important;
   font-variant: normal;
+  font-size: 1.5rem;
   text-transform: none;
   line-height: 1;
   vertical-align: top;
@@ -38,26 +39,26 @@ $down-arrow-source: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
 
 
 .icon.icon-check-circle:before {
-  content: unicode($check-circle);
+  content: $check-circle;
 }
 .icon.icon-check:before {
-  content: unicode($check);
+  content: $check;
 }
 .icon.icon-down-arrow:before {
-  content: unicode($down-arrow);
+  content: $down-arrow;
 }
 .icon.icon-info-circle:before {
-  content: unicode($info-circle);
+  content: $info-circle;
 }
 .icon.icon-left-arrow:before {
-  content: unicode($left-arrow);
+  content: $left-arrow;
 }
 .icon.icon-right-arrow:before {
-  content: unicode($right-arrow);
+  content: $right-arrow;
 }
 .icon.icon-up-arrow:before {
-  content: unicode($up-arrow);
+  content: $up-arrow;
 }
 .icon.icon-warning:before {
-  content: unicode($warning);
+  content: $warning;
 }

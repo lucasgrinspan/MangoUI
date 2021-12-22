@@ -11,6 +11,7 @@ ${{ name }}-font: "{{ name }}";
   font-style: normal;
   font-weight: normal !important;
   font-variant: normal;
+  font-size: 1.5rem;
   text-transform: none;
   line-height: 1;
   vertical-align: top;
@@ -43,6 +44,6 @@ $down-arrow-source: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
 {{ else }}
 {{ tag }}.{{ ../prefix }}-{{ @key }}:before {
 {{/ if }}
-  content: unicode(${{ @key }});
+  content: ${{ @key }};
 }
 {{/ each }}

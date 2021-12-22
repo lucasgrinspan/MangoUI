@@ -1,0 +1,50 @@
+@use "../tokens";
+
+// puts things in a neat row
+.row {
+  display: flex;
+
+  > * {
+    margin-left: tokens.$cozy;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &-tight {
+    > * {
+      margin-left: tokens.$cozy;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+// puts things in a neat column
+.column {
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    margin-top: tokens.$cozy;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &-tight {
+    display: flex;
+    flex-direction: column;
+    > * {
+      margin-top: tokens.$tight;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}

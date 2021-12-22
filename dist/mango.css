@@ -387,6 +387,126 @@ template {
   content: "\f108";
 }
 
+.padding {
+  padding: 0.5rem;
+}
+
+.pt-tight {
+  padding-top: 0.5rem;
+}
+
+.pb-tight {
+  padding-bottom: 0.5rem;
+}
+
+.pl-tight {
+  padding-left: 0.5rem;
+}
+
+.pr-tight {
+  padding-right: 0.5rem;
+}
+
+.margin {
+  margin: 0.5rem;
+}
+
+.mt-tight {
+  margin-top: 0.5rem;
+}
+
+.mb-tight {
+  margin-bottom: 0.5rem;
+}
+
+.ml-tight {
+  margin-left: 0.5rem;
+}
+
+.mr-tight {
+  margin-right: 0.5rem;
+}
+
+.padding {
+  padding: 1rem;
+}
+
+.pt-cozy {
+  padding-top: 1rem;
+}
+
+.pb-cozy {
+  padding-bottom: 1rem;
+}
+
+.pl-cozy {
+  padding-left: 1rem;
+}
+
+.pr-cozy {
+  padding-right: 1rem;
+}
+
+.margin {
+  margin: 1rem;
+}
+
+.mt-cozy {
+  margin-top: 1rem;
+}
+
+.mb-cozy {
+  margin-bottom: 1rem;
+}
+
+.ml-cozy {
+  margin-left: 1rem;
+}
+
+.mr-cozy {
+  margin-right: 1rem;
+}
+
+.padding {
+  padding: 1.5rem;
+}
+
+.pt-comfortable {
+  padding-top: 1.5rem;
+}
+
+.pb-comfortable {
+  padding-bottom: 1.5rem;
+}
+
+.pl-comfortable {
+  padding-left: 1.5rem;
+}
+
+.pr-comfortable {
+  padding-right: 1.5rem;
+}
+
+.margin {
+  margin: 1.5rem;
+}
+
+.mt-comfortable {
+  margin-top: 1.5rem;
+}
+
+.mb-comfortable {
+  margin-bottom: 1.5rem;
+}
+
+.ml-comfortable {
+  margin-left: 1.5rem;
+}
+
+.mr-comfortable {
+  margin-right: 1.5rem;
+}
+
 label,
 fieldset legend {
   display: block;

@@ -1,4 +1,4 @@
-name: Deploy docs
+name: Deploy to GitHub Pages branch
 
 on:
   push:
@@ -6,29 +6,30 @@ on:
       - main
 
 jobs:
-  copy:
-    name: Copy my assets
+  deploy:
+    name: deploy
     runs-on: ubuntu-latest
     steps:
       - name: setup node
         uses: actions/setup-node@v2
+        uses: actions/checkout@v2
         with:
-          node-version: '16'
-          cache: 'npm'
+          node-version: "16"
+          cache: "npm"
       - run: |
           npm install
           npm run build
       - name: copy files
         uses: actions/checkout@v2
         env:
-          DOCS_PATH: 'docs'
-          ASSETS_PATH: 'dist'
-          TARGET_BRANCH: 'site'
+          DOCS_PATH: "docs"
+          ASSETS_PATH: "dist"
+          TARGET_BRANCH: "site"
       - run: |
           # get the files
           assetFiles=$(find $ASSETS_PATH -type f)
           docsFiles=$(find $DOCS_PATH -type f)          
-          
+
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
           git fetch                                  

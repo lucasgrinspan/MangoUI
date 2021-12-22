@@ -3,3 +3,34 @@ $cozy: 1rem;
 $comfortable: 1.5rem;
 
 $input-width: 30ch;
+
+// spacing helper classes
+$spacings: (
+  tight: $tight,
+  cozy: $cozy,
+  comfortable: $comfortable,
+);
+$schemes: (
+  padding: p,
+  margin: m,
+);
+
+@each $name, $spacing in $spacings {
+  @each $scheme, $class in $schemes {
+    .#{$scheme} {
+      #{$scheme}: $spacing;
+    }
+    .#{$class}t-#{$name} {
+      #{$scheme}-top: $spacing;
+    }
+    .#{$class}b-#{$name} {
+      #{$scheme}-bottom: $spacing;
+    }
+    .#{$class}l-#{$name} {
+      #{$scheme}-left: $spacing;
+    }
+    .#{$class}r-#{$name} {
+      #{$scheme}-right: $spacing;
+    }
+  }
+}

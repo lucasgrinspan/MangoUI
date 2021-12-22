@@ -1,0 +1,15 @@
+.landing {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  background-color: var(--surface);
+}
+
+.landing > * {
+  flex-basis: 750px;
+}
+
+.landing h1 {
+  font-weight: 800;
+  font-size: 3rem;
+}

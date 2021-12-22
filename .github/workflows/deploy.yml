@@ -16,7 +16,7 @@ jobs:
           cache: "npm"
       - name: checkout
         uses: actions/checkout@v2
-        run: |
+      - run: |
           npm install
           npm run build
   deploy:

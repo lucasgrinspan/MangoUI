@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap);
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -386,54 +387,6 @@ template {
   content: "\f108";
 }
 
-@font-face {
-  font-family: Nunito;
-  font-style: normal;
-  font-weight: 200;
-  src: url(../../assets/font/Nunito-200.ttf);
-}
-@font-face {
-  font-family: Nunito;
-  font-style: normal;
-  font-weight: 300;
-  src: url(../../assets/font/Nunito-300.ttf);
-}
-@font-face {
-  font-family: Nunito;
-  font-style: normal;
-  font-weight: 400;
-  src: url(../../assets/font/Nunito-400.ttf);
-}
-@font-face {
-  font-family: Nunito;
-  font-style: normal;
-  font-weight: 500;
-  src: url(../../assets/font/Nunito-500.ttf);
-}
-@font-face {
-  font-family: Nunito;
-  font-style: normal;
-  font-weight: 600;
-  src: url(../../assets/font/Nunito-600.ttf);
-}
-@font-face {
-  font-family: Nunito;
-  font-style: normal;
-  font-weight: 700;
-  src: url(../../assets/font/Nunito-700.ttf);
-}
-@font-face {
-  font-family: Nunito;
-  font-style: normal;
-  font-weight: 800;
-  src: url(../../assets/font/Nunito-800.ttf);
-}
-@font-face {
-  font-family: Nunito;
-  font-style: normal;
-  font-weight: 900;
-  src: url(../../assets/font/Nunito-900.ttf);
-}
 label,
 fieldset legend {
   display: block;

@@ -1,0 +1,22 @@
+{
+  "name": "mango-ui",
+  "version": "1.0.0",
+  "description": "A fresh design system",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve & npm run build:watch",
+    "build": "sass src/main.scss dist/mango.css",
+    "build:watch": "sass src/main.scss dist/mango.css --watch",
+    "build:icons": "fantasticon"
+  },
+  "author": "Lucas Grinspan",
+  "license": "MIT",
+  "devDependencies": {
+    "fantasticon": "^1.2.3",
+    "sass": "^1.45.0",
+    "serve": "^13.0.2"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}

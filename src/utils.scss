@@ -1,0 +1,24 @@
+// generates CSS variables based on a theme map.
+// If is-default, then the vars will get added to the
+// html selector
+@mixin css-vars($theme, $name, $is-default: false) {
+  %vars {
+    @each $variable, $value in $theme {
+      --#{$variable}: #{$value};
+    }
+  }
+
+  html[data-theme="#{$name}"] {
+    @extend %vars;
+  }
+
+  @if $is-default {
+    html {
+      @extend %vars;
+    }
+  }
+}
+
+@function v($name) {
+  @return var(--#{$name});
+}

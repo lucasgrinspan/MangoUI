@@ -1,0 +1,61 @@
+@use "../tokens";
+// generates helper class names
+
+// wrap your main content in this
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > .section {
+    width: 100%;
+    max-width: 80ch;
+  }
+}
+
+// puts things in a neat row
+.row {
+  display: flex;
+
+  > * {
+    margin-left: tokens.$cozy;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+// puts things in a neat column
+.column {
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    margin-top: tokens.$cozy;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+// intended for a label and input
+.field {
+  display: flex;
+  flex-direction: column;
+
+  input,
+  select {
+    margin-top: tokens.$tight;
+  }
+}
+
+// spread it out like mango jelly
+.fluid {
+  width: 100% !important;
+}
+
+:active.no-squish {
+  transform: scale(1) !important;
+}

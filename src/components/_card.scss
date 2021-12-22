@@ -1,0 +1,14 @@
+@use "../utils.scss";
+@use "../tokens";
+
+.card {
+  background-color: utils.v(surface);
+  padding: tokens.$cozy;
+  margin: tokens.$cozy;
+  border-radius: tokens.$radius;
+  box-shadow: tokens.$shadow-medium;
+
+  > :first-child {
+    margin-top: 0;
+  }
+}

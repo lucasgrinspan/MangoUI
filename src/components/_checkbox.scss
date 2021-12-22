@@ -1,0 +1,44 @@
+@use "../utils.scss";
+@use "../tokens";
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+
+  + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    transition: tokens.$effect-transition;
+    width: max-content;
+
+    &::before {
+      display: inline-block;
+      content: "";
+      vertical-align: top;
+      transition: tokens.$effect-transition;
+
+      margin-right: tokens.$tight;
+      border: tokens.$border;
+      border-radius: tokens.$radius-small;
+      width: 1rem;
+      height: 1rem;
+      background-color: utils.v(page-background);
+    }
+    &:hover::before {
+      background-color: utils.v(surface-hover);
+    }
+    &:active {
+      transform: tokens.$squish;
+    }
+  }
+
+  &:focus + label::before {
+    @include tokens.focus-ring;
+  }
+
+  &:checked + label::before {
+    content: "✓";
+    background-color: utils.v(primary);
+  }
+}

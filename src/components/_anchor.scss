@@ -1,0 +1,16 @@
+@use "../utils.scss";
+@use "../tokens";
+
+a {
+  color: utils.v(link);
+  transition: tokens.$effect-transition;
+  display: inline-block;
+
+  &:hover {
+    color: utils.v(link-hover);
+  }
+
+  &:active {
+    transform: tokens.$squish;
+  }
+}

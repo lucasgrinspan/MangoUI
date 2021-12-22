@@ -1,0 +1,67 @@
+@use "../utils.scss";
+@use "../tokens";
+
+details {
+  border: tokens.$border;
+  border-radius: tokens.$radius;
+  padding: 0 tokens.$tight; // left and right
+
+  // the disclosure button
+  summary {
+    padding: tokens.$tight;
+    margin: 0 -#{tokens.$tight}; // make it sit flush to prevent double padding
+    cursor: pointer;
+    list-style: none;
+    font-weight: tokens.$bold;
+
+    &:hover {
+      background-color: utils.v(surface-hover);
+    }
+    &::before {
+      @include tokens.use-icon;
+      content: tokens.$right-arrow;
+      margin-right: tokens.$tight;
+    }
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  // open styles, expand the spacing for the text
+  &[open] {
+    padding-bottom: tokens.$tight;
+
+    summary {
+      border-bottom: tokens.$border;
+      margin-bottom: tokens.$tight;
+      background-color: utils.v(surface-selected);
+
+      &::before {
+        content: tokens.$down-arrow;
+      }
+    }
+  }
+
+  // when in a group
+  .disclosure-group & {
+    border-radius: 0;
+    border-top: none;
+
+    &:first-child {
+      border-radius: tokens.$radius tokens.$radius 0 0;
+      border: tokens.$border;
+
+      summary {
+        border-radius: tokens.$radius tokens.$radius 0 0;
+      }
+    }
+
+    &:last-child {
+      border-radius: 0 0 tokens.$radius tokens.$radius;
+
+      summary {
+        border-radius: 0 0 tokens.$radius tokens.$radius;
+      }
+    }
+  }
+}

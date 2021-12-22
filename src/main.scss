@@ -1,0 +1,42 @@
+@use "../node_modules/normalize.css/normalize.css";
+@use "tokens";
+@use "helpers";
+@use "components";
+
+@use "utils.scss";
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  color: utils.v(text);
+  background-color: utils.v(page-background);
+}
+
+// for checkbox and radio groups
+fieldset {
+  border: tokens.$border;
+  border-radius: tokens.$radius;
+  legend {
+    padding: 0 tokens.$tight;
+  }
+  > input[type="checkbox"] + label,
+  > input[type="radio"] + label {
+    margin-top: tokens.$tight;
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+*:focus {
+  @include tokens.focus-ring;
+}

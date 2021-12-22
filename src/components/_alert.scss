@@ -1,0 +1,63 @@
+@use "../utils.scss";
+@use "../tokens";
+
+%with-icon {
+  @include tokens.use-icon;
+  display: block;
+  font-size: 2rem;
+  margin-right: tokens.$tight;
+}
+
+[role="alert"] {
+  background-color: utils.v(neutral-alert-background);
+  border: 1px solid utils.v(neutral-alert-border);
+  border-radius: tokens.$radius;
+  padding: tokens.$cozy;
+  display: flex; // needed for the icon variations
+  align-items: center;
+
+  &::before {
+    @extend %with-icon;
+    content: tokens.$info-circle;
+  }
+
+  &.danger {
+    background-color: utils.v(danger-alert-background);
+    border-color: utils.v(danger-alert-border);
+    color: utils.v(danger-alert-text);
+
+    &::before {
+      @extend %with-icon;
+      content: tokens.$warning;
+    }
+  }
+
+  &.warning {
+    background-color: utils.v(warning-alert-background);
+    border-color: utils.v(warning-alert-border);
+    color: utils.v(warning-alert-text);
+
+    &::before {
+      @extend %with-icon;
+      content: tokens.$warning;
+    }
+  }
+
+  &.success {
+    background-color: utils.v(success-alert-background);
+    border-color: utils.v(success-alert-border);
+    color: utils.v(success-alert-text);
+
+    &::before {
+      @include tokens.use-icon;
+      content: tokens.$check-circle;
+      display: block;
+      font-size: 2rem;
+      margin-right: tokens.$tight;
+    }
+  }
+
+  &.no-icon::before {
+    content: "";
+  }
+}

@@ -1,0 +1,33 @@
+@use "../tokens";
+@use "../utils.scss";
+
+button {
+  background-color: utils.v(primary);
+  border-radius: tokens.$radius;
+  border: tokens.$border;
+  padding: tokens.$tight tokens.$cozy;
+  cursor: pointer;
+  transition: tokens.$effect-transition;
+
+  &:hover {
+    background-color: utils.v(primary-hover);
+  }
+  &:active {
+    transform: tokens.$squish;
+  }
+}
+
+button.outline,
+%outline-base {
+  background-color: utils.v(surface);
+  border: tokens.$border;
+
+  &:hover {
+    background-color: utils.v(surface-hover);
+  }
+}
+
+button.ghost {
+  @extend %outline-base;
+  border: none;
+}

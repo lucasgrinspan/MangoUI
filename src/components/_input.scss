@@ -1,0 +1,16 @@
+@use "../utils.scss";
+@use "../tokens";
+
+input {
+  background-color: utils.v(page-background);
+  border: tokens.$input-border;
+  border-radius: tokens.$radius-small;
+  padding: tokens.$tight;
+
+  max-width: tokens.$input-width;
+
+  &:focus {
+    border-color: utils.v(primary);
+    outline: none;
+  }
+}

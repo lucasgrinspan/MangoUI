@@ -1,0 +1,27 @@
+@use "../utils.scss";
+@use "../tokens";
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+
+  border: tokens.$input-border;
+  border-radius: tokens.$radius-small;
+  padding: tokens.$tight;
+  background-color: utils.v(page-background);
+  width: tokens.$input-width;
+  color: utils.v(text);
+
+  &:focus {
+    border: tokens.$border;
+    outline: none;
+  }
+
+  // caret hack without using wrapper div
+  background-image: utils.v(image-down-arrow);
+  background-repeat: no-repeat;
+  background-size: 1rem auto;
+  background-position: center right tokens.$tight;
+}

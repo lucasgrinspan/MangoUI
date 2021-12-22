@@ -1,0 +1,31 @@
+name: Copy folder to other branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  copy:
+    name: Copy my assets
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: copy
+        env:
+          DOCS_PATH: 'docs'
+          ASSETS_PATH: 'dist'
+          TARGET_BRANCH: 'site'
+        run: |
+          # get the files
+          assetFiles=$(find $ASSETS_PATH -type f)
+          docsFiles=$(find $DOCS_PATH -type f)          
+          
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git fetch                                  
+          git checkout $TARGET_BRANCH                   
+          git checkout ${GITHUB_REF##*/} -- $assetFiles $docsFiles 
+          git add -A
+          git diff-index --quiet HEAD ||  git commit -am "deploying docs"  # commit to the repository (ignore if no modification)
+          git push origin $TARGET_BRANCH # push to remote branch

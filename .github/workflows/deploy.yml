@@ -39,5 +39,5 @@ jobs:
           git checkout $TARGET_BRANCH                   
           git checkout ${GITHUB_REF##*/} -- $assetFiles $docsFiles 
           git add -A
-          git diff-index --quiet HEAD ||  git commit -am "deploying docs"  # commit to the repository (ignore if no modification)
+          git diff-index --quiet HEAD ||  git commit -am "deploying docs"
           git push origin $TARGET_BRANCH # push to remote branch

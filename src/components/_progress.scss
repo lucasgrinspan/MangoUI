@@ -1,0 +1,61 @@
+@use "../utils.scss";
+@use "../tokens";
+
+progress {
+  height: tokens.$cozy;
+  width: 15rem;
+  border-radius: tokens.$radius;
+  overflow: hidden;
+
+  // these should take effect in firefox
+  border: tokens.$border;
+  background-color: utils.v(page-background);
+
+  // the wrapper bar
+  &::-webkit-progress-bar {
+    border-radius: tokens.$radius;
+    background-color: transparent;
+  }
+
+  // the bar value
+  &::-moz-progress-bar {
+    background-color: utils.v(primary);
+    border-radius: tokens.$radius-small;
+  }
+  &::-webkit-progress-value {
+    background-color: utils.v(primary);
+    border-radius: tokens.$radius-small;
+  }
+
+  &:indeterminate {
+    background: utils.v(page-background)
+      linear-gradient(to right, utils.v(primary) 30%, utils.v(page-background) 30%) top left/150%
+      150% no-repeat;
+    animation: progressIndeterminate 1.4s linear infinite;
+
+    @media (prefers-reduced-motion: reduce) {
+      background: repeating-linear-gradient(
+        45deg,
+        utils.v(page-background),
+        utils.v(page-background) tokens.$tight,
+        utils.v(primary) tokens.$tight,
+        utils.v(primary) tokens.$cozy
+      );
+      background-repeat: repeat;
+      animation: none;
+    }
+  }
+}
+
+@keyframes progressIndeterminate {
+  0% {
+    background-position: 200% 0;
+  }
+  70% {
+    background-position: -200% 0;
+  }
+  // adds a manual delay
+  100% {
+    background-position: -200% 0;
+  }
+}

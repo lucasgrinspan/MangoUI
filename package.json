@@ -4,7 +4,7 @@
   "description": "A fresh design system",
   "main": "index.js",
   "scripts": {
-    "start": "serve & npm run build:watch",
+    "start": "serve -c serve.json & npm run build:watch",
     "build": "npm run build:icons && sass src/main.scss dist/mango.css",
     "build:watch": "sass src/main.scss dist/mango.css --watch",
     "build:icons": "fantasticon"

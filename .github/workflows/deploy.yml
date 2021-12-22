@@ -1,4 +1,4 @@
-name: Copy folder to other branch
+name: Deploy docs
 
 on:
   push:
@@ -10,13 +10,21 @@ jobs:
     name: Copy my assets
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: copy
+      - name: setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: 'npm'
+      - run: |
+          npm install
+          npm run build
+      - name: copy files
+        uses: actions/checkout@v2
         env:
           DOCS_PATH: 'docs'
           ASSETS_PATH: 'dist'
           TARGET_BRANCH: 'site'
-        run: |
+      - run: |
           # get the files
           assetFiles=$(find $ASSETS_PATH -type f)
           docsFiles=$(find $DOCS_PATH -type f)          

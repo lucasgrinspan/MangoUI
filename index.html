@@ -162,8 +162,14 @@
       <div class="section card">
         <h2>Progress Bar</h2>
         <div class="column">
-          <progress></progress>
-          <progress value="30" max="100">30%</progress>
+          <div>
+            <label for="indeterminate-progress">Loading mangos...</label>
+            <progress id="indeterminate-progress"></progress>
+          </div>
+          <div>
+            <label for="determinate-progress">30 out of 100 mangos loaded</label>
+            <progress value="30" max="100" id="determinate-progress">30%</progress>
+          </div>
         </div>
       </div>
     </div>

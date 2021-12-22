@@ -22,13 +22,13 @@ jobs:
     needs: setup
     runs-on: ubuntu-latest
     steps:
-      - name: copy files
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         env:
           DOCS_PATH: "docs"
           ASSETS_PATH: "dist"
           TARGET_BRANCH: "site"
-      - run: |
+      - name: transfer the files
+        run: |
           # get the files
           assetFiles=$(find $ASSETS_PATH -type f)
           docsFiles=$(find $DOCS_PATH -type f)          

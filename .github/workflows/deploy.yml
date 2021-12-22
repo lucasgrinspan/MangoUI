@@ -25,6 +25,7 @@ jobs:
           mv ./index.html ./public
           mv ./dist ./public
           mv ./docs ./public
+          mv ./assets ./public
       - name: "deploying docs"
         uses: peaceiris/actions-gh-pages@v3
         with:

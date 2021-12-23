@@ -340,7 +340,7 @@ template {
 
 @font-face {
   font-family: "mango-icons";
-  src: url("../assets/font/mango-icons.woff2?dcbcb84464cdbf0c2ff170b8f628ec8b") format("woff2");
+  src: url("../assets/font/mango-icons.woff2?58f3663d98e53907dfdae57df3012ba3") format("woff2");
 }
 .icon:before {
   font-family: mango-icons !important;
@@ -384,24 +384,20 @@ template {
   content: "\f107";
 }
 
-.icon.icon-mangoui:before {
+.icon.icon-right-arrow:before {
   content: "\f108";
 }
 
-.icon.icon-right-arrow:before {
+.icon.icon-sparkle:before {
   content: "\f109";
 }
 
-.icon.icon-sparkle:before {
+.icon.icon-up-arrow:before {
   content: "\f10a";
 }
 
-.icon.icon-up-arrow:before {
-  content: "\f10b";
-}
-
 .icon.icon-warning:before {
-  content: "\f10c";
+  content: "\f10b";
 }
 
 .icon.icon-lg::before {
@@ -846,7 +842,7 @@ html, html[data-theme=sunset] {
   color: var(--danger-alert-text);
 }
 [role=alert].danger::before {
-  content: "\f10c";
+  content: "\f10b";
 }
 [role=alert].warning {
   background-color: var(--warning-alert-background);
@@ -854,7 +850,7 @@ html, html[data-theme=sunset] {
   color: var(--warning-alert-text);
 }
 [role=alert].warning::before {
-  content: "\f10c";
+  content: "\f10b";
 }
 [role=alert].success {
   background-color: var(--success-alert-background);
@@ -1021,7 +1017,7 @@ details summary::before {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1rem;
-  content: "\f109";
+  content: "\f108";
   margin-right: 0.5rem;
 }
 details summary::-webkit-details-marker {

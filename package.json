@@ -7,7 +7,8 @@
     "start": "serve -c serve.json & npm run build:watch",
     "build": "npm run build:icons && sass src/main.scss dist/mango.css",
     "build:watch": "sass src/main.scss dist/mango.css --watch",
-    "build:icons": "fantasticon"
+    "build:icons": "fantasticon",
+    "build:docs": "node site/build.js"
   },
   "author": "Lucas Grinspan",
   "license": "MIT",

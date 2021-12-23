@@ -1,0 +1,8 @@
+[
+  { "name": "inspiration", "type": "page" },
+  { "name": "getting-started", "type": "page" },
+  { "name": "components", "type": "page" },
+  { "name": "index.html", "type": "copy" },
+  { "name": "styles", "type": "assets" },
+  { "name": "assets", "type": "assets" }
+]

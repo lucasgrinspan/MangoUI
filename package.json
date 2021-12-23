@@ -13,6 +13,7 @@
   "license": "MIT",
   "devDependencies": {
     "fantasticon": "^1.2.3",
+    "handlebars": "^4.7.7",
     "sass": "^1.45.0",
     "serve": "^13.0.2"
   },

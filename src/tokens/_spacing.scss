@@ -23,19 +23,19 @@ $schemes: (
 @each $name, $spacing in $spacings {
   @each $scheme, $class in $schemes {
     .#{$class}-#{$name} {
-      #{$scheme}: $spacing;
+      #{$scheme}: $spacing !important;
     }
     .#{$class}t-#{$name} {
-      #{$scheme}-top: $spacing;
+      #{$scheme}-top: $spacing !important;
     }
     .#{$class}b-#{$name} {
-      #{$scheme}-bottom: $spacing;
+      #{$scheme}-bottom: $spacing !important;
     }
     .#{$class}l-#{$name} {
-      #{$scheme}-left: $spacing;
+      #{$scheme}-left: $spacing !important;
     }
     .#{$class}r-#{$name} {
-      #{$scheme}-right: $spacing;
+      #{$scheme}-right: $spacing !important;
     }
   }
 }

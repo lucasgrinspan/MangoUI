@@ -25,6 +25,9 @@ nav[data-orientation="vertical"] {
           font-weight: map-get(tokens.$font-weights, bold);
           background-color: utils.v(surface-selected);
         }
+        &:focus {
+          text-decoration: underline;
+        }
       }
 
       &:hover {

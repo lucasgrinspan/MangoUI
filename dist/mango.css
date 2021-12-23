@@ -1173,6 +1173,54 @@ select:focus {
   outline: none;
 }
 
+nav[data-orientation=vertical] {
+  background-color: var(--surface);
+}
+nav[data-orientation=vertical] ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+nav[data-orientation=vertical] ul li {
+  border: 1px solid var(--primary);
+  border-top: none;
+}
+nav[data-orientation=vertical] ul li a {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  color: var(--text);
+  width: 10rem;
+}
+nav[data-orientation=vertical] ul li a[aria-current=page] {
+  font-weight: 600;
+  background-color: var(--surface-selected);
+}
+nav[data-orientation=vertical] ul li:hover {
+  text-decoration: underline;
+  background-color: var(--surface-hover);
+  color: var(--text);
+}
+nav[data-orientation=vertical] ul li:first-child {
+  border-top: 1px solid var(--primary);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+nav[data-orientation=vertical] ul li:first-child a {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+nav[data-orientation=vertical] ul li:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+nav[data-orientation=vertical] ul li:last-child a {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 table {
   border-spacing: 0;
   border-collapse: separate;

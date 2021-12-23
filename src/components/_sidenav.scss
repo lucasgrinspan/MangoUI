@@ -1,0 +1,57 @@
+@use "../utils.scss";
+@use "../tokens";
+
+nav[data-orientation="vertical"] {
+  background-color: utils.v(surface);
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+
+    li {
+      border: tokens.$border;
+      border-top: none;
+      a {
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        padding: tokens.$tight tokens.$cozy;
+        color: utils.v(text);
+        width: 10rem;
+
+        &[aria-current="page"] {
+          font-weight: map-get(tokens.$font-weights, bold);
+          background-color: utils.v(surface-selected);
+        }
+      }
+
+      &:hover {
+        text-decoration: underline;
+        background-color: utils.v(surface-hover);
+        color: utils.v(text);
+      }
+
+      // we have to do this weird construction so that the border of the
+      // link isn't affected by the squish effect
+      &:first-child {
+        border-top: tokens.$border;
+        border-top-left-radius: tokens.$radius;
+        border-top-right-radius: tokens.$radius;
+        a {
+          border-top-left-radius: tokens.$radius;
+          border-top-right-radius: tokens.$radius;
+        }
+      }
+      &:last-child {
+        border-bottom-left-radius: tokens.$radius;
+        border-bottom-right-radius: tokens.$radius;
+        a {
+          border-bottom-left-radius: tokens.$radius;
+          border-bottom-right-radius: tokens.$radius;
+        }
+      }
+    }
+  }
+}

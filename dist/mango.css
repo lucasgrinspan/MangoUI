@@ -340,7 +340,7 @@ template {
 
 @font-face {
   font-family: "mango-icons";
-  src: url("../assets/font/mango-icons.woff2?b34fe0cd544fa554d6de04591952e48a") format("woff2");
+  src: url("../assets/font/mango-icons.woff2?dcbcb84464cdbf0c2ff170b8f628ec8b") format("woff2");
 }
 .icon:before {
   font-family: mango-icons !important;
@@ -356,40 +356,60 @@ template {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon.icon-check-circle:before {
+.icon.icon-accessibility:before {
   content: "\f101";
 }
 
-.icon.icon-check:before {
+.icon.icon-check-circle:before {
   content: "\f102";
 }
 
-.icon.icon-down-arrow:before {
+.icon.icon-check:before {
   content: "\f103";
 }
 
-.icon.icon-info-circle:before {
+.icon.icon-code:before {
   content: "\f104";
 }
 
-.icon.icon-left-arrow:before {
+.icon.icon-down-arrow:before {
   content: "\f105";
 }
 
-.icon.icon-right-arrow:before {
+.icon.icon-info-circle:before {
   content: "\f106";
 }
 
-.icon.icon-up-arrow:before {
+.icon.icon-left-arrow:before {
   content: "\f107";
 }
 
-.icon.icon-warning:before {
+.icon.icon-mangoui:before {
   content: "\f108";
+}
+
+.icon.icon-right-arrow:before {
+  content: "\f109";
+}
+
+.icon.icon-sparkle:before {
+  content: "\f10a";
+}
+
+.icon.icon-up-arrow:before {
+  content: "\f10b";
+}
+
+.icon.icon-warning:before {
+  content: "\f10c";
 }
 
 .icon.icon-lg::before {
   font-size: 2rem;
+}
+
+.icon.icon-xl::before {
+  font-size: 3rem;
 }
 
 .p-none {
@@ -760,6 +780,10 @@ html, html[data-theme=sunset] {
   justify-content: center;
 }
 
+.flex-align-center {
+  align-items: center;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -814,7 +838,7 @@ html, html[data-theme=sunset] {
   width: 100%;
 }
 [role=alert]::before {
-  content: "\f104";
+  content: "\f106";
 }
 [role=alert].danger {
   background-color: var(--danger-alert-background);
@@ -822,7 +846,7 @@ html, html[data-theme=sunset] {
   color: var(--danger-alert-text);
 }
 [role=alert].danger::before {
-  content: "\f108";
+  content: "\f10c";
 }
 [role=alert].warning {
   background-color: var(--warning-alert-background);
@@ -830,7 +854,7 @@ html, html[data-theme=sunset] {
   color: var(--warning-alert-text);
 }
 [role=alert].warning::before {
-  content: "\f108";
+  content: "\f10c";
 }
 [role=alert].success {
   background-color: var(--success-alert-background);
@@ -849,7 +873,7 @@ html, html[data-theme=sunset] {
   vertical-align: top;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "\f101";
+  content: "\f102";
   display: block;
   font-size: 2rem;
   margin-right: 0.5rem;
@@ -965,7 +989,7 @@ input[type=checkbox]:checked + label::before {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1rem;
-  content: "\f102";
+  content: "\f103";
   background-color: var(--primary);
 }
 
@@ -997,7 +1021,7 @@ details summary::before {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1rem;
-  content: "\f106";
+  content: "\f109";
   margin-right: 0.5rem;
 }
 details summary::-webkit-details-marker {
@@ -1012,7 +1036,7 @@ details[open] summary {
   background-color: var(--surface-selected);
 }
 details[open] summary::before {
-  content: "\f103";
+  content: "\f105";
 }
 .disclosure-group details {
   border-radius: 0;

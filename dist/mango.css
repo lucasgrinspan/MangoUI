@@ -349,6 +349,7 @@ template {
   font-variant: normal;
   font-size: 1.5rem;
   text-transform: none;
+  color: var(--text);
   line-height: 1;
   vertical-align: top;
   -webkit-font-smoothing: antialiased;
@@ -387,7 +388,91 @@ template {
   content: "\f108";
 }
 
-.padding {
+.icon.icon-lg::before {
+  font-size: 2rem;
+}
+
+.p-none {
+  padding: 0;
+}
+
+.pt-none {
+  padding-top: 0;
+}
+
+.pb-none {
+  padding-bottom: 0;
+}
+
+.pl-none {
+  padding-left: 0;
+}
+
+.pr-none {
+  padding-right: 0;
+}
+
+.m-none {
+  margin: 0;
+}
+
+.mt-none {
+  margin-top: 0;
+}
+
+.mb-none {
+  margin-bottom: 0;
+}
+
+.ml-none {
+  margin-left: 0;
+}
+
+.mr-none {
+  margin-right: 0;
+}
+
+.p-squished {
+  padding: 0.25rem;
+}
+
+.pt-squished {
+  padding-top: 0.25rem;
+}
+
+.pb-squished {
+  padding-bottom: 0.25rem;
+}
+
+.pl-squished {
+  padding-left: 0.25rem;
+}
+
+.pr-squished {
+  padding-right: 0.25rem;
+}
+
+.m-squished {
+  margin: 0.25rem;
+}
+
+.mt-squished {
+  margin-top: 0.25rem;
+}
+
+.mb-squished {
+  margin-bottom: 0.25rem;
+}
+
+.ml-squished {
+  margin-left: 0.25rem;
+}
+
+.mr-squished {
+  margin-right: 0.25rem;
+}
+
+.p-tight {
   padding: 0.5rem;
 }
 
@@ -407,7 +492,7 @@ template {
   padding-right: 0.5rem;
 }
 
-.margin {
+.m-tight {
   margin: 0.5rem;
 }
 
@@ -427,7 +512,7 @@ template {
   margin-right: 0.5rem;
 }
 
-.padding {
+.p-cozy {
   padding: 1rem;
 }
 
@@ -447,7 +532,7 @@ template {
   padding-right: 1rem;
 }
 
-.margin {
+.m-cozy {
   margin: 1rem;
 }
 
@@ -467,7 +552,7 @@ template {
   margin-right: 1rem;
 }
 
-.padding {
+.p-comfortable {
   padding: 1.5rem;
 }
 
@@ -487,7 +572,7 @@ template {
   padding-right: 1.5rem;
 }
 
-.margin {
+.m-comfortable {
   margin: 1.5rem;
 }
 
@@ -507,10 +592,88 @@ template {
   margin-right: 1.5rem;
 }
 
+.p-socially-distanced {
+  padding: 2rem;
+}
+
+.pt-socially-distanced {
+  padding-top: 2rem;
+}
+
+.pb-socially-distanced {
+  padding-bottom: 2rem;
+}
+
+.pl-socially-distanced {
+  padding-left: 2rem;
+}
+
+.pr-socially-distanced {
+  padding-right: 2rem;
+}
+
+.m-socially-distanced {
+  margin: 2rem;
+}
+
+.mt-socially-distanced {
+  margin-top: 2rem;
+}
+
+.mb-socially-distanced {
+  margin-bottom: 2rem;
+}
+
+.ml-socially-distanced {
+  margin-left: 2rem;
+}
+
+.mr-socially-distanced {
+  margin-right: 2rem;
+}
+
 label,
 fieldset legend {
   display: block;
   font-weight: 600;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1rem 0;
+}
+
+p {
+  line-height: 1.4;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+.font-weight-thin {
+  font-weight: 200;
+}
+
+.font-weight-regular {
+  font-weight: 400;
+}
+
+.font-weight-bold {
+  font-weight: 600;
+}
+
+.font-weight-semiblack {
+  font-weight: 800;
+}
+
+.font-weight-black {
+  font-weight: 900;
 }
 
 html, html[data-theme=sunset] {
@@ -577,6 +740,26 @@ html, html[data-theme=sunset] {
   margin-top: 0;
 }
 
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-justify-end {
+  justify-content: flex-end;
+}
+
+.flex-justify-between {
+  justify-content: space-between;
+}
+
+.flex-justify-center {
+  justify-content: center;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -611,6 +794,7 @@ html, html[data-theme=sunset] {
   font-variant: normal;
   font-size: 1.5rem;
   text-transform: none;
+  color: var(--text);
   line-height: 1;
   vertical-align: top;
   -webkit-font-smoothing: antialiased;
@@ -660,6 +844,7 @@ html, html[data-theme=sunset] {
   font-variant: normal;
   font-size: 1.5rem;
   text-transform: none;
+  color: var(--text);
   line-height: 1;
   vertical-align: top;
   -webkit-font-smoothing: antialiased;
@@ -685,32 +870,40 @@ a:active {
   transform: scale(0.95);
 }
 
-button {
+button,
+.button {
+  display: block;
+  color: var(--text);
   background-color: var(--primary);
   border-radius: 10px;
   border: 1px solid var(--primary);
   padding: 0.5rem 1rem;
   cursor: pointer;
+  text-decoration: none;
   transition: 150ms linear all;
 }
-button:hover {
+button:hover,
+.button:hover {
+  color: var(--text);
   background-color: var(--primary-hover);
 }
-button:active {
+button:active,
+.button:active {
   transform: scale(0.95);
 }
-
-button.outline,
-button.ghost {
+button.outline, button.ghost,
+.button.outline,
+.button.ghost {
   background-color: var(--surface);
   border: 1px solid var(--primary);
 }
-button.outline:hover,
-button.ghost:hover {
+button.outline:hover, button.ghost:hover,
+.button.outline:hover,
+.button.ghost:hover {
   background-color: var(--surface-hover);
 }
-
-button.ghost {
+button.ghost,
+.button.ghost {
   border: none;
 }
 
@@ -766,6 +959,7 @@ input[type=checkbox]:checked + label::before {
   font-variant: normal;
   font-size: 1.5rem;
   text-transform: none;
+  color: var(--text);
   line-height: 1;
   vertical-align: top;
   -webkit-font-smoothing: antialiased;
@@ -797,6 +991,7 @@ details summary::before {
   font-variant: normal;
   font-size: 1.5rem;
   text-transform: none;
+  color: var(--text);
   line-height: 1;
   vertical-align: top;
   -webkit-font-smoothing: antialiased;

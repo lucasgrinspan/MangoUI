@@ -1,11 +1,41 @@
+@use "./spacing";
 @import url(https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap);
 
 $font: Nunito;
-$font-weights: 200, 300, 400, 500, 600, 700, 800, 900;
-$bold: 600;
+$font-weights: (
+  thin: 200,
+  regular: 400,
+  bold: 600,
+  semiblack: 800,
+  black: 900,
+);
 
 label,
 fieldset legend {
   display: block;
-  font-weight: $bold;
+  font-weight: map-get($map: $font-weights, $key: bold);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 spacing.$cozy 0;
+}
+
+p {
+  line-height: 1.4;
+}
+
+h1 {
+  font-weight: map-get($map: $font-weights, $key: semiblack);
+}
+
+@each $weight, $value in $font-weights {
+  .font-weight-#{$weight} {
+    font-weight: $value;
+  }
 }

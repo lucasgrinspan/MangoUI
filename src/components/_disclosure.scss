@@ -12,7 +12,7 @@ details {
     margin: 0 -#{tokens.$tight}; // make it sit flush to prevent double padding
     cursor: pointer;
     list-style: none;
-    font-weight: tokens.$bold;
+    font-weight: map-get($map: tokens.$font-weights, $key: bold);
 
     &:hover {
       background-color: utils.v(surface-hover);

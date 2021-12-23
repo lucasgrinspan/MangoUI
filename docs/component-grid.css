@@ -1,14 +1,30 @@
-.landing .component-grid {
+#landing #component-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
-  padding: 0.75rem;
+  min-width: 500px;
+  width: 600px;
+  max-height: 340px;
 }
 
-.component-grid [role="alert"] {
+#component-grid [role="alert"] {
   grid-column: span 2;
 }
 
-.component-grid fieldset {
-  grid-row: span 2;
+#component-grid .disclosure-group {
+  grid-column: span 2;
+}
+
+#component-grid select {
+  margin-top: 0.75rem;
+}
+
+#component-grid progress {
+  margin-top: 0.75rem;
+}
+
+.subgrid {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  gap: 0.75rem;
 }

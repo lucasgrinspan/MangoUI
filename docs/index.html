@@ -10,50 +10,90 @@
     <link rel="stylesheet" href="../docs/component-grid.css" />
   </head>
   <body>
-    <div class="landing">
-      <div>
-        <h1>Mango UI</h1>
-        <p>What if a mango could inspire a design system?</p>
+    <main>
+      <div class="flex flex-justify-center" id="landing">
+        <div class="p-cozy flex flex-column flex-justify-center" id="heading">
+          <h1 class="m-none font-weight-black">Mango UI</h1>
+          <p>What if a mango could inspire a design system?</p>
+          <div class="row">
+            <a href="/docs/" class="button">See the docs</a>
+            <a href="/docs/components" class="button outline">Github</a>
+          </div>
+        </div>
+        <div class="p-cozy" id="component-grid" aria-hidden="true">
+          <div role="alert" class="success no-icon">Hey there!</div>
+          <div class="subgrid">
+            <div class="column-tight">
+              <button>Mango</button>
+              <button class="outline">Disco</button>
+              <button class="ghost">Party</button>
+            </div>
+            <div class="column-tight">
+              <span class="icon icon-check-circle icon-lg"></span>
+              <span class="icon icon-warning icon-lg"></span>
+              <span class="icon icon-info-circle icon-lg"></span>
+            </div>
+            <div class="disclosure-group">
+              <details>
+                <summary>Open me!</summary>
+                Thanks for opening me!
+              </details>
+              <details>
+                <summary>No! Open me!</summary>
+                I knew I could count on you
+              </details>
+              <details>
+                <summary>Don't forget about me!</summary>
+                Phew, thanks!
+              </details>
+            </div>
+          </div>
+          <div class="flex flex-column">
+            <fieldset>
+              <legend>Favorite dish?</legend>
+              <input type="checkbox" id="mango-cake" />
+              <label for="mango-cake"> Mango Cake </label>
+              <input type="checkbox" id="mango-salad" />
+              <label for="mango-salad"> Mango Quinoa Salad </label>
+              <input type="checkbox" id="mango-sorbet" />
+              <label for="mango-sorbet"> Mango Sorbet </label>
+              <input type="checkbox" id="mango-chow" />
+              <label for="mango-chow"> Mango Chow </label>
+              <input type="checkbox" id="mango-popsicle" />
+              <label for="mango-popsicle"> Mango Popsicle </label>
+            </fieldset>
+            <select>
+              <option>Bounce</option>
+              <option>Rock</option>
+              <option>Skate</option>
+              <option>Roll</option>
+            </select>
+            <progress class="fluid"></progress>
+          </div>
+          <div role="alert" class="warning">Watch out!</div>
+        </div>
       </div>
-      <div class="component-grid" aria-hidden="true">
-        <div role="alert" class="success no-icon">Hey there!</div>
-        <div class="column-tight">
-          <button>Mango</button>
-          <button class="outline">Disco</button>
-          <button class="ghost">Party</button>
-        </div>
-        <fieldset>
-          <legend>Favorite dish?</legend>
-          <input type="checkbox" id="mango-cake" />
-          <label for="mango-cake"> Mango Cake </label>
-          <input type="checkbox" id="mango-salad" />
-          <label for="mango-salad"> Mango Quinoa Salad </label>
-          <input type="checkbox" id="mango-sorbet" />
-          <label for="mango-sorbet"> Mango Sorbet </label>
-          <input type="checkbox" id="mango-chow" />
-          <label for="mango-chow"> Mango Chow </label>
-          <input type="checkbox" id="mango-popsicle" />
-          <label for="mango-popsicle"> Mango Popsicle </label>
-        </fieldset>
-        <div>
-          <span class="icon icon-check-circle"></span>
-          <span class="icon icon-warning"></span>
-        </div>
-        <div class="disclosure-group">
-          <details>
-            <summary>Open me!</summary>
-            Thanks for opening me!
-          </details>
-          <details>
-            <summary>No! Open me!</summary>
-            I knew I could count on you
-          </details>
-          <details>
-            <summary>Don't forget about me!</summary>
-            Phew, thanks!
-          </details>
+      <div class="fluid" id="transition-container">
+        <div style="height: 150px; overflow: hidden">
+          <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%">
+            <path
+              d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+              fill="var(--page-background)"
+            ></path>
+          </svg>
         </div>
       </div>
-    </div>
+      <div class="content">
+        <div class="card section">
+          <h2>Fresh web components</h2>
+          <p>
+            Growing up, I had a mango tree. So did some of my friends. Late summer rained endless
+            mangos onto my backyard and mango vendors would line some of the roads nearby. A visit
+            to a friend's house could start with a mango smoothie made by their grandmother and end
+            with mango smiles. Babbo pls help
+          </p>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

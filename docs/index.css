@@ -1,15 +1,18 @@
-.landing {
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
+#landing {
   background-color: var(--surface);
 }
 
-.landing > * {
-  flex-basis: 750px;
+#heading h1 {
+  font-size: 5rem;
+}
+#heading p {
+  font-size: 2rem;
 }
 
-.landing h1 {
-  font-weight: 800;
-  font-size: 3rem;
+#transition-container {
+  background-color: var(--surface);
+}
+
+#transition-wave {
+  width: 100%;
 }

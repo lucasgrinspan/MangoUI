@@ -1,3 +1,5 @@
+@use "../utils.scss";
+
 $mango-icons-font: "mango-icons";
 
 @font-face {
@@ -12,6 +14,7 @@ $mango-icons-font: "mango-icons";
   font-variant: normal;
   font-size: 1.5rem;
   text-transform: none;
+  color: utils.v(text);
   line-height: 1;
   vertical-align: top;
   -webkit-font-smoothing: antialiased;
@@ -19,7 +22,7 @@ $mango-icons-font: "mango-icons";
 }
 
 .icon:before {
-  @include use-icon;
+  @include use-icon
 }
 
 @function unicode($str) {
@@ -35,6 +38,8 @@ $right-arrow: unicode(f106);
 $up-arrow: unicode(f107);
 $warning: unicode(f108);
 $down-arrow-source: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none'%3E%3Cpath d='M58.895 23.552a3.5 3.5 0 0 0-4.79-5.104l4.79 5.104zM32 44l-2.395 2.552a3.5 3.5 0 0 0 4.79 0L32 44zM9.896 18.448a3.5 3.5 0 0 0-4.792 5.104l4.792-5.104zm44.209 0l-24.5 23 4.79 5.104 24.5-23-4.79-5.104zm-49 5.104l24.5 23 4.79-5.104-24.5-23-4.79 5.104z' fill='%23212121'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+
+
 
 .icon.icon-check-circle:before {
   content: $check-circle;
@@ -59,4 +64,8 @@ $down-arrow-source: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
 }
 .icon.icon-warning:before {
   content: $warning;
+}
+
+.icon.icon-lg::before {
+  font-size: 2rem;
 }

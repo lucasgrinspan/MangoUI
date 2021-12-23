@@ -1,4 +1,6 @@
 {{!-- Used to generate icon SCSS file --}}
+@use "../utils.scss";
+
 ${{ name }}-font: "{{ name }}";
 
 @font-face {
@@ -13,6 +15,7 @@ ${{ name }}-font: "{{ name }}";
   font-variant: normal;
   font-size: 1.5rem;
   text-transform: none;
+  color: utils.v(text);
   line-height: 1;
   vertical-align: top;
   -webkit-font-smoothing: antialiased;
@@ -47,3 +50,7 @@ $down-arrow-source: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
   content: ${{ @key }};
 }
 {{/ each }}
+
+.icon.icon-lg::before {
+  font-size: 2rem;
+}

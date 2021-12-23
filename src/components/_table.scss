@@ -11,7 +11,7 @@ table {
   caption {
     caption-side: bottom;
     margin: tokens.$cozy;
-    font-weight: tokens.$bold;
+    font-weight: map-get($map: tokens.$font-weights, $key: bold);
   }
 
   th {

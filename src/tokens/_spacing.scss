@@ -1,14 +1,19 @@
+$squished: 0.25rem;
 $tight: 0.5rem;
 $cozy: 1rem;
 $comfortable: 1.5rem;
+$socially-distanced: 2rem;
 
 $input-width: 30ch;
 
 // spacing helper classes
 $spacings: (
+  none: 0,
+  squished: $squished,
   tight: $tight,
   cozy: $cozy,
   comfortable: $comfortable,
+  socially-distanced: $socially-distanced,
 );
 $schemes: (
   padding: p,
@@ -17,7 +22,7 @@ $schemes: (
 
 @each $name, $spacing in $spacings {
   @each $scheme, $class in $schemes {
-    .#{$scheme} {
+    .#{$class}-#{$name} {
       #{$scheme}: $spacing;
     }
     .#{$class}t-#{$name} {

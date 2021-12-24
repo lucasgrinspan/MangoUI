@@ -9,3 +9,10 @@ $input-border: 1px solid utils.v(input-border);
   outline: 2px solid utils.v(primary);
   outline-offset: -1px;
 }
+
+.rounded {
+  border-radius: $radius;
+}
+.rounded-small {
+  border-radius: $radius-small;
+}

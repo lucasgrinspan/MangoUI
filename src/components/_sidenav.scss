@@ -6,6 +6,7 @@ nav[data-orientation="vertical"] {
   border: tokens.$border;
   border-radius: tokens.$radius;
   width: max-content;
+  height: max-content;
   overflow: hidden;
 
   > ul li {

@@ -15,6 +15,7 @@
     "type": "page",
     "pages": [
       { "title": "Alert", "slug": "alert" },
+      { "title": "Anchor", "slug": "anchor" },
       { "title": "Button", "slug": "button" },
       { "title": "Checkbox", "slug": "checkbox" }
     ]

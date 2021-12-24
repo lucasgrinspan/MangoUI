@@ -9,7 +9,7 @@
     "build:watch": "sass src/main.scss dist/mango.css --watch",
     "build:icons": "fantasticon",
     "build:docs": "node site/build.js",
-    "build:docs:watch": "nodemon --watch site -e html,hbs,js,css site/build.js"
+    "build:docs:watch": "nodemon --watch site -e html,hbs,js,json,css site/build.js"
   },
   "author": "Lucas Grinspan",
   "license": "MIT",

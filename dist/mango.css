@@ -338,6 +338,14 @@ template {
   display: none;
 }
 
+.rounded {
+  border-radius: 10px;
+}
+
+.rounded-small {
+  border-radius: 5px;
+}
+
 @font-face {
   font-family: "mango-icons";
   src: url("../assets/font/mango-icons.woff2?58f3663d98e53907dfdae57df3012ba3") format("woff2");
@@ -1183,6 +1191,7 @@ nav[data-orientation=vertical] {
   border: 1px solid var(--primary);
   border-radius: 10px;
   width: max-content;
+  height: max-content;
   overflow: hidden;
 }
 nav[data-orientation=vertical] > ul li {
@@ -1313,6 +1322,11 @@ fieldset > input[type=radio] + label:first-of-type {
 *:focus {
   outline: 2px solid var(--primary);
   outline-offset: -1px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /*# sourceMappingURL=mango.css.map */

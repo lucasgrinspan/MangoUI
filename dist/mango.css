@@ -348,7 +348,7 @@ template {
 
 @font-face {
   font-family: "mango-icons";
-  src: url("../assets/font/mango-icons.woff2?58f3663d98e53907dfdae57df3012ba3") format("woff2");
+  src: url("../assets/font/mango-icons.woff2?52c0ca2aa33c1b0646813a25bb80e8bc") format("woff2");
 }
 .icon:before {
   font-family: mango-icons !important;
@@ -384,28 +384,40 @@ template {
   content: "\f105";
 }
 
-.icon.icon-info-circle:before {
+.icon.icon-download:before {
   content: "\f106";
 }
 
-.icon.icon-left-arrow:before {
+.icon.icon-info-circle:before {
   content: "\f107";
 }
 
-.icon.icon-right-arrow:before {
+.icon.icon-left-arrow:before {
   content: "\f108";
 }
 
-.icon.icon-sparkle:before {
+.icon.icon-right-arrow:before {
   content: "\f109";
 }
 
-.icon.icon-up-arrow:before {
+.icon.icon-sparkle:before {
   content: "\f10a";
 }
 
-.icon.icon-warning:before {
+.icon.icon-spinner:before {
   content: "\f10b";
+}
+
+.icon.icon-up-arrow:before {
+  content: "\f10c";
+}
+
+.icon.icon-upload:before {
+  content: "\f10d";
+}
+
+.icon.icon-warning:before {
+  content: "\f10e";
 }
 
 .icon.icon-lg::before {
@@ -416,6 +428,18 @@ template {
   font-size: 3rem;
 }
 
+.icon.spin {
+  animation: rotate 1s cubic-bezier(0.42, 0.1, 0.6, 0.8) infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .p-none {
   padding: 0 !important;
 }
@@ -727,6 +751,10 @@ html, html[data-theme=sunset] {
   --text: #322000;
   --code-text: #651a1a;
   --code-background: #ffecec;
+  --disabled-text: #838383;
+  --disabled-background: #b5b5b5;
+  --disabled-text-light: #b5b5b5;
+  --disabled-background-light: #dedede;
 }
 
 .responsive {
@@ -795,6 +823,11 @@ html, html[data-theme=sunset] {
   align-items: center;
 }
 
+.flex-break {
+  flex-basis: 100%;
+  height: 0;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -854,7 +887,7 @@ html, html[data-theme=sunset] {
 }
 [role=alert]::before,
 .alert::before {
-  content: "\f106";
+  content: "\f107";
 }
 [role=alert].danger,
 .alert.danger {
@@ -864,7 +897,7 @@ html, html[data-theme=sunset] {
 }
 [role=alert].danger::before,
 .alert.danger::before {
-  content: "\f10b";
+  content: "\f10e";
 }
 [role=alert].warning,
 .alert.warning {
@@ -874,7 +907,7 @@ html, html[data-theme=sunset] {
 }
 [role=alert].warning::before,
 .alert.warning::before {
-  content: "\f10b";
+  content: "\f10e";
 }
 [role=alert].success,
 .alert.success {
@@ -926,17 +959,37 @@ button,
   border: 1px solid var(--primary);
   padding: 0.5rem 1rem;
   cursor: pointer;
+  overflow: hidden;
   text-decoration: none;
   transition: 150ms linear all;
 }
-button:hover,
-.button:hover {
+button:focus, button.focus,
+.button:focus,
+.button.focus {
+  outline: none;
+  box-shadow: 0 0 0 3pt var(--primary-hover);
+}
+button:hover, button.hover,
+.button:hover,
+.button.hover {
   color: var(--text);
   background-color: var(--primary-hover);
 }
-button:active,
-.button:active {
+button:active, button.active,
+.button:active,
+.button.active {
   transform: scale(0.95);
+}
+button:disabled,
+.button:disabled {
+  background-color: var(--disabled-background);
+  color: var(--disabled-text);
+  border-color: var(--disabled-text);
+  cursor: not-allowed;
+}
+button:disabled:active,
+.button:disabled:active {
+  transform: none;
 }
 button.outline, button.ghost,
 .button.outline,
@@ -944,14 +997,41 @@ button.outline, button.ghost,
   background-color: var(--surface);
   border: 1px solid var(--primary);
 }
-button.outline:hover, button.ghost:hover,
+button.outline:hover, button.ghost:hover, button.outline.hover, button.hover.ghost,
 .button.outline:hover,
-.button.ghost:hover {
+.button.ghost:hover,
+.button.outline.hover,
+.button.hover.ghost {
   background-color: var(--surface-hover);
+}
+button.outline:disabled, button.ghost:disabled,
+.button.outline:disabled,
+.button.ghost:disabled {
+  background-color: var(--disabled-background-light);
+  color: var(--disabled-text-light);
+  border-color: var(--disabled-text-light);
 }
 button.ghost,
 .button.ghost {
   border: none;
+}
+button.icon::before,
+.button.icon::before {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+button > span[role=alert],
+.button > span[role=alert] {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+button > span[role=alert]::before,
+.button > span[role=alert]::before {
+  font-size: 1rem;
+  content: "\f10b";
+  animation: rotate 1s cubic-bezier(0.42, 0.1, 0.6, 0.8) infinite;
 }
 
 .card {
@@ -1052,7 +1132,7 @@ details summary::before {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1rem;
-  content: "\f108";
+  content: "\f109";
   margin-right: 0.5rem;
 }
 details summary::-webkit-details-marker {

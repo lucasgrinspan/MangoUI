@@ -8,7 +8,8 @@
   margin-right: tokens.$tight;
 }
 
-[role="alert"] {
+[role="alert"],
+.alert {
   background-color: utils.v(neutral-alert-background);
   border: 1px solid utils.v(neutral-alert-border);
   border-radius: tokens.$radius;

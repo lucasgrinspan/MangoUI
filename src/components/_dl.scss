@@ -1,0 +1,12 @@
+@use "../utils.scss";
+@use "../tokens";
+
+dl {
+  dt {
+    font-weight: map-get(tokens.$font-weights, bold);
+    margin-bottom: tokens.$squished;
+  }
+  dd {
+    margin-bottom: tokens.$squished;
+  }
+}

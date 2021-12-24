@@ -4,12 +4,12 @@
   "description": "A fresh design system",
   "main": "index.js",
   "scripts": {
-    "start": "http-server & npm run build:watch",
+    "start": "http-server -s & npm run build:watch",
     "build": "npm run build:icons && npm run build:docs && sass src/main.scss dist/mango.css",
     "build:watch": "sass src/main.scss dist/mango.css --watch",
     "build:icons": "fantasticon",
     "build:docs": "node site/build.js",
-    "build:docs:watch": "nodemon --watch site -e html,hbs,js site/build.js"
+    "build:docs:watch": "nodemon --watch site -e html,hbs,js,css site/build.js"
   },
   "author": "Lucas Grinspan",
   "license": "MIT",

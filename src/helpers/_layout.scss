@@ -1,5 +1,11 @@
 @use "../tokens";
 
+// uses a responsive width
+.responsive {
+  width: 95%;
+  max-width: 80ch;
+}
+
 // puts things in a neat row
 .row {
   display: flex;

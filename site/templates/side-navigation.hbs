@@ -2,11 +2,15 @@
   <ul>
     {{#each sitemap}}
       <li><a href="/docs/{{this.slug}}" {{ariaCurrent this.slug ../current}}>{{this.title}}</a></li>
-      <ul>
-        {{#each this.pages}}
-          <li><a href="/docs/{{../slug}}/{{this.slug}}" {{ariaCurrent this.slug ../../current}}>{{this.title}}</a></li>
-        {{/each}}
-      </ul>
+      {{#if this.pages}}
+        <li>
+          <ul>
+            {{#each this.pages}}
+              <li><a href="/docs/{{../slug}}/{{this.slug}}" {{ariaCurrent this.slug ../../current}}>{{this.title}}</a></li>
+            {{/each}}
+          </ul>
+        </li>
+      {{/if}}
     {{/each}}
   </ul>
 </nav>

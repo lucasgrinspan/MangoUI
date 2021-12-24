@@ -7,7 +7,7 @@ const pageTemplatePath = "templates/docs-page.hbs";
 const navTemplatePath = "templates/side-navigation.hbs";
 
 Handlebars.registerHelper("ariaCurrent", (slug, currentSlug) => {
-  return slug === currentSlug ? 'aria-current="true"' : "";
+  return slug === currentSlug ? 'aria-current="page"' : "";
 });
 
 // builds the side navigation so that it can be injected

@@ -8,13 +8,15 @@
     "build": "npm run build:icons && npm run build:docs && sass src/main.scss dist/mango.css",
     "build:watch": "sass src/main.scss dist/mango.css --watch",
     "build:icons": "fantasticon",
-    "build:docs": "node site/build.js"
+    "build:docs": "node site/build.js",
+    "build:docs:watch": "nodemon --watch site -e html,hbs,js site/build.js"
   },
   "author": "Lucas Grinspan",
   "license": "MIT",
   "devDependencies": {
     "fantasticon": "^1.2.3",
     "handlebars": "^4.7.7",
+    "nodemon": "^2.0.15",
     "sass": "^1.45.0",
     "serve": "^13.0.2"
   },

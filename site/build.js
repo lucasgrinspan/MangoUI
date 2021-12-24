@@ -1,21 +1,58 @@
 const Handlebars = require("handlebars");
 const fs = require("fs");
-const { getFileText, getFiles, createFolder, writeFile, transfer } = require("./helpers");
+const { getFileText, createFolder, writeFile, transfer } = require("./helpers");
 
 const sitemapPath = "site-map.json";
 const pageTemplatePath = "templates/docs-page.hbs";
+const navTemplatePath = "templates/side-navigation.hbs";
+
+Handlebars.registerHelper("ariaCurrent", (slug, currentSlug) => {
+  return slug === currentSlug ? 'aria-current="true"' : "";
+});
+
+// builds the side navigation so that it can be injected
+// into the pages
+const buildNavigation = async (sitemap, current) => {
+  const navigationTemplateContent = await getFileText(navTemplatePath);
+  const navigationTemplate = Handlebars.compile(navigationTemplateContent, {
+    noEscape: true,
+  });
+  const output = navigationTemplate({
+    sitemap: sitemap.filter((p) => p.type === "page"),
+    current,
+  });
+  return output;
+};
 
 // takes in a section from the sitemap and builds it
-const buildPages = async (section, template) => {
-  await createFolder(section);
-  const sectionPages = await getFiles(`pages/${section}`);
+const buildPages = async ({ slug, pages, title }, template, sitemap) => {
+  await createFolder(slug);
 
-  sectionPages.forEach(async (sectionPage) => {
-    const content = await getFileText(`pages/${section}/${sectionPage}`);
-    const pageOutput = template({ content });
-    await writeFile(`${section}/${sectionPage}`, pageOutput);
-    console.log(`✅ 📄 Wrote ${section} / ${sectionPage}`);
+  // write the index file
+  const indexNavigation = await buildNavigation(sitemap, slug);
+  const indexContent = await getFileText(`pages/${slug}/index.html`);
+  const indexOutput = template({
+    content: indexContent,
+    pageTitle: title,
+    navigation: indexNavigation,
   });
+  await writeFile(`${slug}/index.html`, indexOutput);
+  console.log(`✅ 📄 ${title}`);
+
+  for (const page of pages || []) {
+    const { slug: pageSlug, title: pageTitle } = page;
+    const content = await getFileText(`pages/${slug}/${pageSlug}.html`);
+
+    const navigation = await buildNavigation(sitemap, pageSlug);
+    const pageOutput = template({
+      content,
+      pageTitle,
+      navigation,
+    });
+
+    await writeFile(`${slug}/${pageSlug}.html`, pageOutput);
+    console.log(`  ✅ 📄 ${pageTitle}`);
+  }
 };
 
 const copyAssets = async (assetPath) => {
@@ -32,21 +69,29 @@ const build = async () => {
   });
 
   console.log("\nStarting build!");
+  console.log("Building site:");
+  console.time("Built in");
   await createFolder("");
 
   // build the site from the sitemap
-  sitemap.forEach(({ type, name }) => {
+  for (const section of sitemap) {
+    const { type, name } = section;
     switch (type) {
       case "page":
-        buildPages(name, pageTemplate);
+        // this one has to happen synchronously to maintain the
+        // intended navigation order
+        await buildPages(section, pageTemplate, sitemap);
         break;
       case "assets":
       case "copy":
       default:
-        copyAssets(name);
+        await copyAssets(name);
         break;
     }
-  });
+  }
+
+  console.log("\nOutput copied to docs/ 🎉");
+  console.timeEnd("Built in");
 };
 
 console.log("Cleaning working directory...");

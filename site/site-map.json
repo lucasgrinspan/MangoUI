@@ -1,7 +1,24 @@
 [
-  { "name": "inspiration", "type": "page" },
-  { "name": "getting-started", "type": "page" },
-  { "name": "components", "type": "page" },
+  {
+    "title": "Inspiration",
+    "slug": "inspiration",
+    "type": "page"
+  },
+  {
+    "title": "Getting Started",
+    "slug": "getting-started",
+    "type": "page"
+  },
+  {
+    "title": "Components",
+    "slug": "components",
+    "type": "page",
+    "pages": [
+      { "title": "Alert", "slug": "alert" },
+      { "title": "Button", "slug": "button" },
+      { "title": "Checkbox", "slug": "checkbox" }
+    ]
+  },
   { "name": "index.html", "type": "copy" },
   { "name": "styles", "type": "assets" },
   { "name": "assets", "type": "assets" }

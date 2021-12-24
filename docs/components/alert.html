@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../dist/mango.css" />
+    <link rel="stylesheet" href="../styles/docs-page.css" />
     <title>MangoUI | Alert</title>
   </head>
   <body>
@@ -23,7 +24,42 @@
   </ul>
 </nav>
       <main class="content responsive">
-        <p>alert</p>
+        <div class="section">
+  <h1>Alert</h1>
+  <dl>
+    <dt>Selector</dt>
+    <dd><code>[role="alert"]</code>, <code>.alert</code></dd>
+  </dl>
+  <p>
+    The alert comes in four flavors, each coming with its own icon, depending on the type of message
+    that you want to convey. Alerts should be important or time sensitive messages.
+  </p>
+  <div class="card column example">
+    <div role="alert">Did you know that alert content interrupts screen readers?</div>
+    <div role="alert" class="success">
+      Your order for more mangos has been successfully submitted.
+    </div>
+    <div role="alert" class="warning">You have one mango left!</div>
+    <div role="alert" class="danger">You are all out of mangos!</div>
+  </div>
+  <p>
+    The <code>"alert"</code> role interrupts screen readers to read the alert message. If this
+    behavior isn't desired, you can also use the <code>.alert</code> class to apply the styles
+    instead.
+  </p>
+  <p>
+    If the icons don't fit the message, they can be removed by using the <code>.no-icon</code> class
+    on the container
+  </p>
+  <div class="card column example">
+    <div class="alert no-icon">Did you know that alert content interrupts screen readers?</div>
+    <div class="alert success no-icon">
+      Your order for more mangos has been successfully submitted.
+    </div>
+    <div class="alert warning no-icon">You have one mango left!</div>
+    <div class="alert danger no-icon">You are all out of mangos!</div>
+  </div>
+</div>
 
       </main>
     </div>

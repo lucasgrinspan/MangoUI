@@ -4,7 +4,7 @@ $mango-icons-font: "mango-icons";
 
 @font-face {
   font-family: $mango-icons-font;
-  src: url("../assets/font/mango-icons.woff2?58f3663d98e53907dfdae57df3012ba3") format("woff2");
+  src: url("../assets/font/mango-icons.woff2?52c0ca2aa33c1b0646813a25bb80e8bc") format("woff2");
 }
 
 @mixin use-icon {
@@ -34,12 +34,15 @@ $check-circle: unicode(f102);
 $check: unicode(f103);
 $code: unicode(f104);
 $down-arrow: unicode(f105);
-$info-circle: unicode(f106);
-$left-arrow: unicode(f107);
-$right-arrow: unicode(f108);
-$sparkle: unicode(f109);
-$up-arrow: unicode(f10a);
-$warning: unicode(f10b);
+$download: unicode(f106);
+$info-circle: unicode(f107);
+$left-arrow: unicode(f108);
+$right-arrow: unicode(f109);
+$sparkle: unicode(f10a);
+$spinner: unicode(f10b);
+$up-arrow: unicode(f10c);
+$upload: unicode(f10d);
+$warning: unicode(f10e);
 $down-arrow-source: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none'%3E%3Cpath d='M58.895 23.552a3.5 3.5 0 0 0-4.79-5.104l4.79 5.104zM32 44l-2.395 2.552a3.5 3.5 0 0 0 4.79 0L32 44zM9.896 18.448a3.5 3.5 0 0 0-4.792 5.104l4.792-5.104zm44.209 0l-24.5 23 4.79 5.104 24.5-23-4.79-5.104zm-49 5.104l24.5 23 4.79-5.104-24.5-23-4.79 5.104z' fill='%23212121'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
 
 
@@ -59,6 +62,9 @@ $down-arrow-source: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
 .icon.icon-down-arrow:before {
   content: $down-arrow;
 }
+.icon.icon-download:before {
+  content: $download;
+}
 .icon.icon-info-circle:before {
   content: $info-circle;
 }
@@ -71,8 +77,14 @@ $down-arrow-source: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
 .icon.icon-sparkle:before {
   content: $sparkle;
 }
+.icon.icon-spinner:before {
+  content: $spinner;
+}
 .icon.icon-up-arrow:before {
   content: $up-arrow;
+}
+.icon.icon-upload:before {
+  content: $upload;
 }
 .icon.icon-warning:before {
   content: $warning;
@@ -83,4 +95,18 @@ $down-arrow-source: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
 }
 .icon.icon-xl::before {
   font-size: 3rem;
+}
+
+$spin-animation: rotate 1s cubic-bezier(0.42, 0.1, 0.6, 0.8) infinite;
+.icon.spin {
+  animation: $spin-animation
+}
+
+@keyframes rotate {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }

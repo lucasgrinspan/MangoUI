@@ -1,1 +1,78 @@
-<p>button</p>
+<div class="section">
+  <h1>Button</h1>
+  <dl>
+    <dt>Selector</dt>
+    <dd><code>button</code>, <code>.button</code></dd>
+  </dl>
+  <p>
+    Buttons are used to perform actions on page. They come in 3 variations, depending on how much
+    attention you want to draw to each action.
+  </p>
+  <div class="card row example shrink">
+    <button>Default</button>
+    <button class="outline">Outline</button>
+    <button class="ghost">Ghost</button>
+  </div>
+  <p>
+    If you need to style a link like a button, such as in the case where you want a link to be a
+    primary call to action, you can use the <code>.button</code> class. Don't style any other
+    elements as buttons, always make sure to use the elements intended by HTML to perform actions.
+  </p>
+  <div class="card row example shrink">
+    <a href="#" class="button">CTA Link</a>
+    <a href="#" class="button outline">Navigate</a>
+    <a href="#" class="button ghost">Sneaky Nav</a>
+  </div>
+  <h2>States</h2>
+  <div class="card column example shrink">
+    <div class="row">
+      <button class="hover">Hover</button>
+      <button class="focus">Focus</button>
+      <button class="active">Active</button>
+      <button disabled>Disabled</button>
+    </div>
+    <div class="row">
+      <button class="outline hover">Hover</button>
+      <button class="outline focus">Focus</button>
+      <button class="outline active">Active</button>
+      <button class="outline" disabled>Disabled</button>
+    </div>
+    <div class="row">
+      <button class="ghost hover">Hover</button>
+      <button class="ghost focus">Ghost</button>
+      <button class="ghost active">Active</button>
+      <button class="ghost" disabled>Disabled</button>
+    </div>
+  </div>
+  <p>
+    It might be hard to see without the transition, but the button is shrunk slightly in the active
+    state. This adheres to the design philosophy of MangoUI, where interactive elements get squished
+    when pressed. The focus state is intended to be round, but a bug in Safari makes the outline
+    from following the radius of the border
+  </p>
+  <p>
+    For disabled buttons, make sure you provide a way for the user to understand why it was disabled
+    or provide a way for the user to re-enable the button. Disabled buttons on their own don't
+    communicate the issue and expecting the user to know how to resolve the disabled button may be a
+    lot to ask, especially on complex forms.
+  </p>
+  <h2>Variations</h2>
+  <p>Icons can be added to the button by using the desired <code>.icon .icon-*</code> classes.</p>
+  <div class="card row example shrink">
+    <button class="icon icon-download">Download files</button>
+    <button class="outline icon icon-upload">Upload files</button>
+  </div>
+  <p>
+    To make a loading button, use a <code>span[role="alert"]</code> as the button content to
+    communicate the loading message. A good technique is to have it hidden in the button and use
+    JavaScript to dynamically show it. When you do that, make sure to hide the original text using a
+    technique like <code>hidden</code> or <code>display: none</code>. The <code>"alert"</code> role
+    ensures that the change is communicated to assistive technologies.
+  </p>
+  <div class="card row example shrink">
+    <button>
+      <span hidden>Submit</span>
+      <span role="alert">Loading...</span>
+    </button>
+  </div>
+</div>

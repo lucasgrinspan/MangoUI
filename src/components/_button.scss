@@ -10,28 +10,76 @@ button,
   border: tokens.$border;
   padding: tokens.$tight tokens.$cozy;
   cursor: pointer;
+  overflow: hidden;
   text-decoration: none;
   transition: tokens.$effect-transition;
 
-  &:hover {
+  &:focus,
+  &.focus {
+    // TODO: standardize the box shadow approach
+    outline: none;
+    box-shadow: 0 0 0 3pt utils.v(primary-hover);
+  }
+
+  &:hover,
+  &.hover {
     color: utils.v(text);
     background-color: utils.v(primary-hover);
   }
-  &:active {
+  &:active,
+  &.active {
     transform: tokens.$squish;
+  }
+
+  &:disabled {
+    background-color: utils.v(disabled-background);
+    color: utils.v(disabled-text);
+    border-color: utils.v(disabled-text);
+    cursor: not-allowed;
+
+    // disabled controls can still have an active state for some reason
+    &:active {
+      transform: none;
+    }
   }
 
   &.outline {
     background-color: utils.v(surface);
     border: tokens.$border;
 
-    &:hover {
+    &:hover,
+    &.hover {
       background-color: utils.v(surface-hover);
+    }
+
+    &:disabled {
+      background-color: utils.v(disabled-background-light);
+      color: utils.v(disabled-text-light);
+      border-color: utils.v(disabled-text-light);
     }
   }
 
   &.ghost {
     @extend .outline;
     border: none;
+  }
+
+  &.icon::before {
+    font-size: 1rem;
+    margin-right: tokens.$tight;
+  }
+
+  > span[role="alert"] {
+    // We have to remove some of the alert styles
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+
+    &::before {
+      font-size: 1rem;
+      content: tokens.$spinner;
+      animation: tokens.$spin-animation;
+    }
   }
 }

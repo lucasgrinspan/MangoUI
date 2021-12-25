@@ -16,9 +16,7 @@ button,
 
   &:focus,
   &.focus {
-    // TODO: standardize the box shadow approach
-    outline: none;
-    box-shadow: 0 0 0 3pt utils.v(primary-hover);
+    @include tokens.shadow-focus-ring-inset;
   }
 
   &:hover,

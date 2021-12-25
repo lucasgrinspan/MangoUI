@@ -26,16 +26,19 @@ input[type="checkbox"] {
       height: 1.125rem;
       background-color: utils.v(page-background);
     }
-    &:hover::before {
+    &:hover::before,
+    &.hover::before {
       background-color: utils.v(surface-hover);
     }
-    &:active {
+    &:active,
+    &.active {
       transform: tokens.$squish;
     }
   }
 
-  &:focus + label::before {
-    @include tokens.focus-ring;
+  &:focus + label::before,
+  &.focus + label::before {
+    @include tokens.shadow-focus-ring;
   }
 
   &:checked + label::before {

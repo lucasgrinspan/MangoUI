@@ -10,6 +10,15 @@ $input-border: 1px solid utils.v(input-border);
   outline-offset: -1px;
 }
 
+@mixin shadow-focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 3pt utils.v(primary-hover);
+}
+@mixin shadow-focus-ring-inset {
+  outline: none;
+  box-shadow: inset 0 0 0 3pt utils.v(primary-hover);
+}
+
 .rounded {
   border-radius: $radius;
 }

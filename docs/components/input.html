@@ -1,0 +1,93 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/mango.css" />
+    <link rel="stylesheet" href="../styles/docs-page.css" />
+    <title>MangoUI | Input</title>
+  </head>
+  <body>
+    <div class="flex flex-justify-center mt-comfortable">
+      <nav data-orientation="vertical" class="mr-comfortable">
+  <ul>
+      <li><a href="../design" >Design</a></li>
+      <li><a href="../getting-started" >Getting Started</a></li>
+      <li><a href="../components" >Components</a></li>
+        <li>
+          <ul>
+              <li><a href="../components/alert" >Alert</a></li>
+              <li><a href="../components/anchor" >Anchor</a></li>
+              <li><a href="../components/button" >Button</a></li>
+              <li><a href="../components/checkbox" >Checkbox</a></li>
+              <li><a href="../components/disclosure" >Disclosure</a></li>
+              <li><a href="../components/input" aria-current="page">Input</a></li>
+          </ul>
+        </li>
+  </ul>
+</nav>
+      <main class="content responsive">
+        <div class="section">
+  <h2>Input</h2>
+  <dl>
+    <dt>Selector</dt>
+    <dd><code>input[type="text"]</code></dd>
+  </dl>
+  <p>
+    Inputs are used to gather data from the user. To maintain clarity, make sure that the input has
+    a visible label. If the visible label uses the <code>label</code> tag, you can take advantage of
+    the <code>for</code> attribute to link them semantically. Otherwise, use
+    <code>aria-labelledby</code> to link the two together.
+  </p>
+  <div class="card example shrink">
+    <label for="input-example">What's your favorite mango?</label>
+    <input type="text" id="input-example" />
+  </div>
+  <h2>States</h2>
+  <div class="card column example shrink">
+    <input type="text" value="Disabled" disabled />
+    <input type="text" value="Readonly" readonly />
+    <input type="text" value="Valid" aria-invalid="false" />
+    <input type="text" value="Invalid" aria-invalid="true" />
+  </div>
+  <p>
+    While both disabled and readonly inputs block the user from editing the text, the
+    <code>disabled</code> attribute completely prevents the user from interacting with the control.
+    <code>readonly</code> inputs allow the user to focus and select the text within the field.
+    Additionally, the value of <code>disabled</code> inputs does not get sent on form submission,
+    while the value of <code>readonly</code> inputs do.
+  </p>
+  <p>
+    Fields will receive a red border and warning icon when invalid through the
+    <code>:invalid</code> pseudo-state. In most cases, the browser will automatically mark the field
+    as invalid when using
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#using_built-in_form_validation"
+      >built in form validation</a
+    >, but it can also be triggered manually by applying <code>aria-invalid="true"</code> to the
+    input. While inputs are considered to be valid when not invalid, sometimes you may want to
+    explicity communicate that the input value is valid. This might be useful if the field
+    validation is particularly complex, for example.
+  </p>
+  <p>
+    When using <code>aria-invalid="true"</code>, make sure to help the user in identifying the error
+    (<a href="https://www.w3.org/TR/WCAG21/#error-identification">S.C 3.3.1</a>). This can be done
+    by providing text under the input that is linked with <code>aria-describedby</code>.
+  </p>
+  <div class="card example shrink">
+    <label for="input-invalid-example">Name</label>
+    <input
+      type="text"
+      id="input-invalid-example"
+      value="$$Mango Lover$$"
+      aria-describedby="error-example"
+      aria-invalid="true"
+    />
+    <p id="error-example" class="danger-text">Your name can't have special characters ($).</p>
+  </div>
+</div>
+
+      </main>
+    </div>
+  </body>
+</html>

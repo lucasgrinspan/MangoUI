@@ -19,7 +19,7 @@ details {
     }
     &::before {
       @include tokens.use-icon;
-      font-size: 1rem;
+      font-size: 1.125rem;
       content: tokens.$right-arrow;
       margin-right: tokens.$tight;
     }

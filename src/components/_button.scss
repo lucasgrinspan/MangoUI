@@ -65,7 +65,7 @@ button,
   }
 
   &.icon::before {
-    font-size: 1rem;
+    font-size: 1.125rem;
     margin-right: tokens.$tight;
   }
 
@@ -77,7 +77,7 @@ button,
     margin: 0;
 
     &::before {
-      font-size: 1rem;
+      font-size: 1.125rem;
       content: tokens.$spinner;
       animation: tokens.$spin-animation;
     }

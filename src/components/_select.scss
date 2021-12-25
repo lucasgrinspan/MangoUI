@@ -22,6 +22,6 @@ select {
   // caret hack without using wrapper div
   background-image: utils.v(image-down-arrow);
   background-repeat: no-repeat;
-  background-size: 1rem auto;
+  background-size: 1.125rem auto;
   background-position: center right tokens.$tight;
 }

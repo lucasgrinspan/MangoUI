@@ -22,8 +22,8 @@ input[type="checkbox"] {
       margin-right: tokens.$tight;
       border: tokens.$border;
       border-radius: tokens.$radius-small;
-      width: 1rem;
-      height: 1rem;
+      width: 1.125rem;
+      height: 1.125rem;
       background-color: utils.v(page-background);
     }
     &:hover::before {
@@ -40,7 +40,7 @@ input[type="checkbox"] {
 
   &:checked + label::before {
     @include tokens.use-icon;
-    font-size: 1rem;
+    font-size: 1.125rem;
     content: tokens.$check;
     background-color: utils.v(primary);
   }

@@ -44,4 +44,22 @@ input[type="checkbox"] {
     content: tokens.$check;
     background-color: utils.v(primary);
   }
+
+  &:disabled + label {
+    color: utils.v(disabled-text);
+
+    &::before {
+      background-color: utils.v(disabled-background-light);
+      border: 1px solid utils.v(disabled-text);
+      color: utils.v(disabled-text);
+    }
+
+    &:active {
+      transform: none;
+    }
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
 }

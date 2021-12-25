@@ -17,7 +17,8 @@
       { "title": "Alert", "slug": "alert" },
       { "title": "Anchor", "slug": "anchor" },
       { "title": "Button", "slug": "button" },
-      { "title": "Checkbox", "slug": "checkbox" }
+      { "title": "Checkbox", "slug": "checkbox" },
+      { "title": "Disclosure", "slug": "disclosure" }
     ]
   },
   { "name": "index.html", "type": "copy" },

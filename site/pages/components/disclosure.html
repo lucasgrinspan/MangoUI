@@ -1,0 +1,39 @@
+<div class="section">
+  <h2>Disclosure</h2>
+  <dl>
+    <dt>Selector</dt>
+    <dd><code>details > summary</code></dd>
+  </dl>
+  <p>
+    The disclosure (also known as accordion or collapsible) is a native HTML widget that can show
+    and hide content when the disclosure button is toggled. The <code>summary</code> should be the
+    first child of the <code>details</code> element. Any other elements in the
+    <code>details</code> will be the content that gets shown and hidden. They can be used on their
+    own or in a group, in which case, surround the disclosures with a
+    <code>&lt;div class="dislosure-group" /&gt;</code> to group them visually.
+  </p>
+  <div class="card section column">
+    <div class="disclosure-group">
+      <details open>
+        <summary>National Mango Recognition</summary>
+        The Mango is the national fruit of Pakistan, India, and the Philippines.
+      </details>
+      <details>
+        <summary>State Mango Recognition</summary>
+        The Mango is the official fruit of Chandigarh and Maharashtra.
+      </details>
+      <details>
+        <summary>Personal Mango Recognition</summary>
+        I just find them tasty.
+      </details>
+    </div>
+    <details>
+      <summary>A disclosure on its own</summary>
+      Hello!
+    </details>
+  </div>
+  <p>
+    To have a disclosure that is open by default, add the <code>open</code> attribute to the details
+    element.
+  </p>
+</div>

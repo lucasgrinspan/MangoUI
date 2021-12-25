@@ -20,6 +20,7 @@
               <li><a href="../components/anchor" >Anchor</a></li>
               <li><a href="../components/button" >Button</a></li>
               <li><a href="../components/checkbox" aria-current="page">Checkbox</a></li>
+              <li><a href="../components/disclosure" >Disclosure</a></li>
           </ul>
         </li>
   </ul>
@@ -39,20 +40,32 @@
   <div class="card column example shrink">
     <fieldset>
       <legend>Favorite dish?</legend>
-      <input type="checkbox" id="mango-cake" checked />
+      <input type="checkbox" id="mango-cake" />
       <label for="mango-cake">Mango Cake</label>
       <input type="checkbox" id="mango-salad" />
       <label for="mango-salad">Mango Quinoa Salad</label>
       <input type="checkbox" id="mango-sorbet" />
       <label for="mango-sorbet">Mango Sorbet</label>
-      <input type="checkbox" id="mango-chow" disabled />
-      <label for="mango-chow">Secret Mango Soup</label>
     </fieldset>
   </div>
   <p>
     Checkboxes shouldn't be used to perform actions. To achieve that, combine them with a form and
     submit button or use a toggle button.
   </p>
+  <h2>States</h2>
+  <div class="card column example shrink">
+    <input type="checkbox" id="hover-checkbox" />
+    <label for="hover-checkbox" class="hover">Hover</label>
+    <input type="checkbox" id="focus-checkbox" class="focus" />
+    <label for="focus-checkbox">Focus</label>
+    <input type="checkbox" id="active-checkbox" />
+    <label for="active-checkbox" class="active">Active</label>
+    <input type="checkbox" id="checked-checkbox" checked />
+    <label for="checked-checkbox">Checked</label>
+    <input type="checkbox" id="disabled-checkbox" disabled />
+    <label for="disabled-checkbox">Disabled</label>
+  </div>
+  <p>Like other interactive controls, the checkbox squishes slightly when clicked.</p>
 </div>
 
       </main>

@@ -1103,6 +1103,20 @@ input[type=checkbox]:checked + label::before {
   content: "\f103";
   background-color: var(--primary);
 }
+input[type=checkbox]:disabled + label {
+  color: var(--disabled-text);
+}
+input[type=checkbox]:disabled + label::before {
+  background-color: var(--disabled-background-light);
+  border: 1px solid var(--disabled-text);
+  color: var(--disabled-text);
+}
+input[type=checkbox]:disabled + label:active {
+  transform: none;
+}
+input[type=checkbox]:disabled + label:hover {
+  cursor: not-allowed;
+}
 
 details {
   border: 1px solid var(--primary);

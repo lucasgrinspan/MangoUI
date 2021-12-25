@@ -25,7 +25,35 @@
   </ul>
 </nav>
       <main class="content responsive">
-        <p>checkbox</p>
+        <div class="section">
+  <h2>Checkbox</h2>
+  <dl>
+    <dt>Selector</dt>
+    <dd><code>input[type="radio"] + label</code></dd>
+  </dl>
+  <p>
+    Checkboxes are used when the user must select any number of available options, including zero.
+    If you have a form with multiple, related checkboxes, surround them with a
+    <code>&lt;fieldset /&gt;</code> tag to visually and semantically group them.
+  </p>
+  <div class="card column example shrink">
+    <fieldset>
+      <legend>Favorite dish?</legend>
+      <input type="checkbox" id="mango-cake" checked />
+      <label for="mango-cake">Mango Cake</label>
+      <input type="checkbox" id="mango-salad" />
+      <label for="mango-salad">Mango Quinoa Salad</label>
+      <input type="checkbox" id="mango-sorbet" />
+      <label for="mango-sorbet">Mango Sorbet</label>
+      <input type="checkbox" id="mango-chow" disabled />
+      <label for="mango-chow">Secret Mango Soup</label>
+    </fieldset>
+  </div>
+  <p>
+    Checkboxes shouldn't be used to perform actions. To achieve that, combine them with a form and
+    submit button or use a toggle button.
+  </p>
+</div>
 
       </main>
     </div>

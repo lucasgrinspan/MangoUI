@@ -1,0 +1,72 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/mango.css" />
+    <link rel="stylesheet" href="../styles/docs-page.css" />
+    <title>MangoUI | Anchor</title>
+  </head>
+  <body>
+    <div class="flex flex-justify-center mt-comfortable">
+      <nav data-orientation="vertical" class="mr-comfortable">
+  <ul>
+      <li><a href="../design" >Design</a></li>
+      <li><a href="../getting-started" >Getting Started</a></li>
+      <li><a href="../components" >Components</a></li>
+        <li>
+          <ul>
+              <li><a href="../components/alert" >Alert</a></li>
+              <li><a href="../components/anchor" aria-current="page">Anchor</a></li>
+              <li><a href="../components/button" >Button</a></li>
+              <li><a href="../components/checkbox" >Checkbox</a></li>
+          </ul>
+        </li>
+  </ul>
+</nav>
+      <main class="content responsive">
+        <div class="section">
+  <h1>Anchor</h1>
+  <dl>
+    <dt>Selector</dt>
+    <dd><code>a</code></dd>
+  </dl>
+  <p>
+    The anchor is used to navigate the user to another page. It should not be used to perform
+    actions on the page. If you need a minimal button, use
+    <code>&lt;button class="ghost"/&gt;</code> instead.
+  </p>
+  <div class="card row example shrink">
+    <a href="#">Home</a> <a href="#">About</a> <a href="#">Shop</a>
+  </div>
+  <p>
+    When using the anchor, make sure to communicate what is being linked to. Don't use labels like
+    "Click here" as they increase cognitive load to decipher the target. For visual users, it makes
+    it harder to skim through text to find a specific link and for screen reader users, navigating
+    by links will be more challenging as the link text gets read out of context.
+  </p>
+  <p>
+    When possible, use unique link names.
+    <a href="https://www.nuance.com/dragon.html">Dragon (speech recognition)</a> users will be able
+    to click links more easily if they don't have to specify which of the duplicated links they
+    meant.
+  </p>
+  <div class="card row example shrink">
+    <p class="mb-none">
+      Mangos have a variety of
+      <a href="https://en.wikipedia.org/wiki/Mango#Culinary_use">culinary uses</a>. My personal
+      favorite is
+      <a href="https://www.simplyrecipes.com/recipes/lime_mango_sorbet/">Mango Sorbet</a>!
+    </p>
+  </div>
+  <p>
+    In general, it is better to avoid using <code>target="_blank"</code> on links to open them in a
+    new tab as it changes default expected behavior. Users will choose to open links in a new tab or
+    window if they want to.
+  </p>
+</div>
+
+      </main>
+    </div>
+  </body>
+</html>

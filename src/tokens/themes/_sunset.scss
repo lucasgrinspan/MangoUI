@@ -1,5 +1,6 @@
 @use "palette";
 @use "../../utils.scss";
+@use "../icons";
 
 // default theme, so is-default is true
 @include utils.css-vars(
@@ -18,16 +19,23 @@
     danger-alert-background: palette.$red-lightest,
     danger-alert-border: palette.$red-lighter,
     danger-alert-text: palette.$red-black,
+    danger-text: palette.$red-darker,
     warning-alert-background: palette.$yellow-lightest,
     warning-alert-border: palette.$yellow-lighter,
     warning-alert-text: palette.$yellow-black,
+    warning-text: palette.$yellow-darker,
     success-alert-background: palette.$green-lightest,
     success-alert-border: palette.$green-lighter,
     success-alert-text: palette.$green-black,
+    success-text: palette.$green-darker,
     input-background: palette.$orange-white,
     input-border: palette.$orange-lighter,
-    image-down-arrow:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none'%3E%3Cpath d='M58.895 23.552a3.5 3.5 0 0 0-4.79-5.104l4.79 5.104zM32 44l-2.395 2.552a3.5 3.5 0 0 0 4.79 0L32 44zM9.896 18.448a3.5 3.5 0 0 0-4.792 5.104l4.792-5.104zm44.209 0l-24.5 23 4.79 5.104 24.5-23-4.79-5.104zm-49 5.104l24.5 23 4.79-5.104-24.5-23-4.79 5.104z' fill='%23#{str-slice(ie-hex-str(palette.$orange-black), 4)}'%3E%3C/path%3E%3C/g%3E%3C/svg%3E"),
+    input-invalid-border: palette.$red-darker,
+    input-valid-border: palette.$green-darker,
+    image-down-arrow: url(icons.get-down-arrow-source(palette.$orange-black)),
+    readonly-input-image: url(icons.get-lock-source(palette.$orange-black)),
+    valid-input-image: url(icons.get-check-circle-source(palette.$green-darker)),
+    invalid-input-image: url(icons.get-warning-source(palette.$red-darker)),
     text: palette.$orange-black,
     code-text: palette.$red-darkest,
     code-background: palette.$red-white,

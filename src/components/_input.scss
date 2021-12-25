@@ -1,7 +1,7 @@
 @use "../utils.scss";
 @use "../tokens";
 
-input {
+input[type="text"] {
   background-color: utils.v(page-background);
   border: tokens.$input-border;
   border-radius: tokens.$radius-small;
@@ -13,4 +13,49 @@ input {
     border-color: utils.v(primary);
     outline: none;
   }
+
+  @mixin has-icon($source) {
+    // icon hack without using wrapper div
+    background-image: $source;
+    background-repeat: no-repeat;
+    background-size: 1.25rem auto;
+    background-position: center right tokens.$tight;
+    // prevent text from overlapping lock icon
+    padding-right: tokens.$socially-distanced;
+  }
+
+  &[aria-invalid="false"] {
+    @include has-icon(utils.v(valid-input-image));
+    border-color: utils.v(input-valid-border);
+  }
+
+  &:invalid,
+  &[aria-invalid="true"] {
+    @include has-icon(utils.v(invalid-input-image));
+    border-color: utils.v(input-invalid-border);
+  }
+
+  &:read-only {
+    @include has-icon(utils.v(readonly-input-image));
+    border-color: utils.v(disabled-text-light);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: utils.v(disabled-text-light);
+    background-color: utils.v(disabled-background-light);
+    border-color: utils.v(disabled-text-light);
+
+    // safari disabled text bug
+    -webkit-text-fill-color: utils.v(disabled-text-light);
+    opacity: 1;
+
+    // override read-only style that also applies to disabled
+    background-image: none;
+    padding-right: tokens.$tight;
+  }
+}
+
+label + input[type="text"] {
+  margin: tokens.$tight 0;
 }

@@ -1,4 +1,5 @@
 @use "./spacing";
+@use "../utils.scss";
 @import url(https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap);
 
 $font: Nunito;
@@ -38,4 +39,14 @@ h1 {
   .font-weight-#{$weight} {
     font-weight: $value;
   }
+}
+
+.success-text {
+  color: utils.v(success-text);
+}
+.danger-text {
+  color: utils.v(danger-text);
+}
+.warning-text {
+  color: utils.v(warning-text);
 }

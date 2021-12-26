@@ -1238,7 +1238,7 @@ input[type=text] {
   border: 1px solid var(--input-border);
   border-radius: 5px;
   padding: 0.5rem;
-  max-width: 30ch;
+  max-width: 20ch;
 }
 input[type=text]:focus {
   border-color: var(--primary);
@@ -1401,7 +1401,7 @@ select {
   border-radius: 5px;
   padding: 0.5rem;
   background-color: var(--page-background);
-  width: 30ch;
+  width: 20ch;
   color: var(--text);
   background-image: var(--image-down-arrow);
   background-repeat: no-repeat;

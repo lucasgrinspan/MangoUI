@@ -1,10 +1,20 @@
 @use "../utils.scss";
 @use "../tokens";
 
-code {
-  background-color: utils.v(code-background);
-  color: utils.v(code-text);
+@mixin inline-text-modifier {
   border-radius: tokens.$radius;
   padding: tokens.$squished;
   font-size: 0.9rem;
+}
+
+code {
+  @include inline-text-modifier;
+  background-color: utils.v(code-background);
+  color: utils.v(code-text);
+}
+
+kbd {
+  @include inline-text-modifier;
+  background-color: utils.v(kbd-background);
+  color: utils.v(kbd-text);
 }

@@ -21,7 +21,8 @@
       { "title": "Disclosure", "slug": "disclosure" },
       { "title": "Input", "slug": "input" },
       { "title": "Progress", "slug": "progress" },
-      { "title": "Radio", "slug": "radio" }
+      { "title": "Radio", "slug": "radio" },
+      { "title": "Select", "slug": "select" }
     ]
   },
   { "name": "index.html", "type": "copy" },

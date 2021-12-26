@@ -14,14 +14,48 @@ select {
   width: tokens.$input-width;
   color: utils.v(text);
 
-  &:focus {
-    border: tokens.$border;
-    outline: none;
-  }
-
   // caret hack without using wrapper div
   background-image: utils.v(image-down-arrow);
   background-repeat: no-repeat;
   background-size: 1.125rem auto;
   background-position: center right tokens.$tight;
+  padding-right: tokens.$socially-distanced;
+
+  &:focus,
+  &.focus {
+    @include tokens.shadow-focus-ring;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: utils.v(disabled-background-light);
+    color: utils.v(disabled-text-light);
+    border-color: utils.v(disabled-text-light);
+    transform: none;
+  }
+
+  @mixin use-two-icons($source, $source-2) {
+    background-image: $source, $source-2;
+    background-position: center right tokens.$socially-distanced, center right tokens.$tight;
+  }
+
+  &:invalid,
+  &[aria-invalid="true"] {
+    @include use-two-icons(utils.v(invalid-input-image), utils.v(image-down-arrow-invalid));
+    border-color: utils.v(input-invalid-border);
+  }
+
+  &[aria-invalid="false"] {
+    @include use-two-icons(utils.v(valid-input-image), utils.v(image-down-arrow-valid));
+    border-color: utils.v(input-valid-border);
+  }
+
+  &[multiple] {
+    background-image: none;
+    padding-right: tokens.$tight;
+  }
+}
+
+label + select {
+  margin-top: tokens.$tight;
 }

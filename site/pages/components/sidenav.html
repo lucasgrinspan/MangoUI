@@ -1,4 +1,4 @@
-<div class="section">
+<div>
   <h1>Side Navigation</h1>
   <dl>
     <dt>Selector</dt>
@@ -18,25 +18,29 @@
     size. Additionally, use <code>aria-current="page"</code> on the current link to provide it with
     selected styles.
   </p>
-  <div class="card stack-horizontal example shrink page nowrap">
-    <nav data-orientation="vertical" aria-label="music course navigation" class="flex-basis-100">
-      <ul>
-        <li><a href="#">Music Theory</a></li>
-        <li><a href="#">Music Fundamentals</a></li>
-        <li>
-          <a href="#">Instruments</a>
-          <ul>
-            <li><a href="#">Guitar</a></li>
-            <li><a href="#">Piano</a></li>
-            <li><a href="#" aria-current="page">Stylophone</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-    <!-- normally, this would be main -->
-    <div class="card mt-none mb-none mr-none">
-      <h1>Stylophone</h1>
-      <p>This groovy instrument burst into the scene in the late 60s, selling 4 million units...</p>
+  <div class="card container example page">
+    <div class="row">
+      <nav data-orientation="vertical" aria-label="music course navigation" class="col-shrink">
+        <ul>
+          <li><a href="#">Music Theory</a></li>
+          <li><a href="#">Music Fundamentals</a></li>
+          <li>
+            <a href="#">Instruments</a>
+            <ul>
+              <li><a href="#">Guitar</a></li>
+              <li><a href="#">Piano</a></li>
+              <li><a href="#" aria-current="page">Stylophone</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- normally, this would be main -->
+      <div class="card mt-none mb-none mr-none">
+        <h1>Stylophone</h1>
+        <p>
+          This groovy instrument burst into the scene in the late 60s, selling 4 million units...
+        </p>
+      </div>
     </div>
   </div>
   <p>

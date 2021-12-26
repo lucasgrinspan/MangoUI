@@ -57,7 +57,7 @@ table {
   }
 
   // zebra stripe, shouldn't change background of th
-  &.striped tr:nth-child(even) td {
+  &.striped tr:nth-child(odd) td {
     background-color: utils.v(surface-hover);
   }
 }

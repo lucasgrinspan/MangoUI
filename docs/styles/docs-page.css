@@ -11,3 +11,40 @@
   border: 3px solid var(--surface);
   background-color: var(--page-background);
 }
+body > div {
+  padding-top: 1rem;
+}
+
+#nav-header-container > button {
+  display: none;
+}
+
+@media screen and (max-width: 650px) {
+  body > div {
+    flex-wrap: wrap;
+    padding-top: 0;
+  }
+
+  #nav-header-container {
+    width: 100%;
+    padding: 1rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    background-color: var(--surface);
+  }
+
+  #nav-header-container button {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  #nav-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 200ms ease-in-out;
+  }
+
+  #nav-container nav {
+    width: auto;
+  }
+}

@@ -8,8 +8,23 @@
     <title>MangoUI | Checkbox</title>
   </head>
   <body>
-    <div class="flex flex-justify-center mt-comfortable">
-      <nav data-orientation="vertical" class="mr-comfortable">
+    <div class="flex flex-justify-center">
+      <div id="nav-header-container">
+        <button
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls="nav-container"
+          class="icon icon-right-arrow"
+        >
+          Expand navigation
+        </button>
+        <div id="nav-container">
+          <nav
+  data-orientation="vertical" 
+  class="mr-comfortable ml-comfortable"
+  id="side-navigation" 
+  aria-label="Documentation navigation"
+>
   <ul>
       <li>
         <a href="../design" >Design</a>
@@ -35,6 +50,8 @@
       </li>
   </ul>
 </nav>
+        </div>
+      </div>
       <main class="content responsive">
         <div class="section">
   <h2>Checkbox</h2>
@@ -93,5 +110,6 @@
 
       </main>
     </div>
+    <script src="../scripts/main.js"></script>
   </body>
 </html>

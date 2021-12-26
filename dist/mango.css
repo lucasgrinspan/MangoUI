@@ -1453,6 +1453,7 @@ nav[data-orientation=vertical] > ul li a {
 }
 nav[data-orientation=vertical] > ul li a:hover {
   background-color: transparent;
+  text-decoration: underline;
 }
 nav[data-orientation=vertical] > ul li a:focus {
   text-decoration: underline;
@@ -1462,7 +1463,6 @@ nav[data-orientation=vertical] > ul li a[aria-current=page] {
   background-color: var(--surface-selected);
 }
 nav[data-orientation=vertical] > ul li:hover {
-  text-decoration: underline;
   background-color: var(--surface-hover);
   color: var(--text);
 }
@@ -1470,14 +1470,11 @@ nav[data-orientation=vertical] > ul li:first-child {
   border-top: none;
 }
 nav[data-orientation=vertical] > ul li ul {
-  width: 100%;
-}
-nav[data-orientation=vertical] > ul li ul li + li {
   border-top: 1px solid var(--primary);
+  width: 100%;
 }
 nav[data-orientation=vertical] > ul li ul a {
   padding-left: 2rem;
-  border: none;
 }
 nav[data-orientation=vertical] ul {
   list-style: none;

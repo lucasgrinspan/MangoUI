@@ -1,0 +1,88 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/mango.css" />
+    <link rel="stylesheet" href="../styles/docs-page.css" />
+    <title>MangoUI | Side Navigation</title>
+  </head>
+  <body>
+    <div class="flex flex-justify-center mt-comfortable">
+      <nav data-orientation="vertical" class="mr-comfortable">
+  <ul>
+      <li>
+        <a href="../design" >Design</a>
+      </li>
+      <li>
+        <a href="../getting-started" >Getting Started</a>
+      </li>
+      <li>
+        <a href="../components" >Components</a>
+            <ul>
+                <li><a href="../components/alert" >Alert</a></li>
+                <li><a href="../components/anchor" >Anchor</a></li>
+                <li><a href="../components/button" >Button</a></li>
+                <li><a href="../components/checkbox" >Checkbox</a></li>
+                <li><a href="../components/disclosure" >Disclosure</a></li>
+                <li><a href="../components/input" >Input</a></li>
+                <li><a href="../components/progress" >Progress</a></li>
+                <li><a href="../components/radio" >Radio</a></li>
+                <li><a href="../components/select" >Select</a></li>
+                <li><a href="../components/sidenav" aria-current="page">Side Navigation</a></li>
+            </ul>
+      </li>
+  </ul>
+</nav>
+      <main class="content responsive">
+        <div class="section">
+  <h1>Side Navigation</h1>
+  <dl>
+    <dt>Selector</dt>
+    <dd><code>nav[data-orientation="horizontal"]</code></dd>
+  </dl>
+  <p>
+    In the navigation hierarchy of Mango UI, the side navigation is secondary. Depending on the
+    exact site, using the side navigation keeps the user in scope of the current navigation item in
+    the header. In Mango UI's selectors, the side navigation is distinguished by adding
+    <code>data-orientation="horizontal"</code> to the <code>nav</code>. This is purely for technical
+    purposes and doesn't offer a semantic difference. However, you should distinguish between the
+    two by providing labels with <code>aria-labelledby</code> or <code>aria-label</code>.
+  </p>
+  <p>
+    To nest items in the side navigation, include a <code>ul</code> within an <code>li</code>. Any
+    links in the child <code>ul</code> will be indented slightly and have a slightly smaller font
+    size. Additionally, use <code>aria-current="page"</code> on the current link to provide it with
+    selected styles.
+  </p>
+  <div class="card row example shrink page">
+    <nav data-orientation="vertical" aria-label="music course navigation">
+      <ul>
+        <li><a href="#">Music Theory</a></li>
+        <li><a href="#">Music Fundamentals</a></li>
+        <li>
+          <a href="#">Instruments</a>
+          <ul>
+            <li><a href="#">Guitar</a></li>
+            <li><a href="#">Piano</a></li>
+            <li><a href="#" aria-current="page">Stylophone</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <!-- normally, this would be main -->
+    <div class="card mt-none mb-none mr-none">
+      <h1>Stylophone</h1>
+      <p>This groovy instrument burst into the scene in the late 60s, selling 4 million units...</p>
+    </div>
+  </div>
+  <p>
+    The navigation used on this page is also an example of a side navigation. Remember that the side
+    navigation isn't intended to be placed on backgrounds with a surface color (cards).
+  </p>
+</div>
+
+      </main>
+    </div>
+  </body>
+</html>

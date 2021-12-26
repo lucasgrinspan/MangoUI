@@ -19,7 +19,8 @@
       { "title": "Button", "slug": "button" },
       { "title": "Checkbox", "slug": "checkbox" },
       { "title": "Disclosure", "slug": "disclosure" },
-      { "title": "Input", "slug": "input" }
+      { "title": "Input", "slug": "input" },
+      { "title": "Progress", "slug": "progress" }
     ]
   },
   { "name": "index.html", "type": "copy" },

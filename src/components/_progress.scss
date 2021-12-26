@@ -33,7 +33,7 @@ progress {
       150% no-repeat;
     animation: progressIndeterminate 1.4s linear infinite;
 
-    @media (prefers-reduced-motion: reduce) {
+    @mixin no-animation {
       background: repeating-linear-gradient(
         45deg,
         utils.v(page-background),
@@ -43,6 +43,13 @@ progress {
       );
       background-repeat: repeat;
       animation: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      @include no-animation;
+    }
+    &.no-animation {
+      @include no-animation;
     }
   }
 }

@@ -8,20 +8,25 @@
     <title>MangoUI | Table</title>
   </head>
   <body>
-    <div class="flex flex-justify-center">
-      <div id="nav-header-container">
-        <button
-          aria-expanded="false"
-          aria-haspopup="true"
-          aria-controls="nav-container"
-          class="icon icon-right-arrow"
-        >
-          Expand navigation
-        </button>
-        <div id="nav-container">
-          <nav
+    <header>
+      <nav>
+        <p>Brand</p>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div id="nav-header-container" class="col-shrink">
+          <button
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-controls="nav-container"
+            class="icon icon-right-arrow"
+          >
+            Expand navigation
+          </button>
+          <div id="nav-container">
+            <nav
   data-orientation="vertical" 
-  class="mr-comfortable ml-comfortable"
   id="side-navigation" 
   aria-label="Documentation navigation"
 >
@@ -50,10 +55,10 @@
       </li>
   </ul>
 </nav>
+          </div>
         </div>
-      </div>
-      <main class="content responsive">
-        <div class="section">
+        <main>
+          <div>
   <h1>Table</h1>
   <dl>
     <dt>Selector</dt>
@@ -127,31 +132,31 @@
         <th scope="col">YoY Growth</th>
       </tr>
       <tr>
-        <th scope="row">Thailand</th>
+        <th scope="stack-horizontal">Thailand</th>
         <td>15.25%</td>
         <td>$570.65M</td>
         <td>-8.74%</td>
       </tr>
       <tr>
-        <th scope="row">Mexico</th>
+        <th scope="stack-horizontal">Mexico</th>
         <td>12.29%</td>
         <td>$459.8M</td>
         <td>+3.15%</td>
       </tr>
       <tr>
-        <th scope="row">Netherlands</th>
+        <th scope="stack-horizontal">Netherlands</th>
         <td>11.1%</td>
         <td>$415.6M</td>
         <td>+13.08%</td>
       </tr>
       <tr>
-        <th scope="row">Peru</th>
+        <th scope="stack-horizontal">Peru</th>
         <td>11.1%</td>
         <td>$415.5M</td>
         <td>+51.88%</td>
       </tr>
       <tr>
-        <th scope="row">Brazil</th>
+        <th scope="stack-horizontal">Brazil</th>
         <td>6.81%</td>
         <td>$254.96M</td>
         <td>+11.39%</td>
@@ -207,7 +212,8 @@
   </div>
 </div>
 
-      </main>
+        </main>
+      </div>
     </div>
     <script src="../scripts/main.js"></script>
   </body>

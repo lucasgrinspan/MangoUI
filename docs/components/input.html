@@ -8,20 +8,25 @@
     <title>MangoUI | Input</title>
   </head>
   <body>
-    <div class="flex flex-justify-center">
-      <div id="nav-header-container">
-        <button
-          aria-expanded="false"
-          aria-haspopup="true"
-          aria-controls="nav-container"
-          class="icon icon-right-arrow"
-        >
-          Expand navigation
-        </button>
-        <div id="nav-container">
-          <nav
+    <header>
+      <nav>
+        <p>Brand</p>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div id="nav-header-container" class="col-shrink">
+          <button
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-controls="nav-container"
+            class="icon icon-right-arrow"
+          >
+            Expand navigation
+          </button>
+          <div id="nav-container">
+            <nav
   data-orientation="vertical" 
-  class="mr-comfortable ml-comfortable"
   id="side-navigation" 
   aria-label="Documentation navigation"
 >
@@ -50,10 +55,10 @@
       </li>
   </ul>
 </nav>
+          </div>
         </div>
-      </div>
-      <main class="content responsive">
-        <div class="section">
+        <main>
+          <div>
   <h2>Input</h2>
   <dl>
     <dt>Selector</dt>
@@ -70,7 +75,7 @@
     <input type="text" id="input-example" />
   </div>
   <h2>States</h2>
-  <div class="card column example shrink">
+  <div class="card stack-vertical example shrink">
     <input type="text" value="Disabled" disabled />
     <input type="text" value="Readonly" readonly />
     <input type="text" value="Valid" aria-invalid="false" />
@@ -113,7 +118,8 @@
   </div>
 </div>
 
-      </main>
+        </main>
+      </div>
     </div>
     <script src="../scripts/main.js"></script>
   </body>

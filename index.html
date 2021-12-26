@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="./dist/mango.css" />
   </head>
   <body>
-    <div class="content">
-      <div class="section card">
+    <div class="container stack-vertical pt-cozy pb-cozy">
+      <div class="card">
         <h1 style="margin-bottom: 0">Mango UI</h1>
       </div>
-      <div class="section card">
+      <div class="card">
         <h2>Buttons</h2>
         <div class="row">
           <button>Eat mango</button>
@@ -20,9 +20,9 @@
           <button class="ghost">Exit</button>
         </div>
       </div>
-      <div class="section card">
+      <div class="card">
         <h2>Checkbox</h2>
-        <div class="column">
+        <div class="stack-vertical">
           <fieldset>
             <legend>Which dishes you like to demo?</legend>
             <input type="checkbox" id="mango-cake" />
@@ -39,7 +39,7 @@
           </div>
         </div>
       </div>
-      <div class="section card">
+      <div class="card">
         <h2>Radio Inputs</h2>
         <fieldset>
           <legend>Which dish would you like to demo?</legend>
@@ -51,7 +51,7 @@
           <label for="mango-sorbet-radio">Mango Sorbet </label>
         </fieldset>
       </div>
-      <div class="section card">
+      <div class="card">
         <h2>Links</h2>
         <a href="#">Mango Recipes</a>
         |
@@ -59,23 +59,23 @@
         |
         <a href="#">Mangology</a>
       </div>
-      <div class="section card">
+      <div class="card">
         <h2>Alert</h2>
-        <div class="column">
+        <div class="stack-vertical">
           <div role="alert">Mangos are a great source of Vitamin C!</div>
           <div role="alert" class="success">3 mangos successfully ordered.</div>
           <div role="alert" class="warning">You have 2 mangos left.</div>
           <div role="alert" class="danger">You have no mangos left.</div>
         </div>
       </div>
-      <div class="section card">
+      <div class="card">
         <h2>Input</h2>
         <div class="field">
           <label for="input-test">Name your mango:</label>
           <input type="text" id="input-test" />
         </div>
       </div>
-      <div class="section card">
+      <div class="card">
         <h2>Select</h2>
         <div class="field">
           <label for="select-test">What's your favorite kind of mango?</label>
@@ -87,9 +87,9 @@
           </select>
         </div>
       </div>
-      <div class="section card">
+      <div class="card">
         <h2>Disclosure</h2>
-        <div class="column">
+        <div class="stack-vertical">
           <div class="disclosure-group">
             <details open>
               <summary>National Mango Recognition</summary>
@@ -110,7 +110,7 @@
           </details>
         </div>
       </div>
-      <div class="section card">
+      <div class="card">
         <h2>Table</h2>
         <table>
           <caption>
@@ -154,9 +154,9 @@
           </tr>
         </table>
       </div>
-      <div class="section card">
+      <div class="card">
         <h2>Progress Bar</h2>
-        <div class="column">
+        <div class="stack-vertical">
           <div>
             <label for="indeterminate-progress">Loading mangos...</label>
             <progress id="indeterminate-progress"></progress>
@@ -167,7 +167,7 @@
           </div>
         </div>
       </div>
-      <div class="section card">
+      <div class="card">
         <h2>Side Navigation</h2>
         <nav data-orientation="vertical">
           <ul>

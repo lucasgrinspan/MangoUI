@@ -8,20 +8,25 @@
     <title>MangoUI | Side Navigation</title>
   </head>
   <body>
-    <div class="flex flex-justify-center">
-      <div id="nav-header-container">
-        <button
-          aria-expanded="false"
-          aria-haspopup="true"
-          aria-controls="nav-container"
-          class="icon icon-right-arrow"
-        >
-          Expand navigation
-        </button>
-        <div id="nav-container">
-          <nav
+    <header>
+      <nav>
+        <p>Brand</p>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div id="nav-header-container" class="col-shrink">
+          <button
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-controls="nav-container"
+            class="icon icon-right-arrow"
+          >
+            Expand navigation
+          </button>
+          <div id="nav-container">
+            <nav
   data-orientation="vertical" 
-  class="mr-comfortable ml-comfortable"
   id="side-navigation" 
   aria-label="Documentation navigation"
 >
@@ -50,10 +55,10 @@
       </li>
   </ul>
 </nav>
+          </div>
         </div>
-      </div>
-      <main class="content responsive">
-        <div class="section">
+        <main>
+          <div>
   <h1>Side Navigation</h1>
   <dl>
     <dt>Selector</dt>
@@ -73,25 +78,29 @@
     size. Additionally, use <code>aria-current="page"</code> on the current link to provide it with
     selected styles.
   </p>
-  <div class="card row example shrink page nowrap">
-    <nav data-orientation="vertical" aria-label="music course navigation" class="flex-basis-100">
-      <ul>
-        <li><a href="#">Music Theory</a></li>
-        <li><a href="#">Music Fundamentals</a></li>
-        <li>
-          <a href="#">Instruments</a>
-          <ul>
-            <li><a href="#">Guitar</a></li>
-            <li><a href="#">Piano</a></li>
-            <li><a href="#" aria-current="page">Stylophone</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-    <!-- normally, this would be main -->
-    <div class="card mt-none mb-none mr-none">
-      <h1>Stylophone</h1>
-      <p>This groovy instrument burst into the scene in the late 60s, selling 4 million units...</p>
+  <div class="card container example page">
+    <div class="row">
+      <nav data-orientation="vertical" aria-label="music course navigation" class="col-shrink">
+        <ul>
+          <li><a href="#">Music Theory</a></li>
+          <li><a href="#">Music Fundamentals</a></li>
+          <li>
+            <a href="#">Instruments</a>
+            <ul>
+              <li><a href="#">Guitar</a></li>
+              <li><a href="#">Piano</a></li>
+              <li><a href="#" aria-current="page">Stylophone</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- normally, this would be main -->
+      <div class="card mt-none mb-none mr-none">
+        <h1>Stylophone</h1>
+        <p>
+          This groovy instrument burst into the scene in the late 60s, selling 4 million units...
+        </p>
+      </div>
     </div>
   </div>
   <p>
@@ -100,7 +109,8 @@
   </p>
 </div>
 
-      </main>
+        </main>
+      </div>
     </div>
     <script src="../scripts/main.js"></script>
   </body>

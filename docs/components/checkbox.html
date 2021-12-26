@@ -8,20 +8,25 @@
     <title>MangoUI | Checkbox</title>
   </head>
   <body>
-    <div class="flex flex-justify-center">
-      <div id="nav-header-container">
-        <button
-          aria-expanded="false"
-          aria-haspopup="true"
-          aria-controls="nav-container"
-          class="icon icon-right-arrow"
-        >
-          Expand navigation
-        </button>
-        <div id="nav-container">
-          <nav
+    <header>
+      <nav>
+        <p>Brand</p>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div id="nav-header-container" class="col-shrink">
+          <button
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-controls="nav-container"
+            class="icon icon-right-arrow"
+          >
+            Expand navigation
+          </button>
+          <div id="nav-container">
+            <nav
   data-orientation="vertical" 
-  class="mr-comfortable ml-comfortable"
   id="side-navigation" 
   aria-label="Documentation navigation"
 >
@@ -50,10 +55,10 @@
       </li>
   </ul>
 </nav>
+          </div>
         </div>
-      </div>
-      <main class="content responsive">
-        <div class="section">
+        <main>
+          <div>
   <h2>Checkbox</h2>
   <dl>
     <dt>Selector</dt>
@@ -65,7 +70,7 @@
     <code>&lt;fieldset /&gt;</code> tag to visually and semantically group them. When you do this,
     make sure to also provide a <code>&lt;legend /&gt;</code> as the first child to label them.
   </p>
-  <div class="card column example shrink">
+  <div class="card stack-vertical example shrink">
     <fieldset>
       <legend>Favorite dish?</legend>
       <input type="checkbox" id="mango-cake" />
@@ -83,7 +88,7 @@
     >). Instead, combine the checkbox with a form and submit button or use a toggle button.
   </p>
   <h2>States</h2>
-  <div class="card column example shrink">
+  <div class="card stack-vertical example shrink">
     <div>
       <input type="checkbox" id="hover-checkbox" />
       <label for="hover-checkbox" class="hover">Hover</label>
@@ -108,7 +113,8 @@
   <p>Like other interactive controls, the checkbox squishes slightly when clicked.</p>
 </div>
 
-      </main>
+        </main>
+      </div>
     </div>
     <script src="../scripts/main.js"></script>
   </body>

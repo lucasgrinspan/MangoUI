@@ -8,20 +8,25 @@
     <title>MangoUI | Disclosure</title>
   </head>
   <body>
-    <div class="flex flex-justify-center">
-      <div id="nav-header-container">
-        <button
-          aria-expanded="false"
-          aria-haspopup="true"
-          aria-controls="nav-container"
-          class="icon icon-right-arrow"
-        >
-          Expand navigation
-        </button>
-        <div id="nav-container">
-          <nav
+    <header>
+      <nav>
+        <p>Brand</p>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div id="nav-header-container" class="col-shrink">
+          <button
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-controls="nav-container"
+            class="icon icon-right-arrow"
+          >
+            Expand navigation
+          </button>
+          <div id="nav-container">
+            <nav
   data-orientation="vertical" 
-  class="mr-comfortable ml-comfortable"
   id="side-navigation" 
   aria-label="Documentation navigation"
 >
@@ -50,10 +55,10 @@
       </li>
   </ul>
 </nav>
+          </div>
         </div>
-      </div>
-      <main class="content responsive">
-        <div class="section">
+        <main>
+          <div>
   <h2>Disclosure</h2>
   <dl>
     <dt>Selector</dt>
@@ -67,7 +72,7 @@
     own or in a group, in which case, surround the disclosures with a
     <code>&lt;div class="dislosure-group" /&gt;</code> to group them visually.
   </p>
-  <div class="card section column">
+  <div class="card example stack-vertical">
     <div class="disclosure-group">
       <details open>
         <summary>National Mango Recognition</summary>
@@ -93,7 +98,8 @@
   </p>
 </div>
 
-      </main>
+        </main>
+      </div>
     </div>
     <script src="../scripts/main.js"></script>
   </body>

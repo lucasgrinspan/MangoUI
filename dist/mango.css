@@ -785,45 +785,69 @@ html, html[data-theme=sunset] {
   --disabled-background-light: #dedede;
 }
 
-.responsive {
-  width: 95%;
-  max-width: 80ch;
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1200px;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-.row {
+.row, .row-comfortable {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.row-comfortable {
+  gap: 1.5rem;
+}
+
+.row > *, .row-comfortable > * {
+  width: 100%;
+  max-width: 100%;
+  flex: 1 0 0%;
+}
+
+.col-shrink {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.stack-horizontal {
   display: flex;
 }
-.row > * {
+.stack-horizontal > * {
   margin-left: 1rem;
 }
-.row > *:first-child {
+.stack-horizontal > *:first-child {
   margin-left: 0;
 }
-.row-tight > * {
+.stack-horizontal-tight > * {
   margin-left: 1rem;
 }
-.row-tight > *:first-child {
+.stack-horizontal-tight > *:first-child {
   margin-left: 0;
 }
 
-.column {
+.stack-vertical {
   display: flex;
   flex-direction: column;
 }
-.column > * {
+.stack-vertical > * {
   margin-top: 1rem;
 }
-.column > *:first-child {
+.stack-vertical > *:first-child {
   margin-top: 0;
 }
-.column-tight {
+.stack-vertical-tight {
   display: flex;
   flex-direction: column;
 }
-.column-tight > * {
+.stack-vertical-tight > * {
   margin-top: 0.5rem;
 }
-.column-tight > *:first-child {
+.stack-vertical-tight > *:first-child {
   margin-top: 0;
 }
 
@@ -862,16 +886,6 @@ html, html[data-theme=sunset] {
 
 .flex-basis-100 {
   flex-basis: 100%;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.content > .section {
-  width: 100%;
-  max-width: 80ch;
 }
 
 .field {
@@ -1073,7 +1087,6 @@ button > span[role=alert]::before,
 .card {
   background-color: var(--surface);
   padding: 1rem;
-  margin: 1rem;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
@@ -1231,6 +1244,17 @@ dl dt {
 }
 dl dd {
   margin-bottom: 0.25rem;
+}
+
+header:not(main header) {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+header:not(main header) nav {
+  background-color: var(--surface);
+  padding: 0.5rem;
 }
 
 input[type=text] {

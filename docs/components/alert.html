@@ -8,20 +8,25 @@
     <title>MangoUI | Alert</title>
   </head>
   <body>
-    <div class="flex flex-justify-center">
-      <div id="nav-header-container">
-        <button
-          aria-expanded="false"
-          aria-haspopup="true"
-          aria-controls="nav-container"
-          class="icon icon-right-arrow"
-        >
-          Expand navigation
-        </button>
-        <div id="nav-container">
-          <nav
+    <header>
+      <nav>
+        <p>Brand</p>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div id="nav-header-container" class="col-shrink">
+          <button
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-controls="nav-container"
+            class="icon icon-right-arrow"
+          >
+            Expand navigation
+          </button>
+          <div id="nav-container">
+            <nav
   data-orientation="vertical" 
-  class="mr-comfortable ml-comfortable"
   id="side-navigation" 
   aria-label="Documentation navigation"
 >
@@ -50,10 +55,10 @@
       </li>
   </ul>
 </nav>
+          </div>
         </div>
-      </div>
-      <main class="content responsive">
-        <div class="section">
+        <main>
+          <div>
   <h1>Alert</h1>
   <dl>
     <dt>Selector</dt>
@@ -63,7 +68,7 @@
     The alert comes in four flavors, each coming with its own icon, depending on the type of message
     that you want to convey. Alerts should be important or time sensitive messages.
   </p>
-  <div class="card column example">
+  <div class="card stack-vertical example">
     <div role="alert">Did you know that alert content interrupts screen readers?</div>
     <div role="alert" class="success">
       Your order for more mangos has been successfully submitted.
@@ -80,7 +85,7 @@
     If the icons don't fit the message, they can be removed by using the <code>.no-icon</code> class
     on the container
   </p>
-  <div class="card column example">
+  <div class="card stack-vertical example">
     <div class="alert no-icon">Did you know that alert content interrupts screen readers?</div>
     <div class="alert success no-icon">
       Your order for more mangos has been successfully submitted.
@@ -90,7 +95,8 @@
   </div>
 </div>
 
-      </main>
+        </main>
+      </div>
     </div>
     <script src="../scripts/main.js"></script>
   </body>

@@ -11,68 +11,74 @@
   </head>
   <body>
     <main>
-      <div class="flex flex-justify-center" id="landing">
-        <div class="p-cozy flex flex-column flex-justify-center" id="heading">
-          <h1 class="m-none font-weight-black">Mango UI</h1>
-          <p>What if a mango could inspire a design system?</p>
+      <div class="fluid" id="landing">
+        <header class="container pt-cozy">
           <div class="row">
-            <a href="/docs/components" class="button">See the components</a>
-            <a href="https://github.com/lucasgrinspan/mangoui" class="button outline">Github</a>
+            <div class="flex flex-column flex-justify-center" id="heading">
+              <h1 class="m-none font-weight-black">Mango UI</h1>
+              <p>What if a mango could inspire a design system?</p>
+              <div class="stack-horizontal">
+                <a href="/docs/components" class="button">See the components</a>
+                <a href="https://github.com/lucasgrinspan/mangoui" class="button outline">Github</a>
+              </div>
+            </div>
+            <div id="component-grid" aria-hidden="true">
+              <div role="alert" class="success no-icon">Hey there!</div>
+              <div class="subgrid">
+                <div class="stack-vertical-tight">
+                  <button>Mango</button>
+                  <button class="outline">Disco</button>
+                  <button class="ghost">Party</button>
+                </div>
+                <div class="stack-vertical-tight flex-justify-between">
+                  <span class="icon icon-check-circle icon-lg"></span>
+                  <span class="icon icon-warning icon-lg"></span>
+                  <span class="icon icon-info-circle icon-lg"></span>
+                </div>
+                  <div class="disclosure-group">
+                    <details>
+                      <summary>Open me!</summary>
+                      Thanks for opening me!
+                    </details>
+                    <details>
+                      <summary>No! Open me!</summary>
+                      I knew I could count on you
+                    </details>
+                    <details>
+                      <summary>Don't forget about me!</summary>
+                      Phew, thanks!
+                    </details>
+                  </div>
+                </div>
+                <div class="flex flex-column">
+                  <fieldset>
+                    <legend>Favorite dish?</legend>
+                    <input type="checkbox" id="mango-cake" />
+                    <label for="mango-cake"> Mango Cake </label>
+                    <input type="checkbox" id="mango-salad" />
+                    <label for="mango-salad"> Mango Quinoa Salad </label>
+                    <input type="checkbox" id="mango-sorbet" />
+                    <label for="mango-sorbet"> Mango Sorbet </label>
+                    <input type="checkbox" id="mango-chow" />
+                    <label for="mango-chow"> Mango Chow </label>
+                    <input type="checkbox" id="mango-popsicle" />
+                    <label for="mango-popsicle"> Mango Popsicle </label>
+                  </fieldset>
+                  <select class="fluid">
+                    <option>Bounce</option>
+                    <option>Rock</option>
+                    <option>Skate</option>
+                    <option>Roll</option>
+                  </select>
+                  <progress class="fluid"></progress>
+                </div>
+                <div role="alert" class="warning">Watch out!</div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="p-cozy" id="component-grid" aria-hidden="true">
-          <div role="alert" class="success no-icon">Hey there!</div>
-          <div class="subgrid">
-            <div class="column-tight">
-              <button>Mango</button>
-              <button class="outline">Disco</button>
-              <button class="ghost">Party</button>
-            </div>
-            <div class="column-tight">
-              <span class="icon icon-check-circle icon-lg"></span>
-              <span class="icon icon-warning icon-lg"></span>
-              <span class="icon icon-info-circle icon-lg"></span>
-            </div>
-            <div class="disclosure-group">
-              <details>
-                <summary>Open me!</summary>
-                Thanks for opening me!
-              </details>
-              <details>
-                <summary>No! Open me!</summary>
-                I knew I could count on you
-              </details>
-              <details>
-                <summary>Don't forget about me!</summary>
-                Phew, thanks!
-              </details>
-            </div>
-          </div>
-          <div class="flex flex-column">
-            <fieldset>
-              <legend>Favorite dish?</legend>
-              <input type="checkbox" id="mango-cake" />
-              <label for="mango-cake"> Mango Cake </label>
-              <input type="checkbox" id="mango-salad" />
-              <label for="mango-salad"> Mango Quinoa Salad </label>
-              <input type="checkbox" id="mango-sorbet" />
-              <label for="mango-sorbet"> Mango Sorbet </label>
-              <input type="checkbox" id="mango-chow" />
-              <label for="mango-chow"> Mango Chow </label>
-              <input type="checkbox" id="mango-popsicle" />
-              <label for="mango-popsicle"> Mango Popsicle </label>
-            </fieldset>
-            <select>
-              <option>Bounce</option>
-              <option>Rock</option>
-              <option>Skate</option>
-              <option>Roll</option>
-            </select>
-            <progress class="fluid"></progress>
-          </div>
-          <div role="alert" class="warning">Watch out!</div>
-        </div>
-      </div>
+      </header>
+    </div>
       <div class="fluid" id="transition-container">
         <div style="height: 150px; overflow: hidden">
           <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%">
@@ -83,17 +89,17 @@
           </svg>
         </div>
       </div>
-      <div class="content">
-        <div class="row">
-          <div class="card column flex-align-center p-comfortable">
+      <div class="container">
+        <div class="row-comfortable">
+          <div class="card stack-vertical flex-align-center p-comfortable">
             <span class="icon icon-code icon-xl"></span>
             <p class="mb-none">Easy to use! Minimal class names required!</p>
           </div>
-          <div class="card column flex-align-center p-comfortable">
+          <div class="card stack-vertical flex-align-center p-comfortable">
             <span class="icon icon-sparkle icon-xl"></span>
             <p class="mb-none">Beautiful themes lifted straight from a mango!</p>
           </div>
-          <div class="card column flex-align-center p-comfortable">
+          <div class="card stack-vertical flex-align-center p-comfortable">
             <span class="icon icon-accessibility icon-xl"></span>
             <p class="mb-none">Built using semantic HTML with a11y in mind.</p>
           </div>

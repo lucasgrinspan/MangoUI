@@ -4,7 +4,8 @@ $cozy: 1rem;
 $comfortable: 1.5rem;
 $socially-distanced: 2rem;
 
-$input-width: 30ch;
+// TODO: figure out a good clamp function
+$input-width: 20ch;
 
 // spacing helper classes
 $spacings: (

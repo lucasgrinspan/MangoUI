@@ -5,52 +5,58 @@ table {
   border-spacing: 0;
   border-collapse: separate;
   border-radius: tokens.$radius;
-  table-layout: fixed;
   width: 100%;
 
   caption {
     caption-side: bottom;
     margin: tokens.$cozy;
+    margin-bottom: 0;
     font-weight: map-get($map: tokens.$font-weights, $key: bold);
   }
 
   th {
     background-color: utils.v(surface-selected);
-    border: tokens.$border;
     text-align: left;
     padding: tokens.$tight tokens.$cozy;
-
-    + th {
-      border-left: none;
-    }
   }
 
   td {
     padding: tokens.$tight tokens.$cozy;
+  }
+
+  tr > * {
     border-left: tokens.$border;
     border-right: tokens.$border;
     border-bottom: tokens.$border;
 
-    + td {
+    + * {
       border-left: none;
     }
   }
 
   // shenanigans to get border radius on the table due to border-collapse
-  thead th:first-child {
-    border-top-left-radius: tokens.$radius;
+  tr:first-child {
+    > * {
+      border-top: tokens.$border;
+    }
+
+    > :first-child {
+      border-top-left-radius: tokens.$radius;
+    }
+    > :last-child {
+      border-top-right-radius: tokens.$radius;
+    }
   }
-  thead th:last-child {
-    border-top-right-radius: tokens.$radius;
-  }
-  tbody tr:last-child td:first-child {
-    border-bottom-left-radius: tokens.$radius;
-  }
-  tbody tr:last-child td:last-child {
-    border-bottom-right-radius: tokens.$radius;
+  tr:last-child {
+    :first-child {
+      border-bottom-left-radius: tokens.$radius;
+    }
+    :last-child {
+      border-bottom-right-radius: tokens.$radius;
+    }
   }
 
-  // zebra stripe
+  // zebra stripe, shouldn't change background of th
   &.striped tr:nth-child(even) td {
     background-color: utils.v(surface-hover);
   }

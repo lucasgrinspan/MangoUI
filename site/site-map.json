@@ -23,7 +23,8 @@
       { "title": "Progress", "slug": "progress" },
       { "title": "Radio", "slug": "radio" },
       { "title": "Select", "slug": "select" },
-      { "title": "Side Navigation", "slug": "sidenav" }
+      { "title": "Side Navigation", "slug": "sidenav" },
+      { "title": "Table", "slug": "table" }
     ]
   },
   { "name": "index.html", "type": "copy" },

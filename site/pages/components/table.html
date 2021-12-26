@@ -1,0 +1,153 @@
+<div class="section">
+  <h1>Table</h1>
+  <dl>
+    <dt>Selector</dt>
+    <dd><code>table</code>, <code>tr</code>, <code>th</code>, <code>td</code></dd>
+  </dl>
+  <p>
+    Don't use these for layout! Tables are useful for easily presenting data in two dimensions. The
+    markup involved is fairly verbose, each <code>table</code> will have two direct children:
+    <code>tbody</code> and <code>thead</code>. Each of those will then have <code>tr</code> elements
+    surrounding <code>td</code> elements or <code>th</code> elements. The <code>table</code> can
+    also optionally have a <code>caption</code> as a direct child to provide a useful description
+    for the table.
+  </p>
+  <div class="card example">
+    <table>
+      <caption>
+        Yearly mango exports for countries
+      </caption>
+      <tr>
+        <th scope="col">Country</th>
+        <th scope="col">Market Share</th>
+        <th scope="col">Export Value</th>
+        <th scope="col">YoY Growth</th>
+      </tr>
+      <tr>
+        <td>Thailand</td>
+        <td>15.25%</td>
+        <td>$570.65M</td>
+        <td>-8.74%</td>
+      </tr>
+      <tr>
+        <td>Mexico</td>
+        <td>12.29%</td>
+        <td>$459.8M</td>
+        <td>+3.15%</td>
+      </tr>
+      <tr>
+        <td>Netherlands</td>
+        <td>11.1%</td>
+        <td>$415.6M</td>
+        <td>+13.08%</td>
+      </tr>
+      <tr>
+        <td>Peru</td>
+        <td>11.1%</td>
+        <td>$415.5M</td>
+        <td>+51.88%</td>
+      </tr>
+      <tr>
+        <td>Brazil</td>
+        <td>6.81%</td>
+        <td>$254.96M</td>
+        <td>+11.39%</td>
+      </tr>
+    </table>
+  </div>
+  <p>
+    The scope attribute on the <code>th</code> element is useful and can also be used within the
+    table body to make tables with two headers. This can be done to the previous table to more
+    explicity associate each country with its mango export performance.
+  </p>
+  <div class="card example">
+    <table>
+      <caption>
+        Yearly mango exports for countries
+      </caption>
+      <tr>
+        <th scope="col">Country</th>
+        <th scope="col">Market Share</th>
+        <th scope="col">Export Value</th>
+        <th scope="col">YoY Growth</th>
+      </tr>
+      <tr>
+        <th scope="row">Thailand</th>
+        <td>15.25%</td>
+        <td>$570.65M</td>
+        <td>-8.74%</td>
+      </tr>
+      <tr>
+        <th scope="row">Mexico</th>
+        <td>12.29%</td>
+        <td>$459.8M</td>
+        <td>+3.15%</td>
+      </tr>
+      <tr>
+        <th scope="row">Netherlands</th>
+        <td>11.1%</td>
+        <td>$415.6M</td>
+        <td>+13.08%</td>
+      </tr>
+      <tr>
+        <th scope="row">Peru</th>
+        <td>11.1%</td>
+        <td>$415.5M</td>
+        <td>+51.88%</td>
+      </tr>
+      <tr>
+        <th scope="row">Brazil</th>
+        <td>6.81%</td>
+        <td>$254.96M</td>
+        <td>+11.39%</td>
+      </tr>
+    </table>
+  </div>
+  <p>
+    For particularly dense and wide tables, you can use the <code>.striped</code> class to make it
+    easier for users to visually parse the table. The class will add a light background to every
+    other row in the table.
+  </p>
+  <div class="card example">
+    <table class="striped">
+      <tr>
+        <th>Name</th>
+        <th>Avg Weight</th>
+        <th>Color</th>
+        <th>Shape</th>
+        <th>Tasty?</th>
+      </tr>
+      <tr>
+        <td>Tommy Atkins</td>
+        <td>500g</td>
+        <td>Orangey yellow</td>
+        <td>Ovoid</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Kent</td>
+        <td>650g</td>
+        <td>Strong yellow</td>
+        <td>Rounded, no beak</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Osteen</td>
+        <td>600g</td>
+        <td>Violet purple</td>
+        <td>Oblong, small beak</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Haden</td>
+        <td>560g</td>
+        <td>Yellowy red</td>
+        <td>Oval</td>
+        <td>Yes</td>
+      </tr>
+      <caption>
+        Super scientific information about some mango varieties
+      </caption>
+    </table>
+  </div>
+</div>

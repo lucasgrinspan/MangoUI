@@ -8,11 +8,24 @@
     <title>MangoUI | {{pageTitle}}</title>
   </head>
   <body>
-    <div class="flex flex-justify-center mt-comfortable">
-      {{navigation}}
+    <div class="flex flex-justify-center">
+      <div id="nav-header-container">
+        <button
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls="nav-container"
+          class="icon icon-right-arrow"
+        >
+          Expand navigation
+        </button>
+        <div id="nav-container">
+          {{navigation}}
+        </div>
+      </div>
       <main class="content responsive">
         {{content}}
       </main>
     </div>
+    <script src="../scripts/main.js"></script>
   </body>
 </html>

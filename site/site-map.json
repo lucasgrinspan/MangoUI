@@ -29,5 +29,6 @@
   },
   { "name": "index.html", "type": "copy" },
   { "name": "styles", "type": "assets" },
+  { "name": "scripts", "type": "assets" },
   { "name": "assets", "type": "assets" }
 ]

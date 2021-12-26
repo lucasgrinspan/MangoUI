@@ -24,6 +24,7 @@ nav[data-orientation="vertical"] {
       &:hover {
         // reveal hovered li color
         background-color: transparent;
+        text-decoration: underline;
       }
       &:focus {
         text-decoration: underline;
@@ -36,7 +37,6 @@ nav[data-orientation="vertical"] {
     }
 
     &:hover {
-      text-decoration: underline;
       background-color: utils.v(surface-hover);
       color: utils.v(text);
     }
@@ -46,16 +46,14 @@ nav[data-orientation="vertical"] {
     }
 
     // sub navigation items are indented more to the left
-    // and shouldn't have a border
+    // and should only have a top border since the first child
+    // of the nested list won't have one
     ul {
+      border-top: tokens.$border;
       width: 100%;
 
-      li + li {
-        border-top: tokens.$border;
-      }
       a {
         padding-left: tokens.$socially-distanced;
-        border: none;
       }
     }
   }

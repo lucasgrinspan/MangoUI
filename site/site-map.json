@@ -22,7 +22,8 @@
       { "title": "Input", "slug": "input" },
       { "title": "Progress", "slug": "progress" },
       { "title": "Radio", "slug": "radio" },
-      { "title": "Select", "slug": "select" }
+      { "title": "Select", "slug": "select" },
+      { "title": "Side Navigation", "slug": "sidenav" }
     ]
   },
   { "name": "index.html", "type": "copy" },

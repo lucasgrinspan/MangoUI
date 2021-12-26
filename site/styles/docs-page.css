@@ -6,3 +6,8 @@
 .example.shrink {
   width: max-content;
 }
+/* emulates the page background */
+.example.page {
+  border: 3px solid var(--surface);
+  background-color: var(--page-background);
+}

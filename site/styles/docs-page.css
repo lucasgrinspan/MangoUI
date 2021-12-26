@@ -4,7 +4,10 @@
   flex-wrap: wrap;
 }
 .example.shrink {
-  width: max-content;
+  width: fit-content;
+}
+.example.nowrap {
+  flex-wrap: nowrap;
 }
 /* emulates the page background */
 .example.page {

@@ -1,0 +1,18 @@
+<h1>Banner</h1>
+<dl>
+  <dt>Selector</dt>
+  <dd><code>header</code>, <code>nav > header</code></dd>
+</dl>
+<p>
+  The banner, or primary navigation, is a site-wide banner that appears stickied to the top of the
+  page. Additionally, since it's purpose is navigation, the first child should be the
+  <code>nav</code> element. The banner is implemented with a <code>header</code> element, since it
+  automatically takes a <code>role="banner"</code> when not a child of the <code>main</code> or
+  <code>article</code> element. This restriction is enforced in the selector as well. The banner
+  styles from Mango UI will only apply to <code>header</code> elements that are not a descendent of
+  the page tags. This ensures that the visuals align with the semantics of the element.
+</p>
+<p>
+  Because of this restriction, it's not possible to include a banner in an example box, but the
+  pattern can be seen in use as the banner of this page.
+</p>

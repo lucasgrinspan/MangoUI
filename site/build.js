@@ -27,6 +27,7 @@ const buildNavigation = async (sitemap, current) => {
 // takes in a section from the sitemap and builds it
 const buildPages = async ({ slug, pages, title }, template, sitemap) => {
   await createFolder(slug);
+  const logo = await getFileText("assets/mangoui.svg");
 
   // write the index file
   const indexNavigation = await buildNavigation(sitemap, slug);
@@ -35,6 +36,7 @@ const buildPages = async ({ slug, pages, title }, template, sitemap) => {
     content: indexContent,
     pageTitle: title,
     navigation: indexNavigation,
+    logo,
   });
   await writeFile(`${slug}/index.html`, indexOutput);
   console.log(`✅ 📄 ${title}`);
@@ -48,6 +50,7 @@ const buildPages = async ({ slug, pages, title }, template, sitemap) => {
       content,
       pageTitle,
       navigation,
+      logo,
     });
 
     await writeFile(`${slug}/${pageSlug}.html`, pageOutput);

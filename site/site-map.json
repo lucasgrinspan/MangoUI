@@ -16,6 +16,7 @@
     "pages": [
       { "title": "Alert", "slug": "alert" },
       { "title": "Anchor", "slug": "anchor" },
+      { "title": "Banner", "slug": "banner" },
       { "title": "Button", "slug": "button" },
       { "title": "Checkbox", "slug": "checkbox" },
       { "title": "Disclosure", "slug": "disclosure" },

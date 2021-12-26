@@ -12,6 +12,7 @@ header:not(main header) {
   right: 0;
   background-color: utils.v(surface);
   width: 100%;
+  box-shadow: tokens.$shadow-low;
 
   nav {
     margin-right: auto;
@@ -21,5 +22,16 @@ header:not(main header) {
     padding: tokens.$cozy;
     display: flex;
     justify-content: space-between;
+
+    a {
+      // my reasoning is that links are easily identifiable in a top nav
+      text-decoration: none;
+      color: utils.v(text);
+      font-weight: map-get(tokens.$font-weights, bold);
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }

@@ -25,16 +25,19 @@ input[type="radio"] {
       height: 1.125rem;
       background-color: utils.v(page-background);
     }
-    &:hover::before {
+    &:hover::before,
+    &.hover::before {
       background-color: utils.v(surface-hover);
     }
-    &:active {
+    &:active,
+    &.active {
       transform: tokens.$squish;
     }
   }
 
-  &:focus + label::before {
-    @include tokens.focus-ring;
+  &:focus + label::before,
+  &.focus + label::before {
+    @include tokens.shadow-focus-ring;
   }
 
   &:checked + label::after {
@@ -51,5 +54,23 @@ input[type="radio"] {
     width: var(--dimensions);
     height: var(--dimensions);
     background-color: utils.v(primary);
+  }
+
+  &:disabled + label {
+    color: utils.v(disabled-text);
+
+    &::before {
+      background-color: utils.v(disabled-background-light);
+      border: 1px solid utils.v(disabled-text);
+      color: utils.v(disabled-text);
+    }
+
+    &:active {
+      transform: none;
+    }
+
+    &:hover {
+      cursor: not-allowed;
+    }
   }
 }

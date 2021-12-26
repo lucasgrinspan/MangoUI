@@ -816,39 +816,22 @@ html, html[data-theme=sunset] {
 
 .stack-horizontal {
   display: flex;
+  gap: 1rem;
 }
-.stack-horizontal > * {
-  margin-left: 1rem;
-}
-.stack-horizontal > *:first-child {
-  margin-left: 0;
-}
-.stack-horizontal-tight > * {
-  margin-left: 1rem;
-}
-.stack-horizontal-tight > *:first-child {
-  margin-left: 0;
+.stack-horizontal-tight {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .stack-vertical {
   display: flex;
   flex-direction: column;
-}
-.stack-vertical > * {
-  margin-top: 1rem;
-}
-.stack-vertical > *:first-child {
-  margin-top: 0;
+  gap: 1rem;
 }
 .stack-vertical-tight {
   display: flex;
   flex-direction: column;
-}
-.stack-vertical-tight > * {
-  margin-top: 0.5rem;
-}
-.stack-vertical-tight > *:first-child {
-  margin-top: 0;
+  gap: 0.5rem;
 }
 
 .flex {
@@ -1251,10 +1234,17 @@ header:not(main header) {
   top: 0;
   left: 0;
   right: 0;
+  background-color: var(--surface);
+  width: 100%;
 }
 header:not(main header) nav {
-  background-color: var(--surface);
-  padding: 0.5rem;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1200px;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 input[type=text] {

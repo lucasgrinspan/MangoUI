@@ -4,7 +4,7 @@
   flex-wrap: wrap;
 }
 .example.shrink {
-  width: fit-content;
+  width: min(fit-content, calc(100% - 3rem));
 }
 .example.nowrap {
   flex-wrap: nowrap;
@@ -33,6 +33,8 @@ body > div {
     padding: 1rem;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
+    margin-top: 1rem;
+    border-radius: 10px;
     background-color: var(--surface);
   }
 

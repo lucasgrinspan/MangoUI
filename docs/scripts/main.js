@@ -5,7 +5,7 @@ const navHeight = nav.offsetHeight;
 
 navToggleButton.addEventListener("click", () => {
   const isExpanded = navToggleButton.ariaExpanded === "true";
-  const targetHeight = isExpanded ? 0 : navHeight;
+  const targetHeight = isExpanded ? 0 : navHeight + 1; /* border */
   const targetMessage = isExpanded ? "Expand navigation" : "Collapse navigation";
 
   navContainer.style.maxHeight = `${targetHeight}px`;

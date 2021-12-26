@@ -1,0 +1,18 @@
+@use "../utils.scss";
+@use "../tokens";
+
+// the styles from this file visually communicate a top banner. The header
+// element loses its banner landmark when it's nested inside of a main tag.
+// That's why this component is named banner instead of what the HTML tag
+// says
+header:not(main header) {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  nav {
+    background-color: utils.v(surface);
+    padding: tokens.$tight;
+  }
+}

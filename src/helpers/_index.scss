@@ -3,18 +3,6 @@
 @use "flex";
 // generates helper class names
 
-// wrap your main content in this
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  > .section {
-    width: 100%;
-    max-width: 80ch;
-  }
-}
-
 // intended for a label and input
 .field {
   display: flex;

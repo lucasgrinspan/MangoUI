@@ -8,7 +8,7 @@
     Buttons are used to perform actions on page. They come in 3 variations, depending on how much
     attention you want to draw to each action.
   </p>
-  <div class="card row example shrink">
+  <div class="card stack-horizontal example shrink">
     <button>Default</button>
     <button class="outline">Outline</button>
     <button class="ghost">Ghost</button>
@@ -18,26 +18,26 @@
     primary call to action, you can use the <code>.button</code> class. Don't style any other
     elements as buttons, always make sure to use the elements intended by HTML to perform actions.
   </p>
-  <div class="card row example shrink">
+  <div class="card stack-horizontal example shrink">
     <a href="#" class="button">CTA Link</a>
     <a href="#" class="button outline">Navigate</a>
     <a href="#" class="button ghost">Sneaky Nav</a>
   </div>
   <h2>States</h2>
-  <div class="card column example shrink">
-    <div class="row">
+  <div class="card stack-vertical example shrink">
+    <div class="stack-horizontal">
       <button class="hover">Hover</button>
       <button class="focus">Focus</button>
       <button class="active">Active</button>
       <button disabled>Disabled</button>
     </div>
-    <div class="row">
+    <div class="stack-horizontal">
       <button class="outline hover">Hover</button>
       <button class="outline focus">Focus</button>
       <button class="outline active">Active</button>
       <button class="outline" disabled>Disabled</button>
     </div>
-    <div class="row">
+    <div class="stack-horizontal">
       <button class="ghost hover">Hover</button>
       <button class="ghost focus">Ghost</button>
       <button class="ghost active">Active</button>
@@ -58,7 +58,7 @@
   </p>
   <h2>Variations</h2>
   <p>Icons can be added to the button by using the desired <code>.icon .icon-*</code> classes.</p>
-  <div class="card row example shrink">
+  <div class="card stack-horizontal example shrink">
     <button class="icon icon-download">Download files</button>
     <button class="outline icon icon-upload">Upload files</button>
   </div>
@@ -69,7 +69,7 @@
     technique like <code>hidden</code> or <code>display: none</code>. The <code>"alert"</code> role
     ensures that the change is communicated to assistive technologies.
   </p>
-  <div class="card row example shrink">
+  <div class="card stack-horizontal example shrink">
     <button>
       <span hidden>Submit</span>
       <span role="alert">Loading...</span>

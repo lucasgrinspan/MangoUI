@@ -1,13 +1,38 @@
 @use "../tokens";
 
-// uses a responsive width
-.responsive {
-  width: 95%;
-  max-width: 80ch;
+// this is a slightly modified version of Bootstrap's grid layout,
+// which I really like
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1200px;
+  width: 100%;
+  padding-left: tokens.$cozy;
+  padding-right: tokens.$cozy;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.$cozy;
+
+  &-comfortable {
+    @extend .row;
+    gap: tokens.$comfortable;
+  }
+}
+
+.row > * {
+  width: 100%;
+  max-width: 100%;
+  flex: 1 0 0%;
+}
+.col-shrink {
+  flex: 0 0 auto;
+  width: auto;
 }
 
 // puts things in a neat row
-.row {
+.stack-horizontal {
   display: flex;
 
   > * {
@@ -30,7 +55,7 @@
 }
 
 // puts things in a neat column
-.column {
+.stack-vertical {
   display: flex;
   flex-direction: column;
 

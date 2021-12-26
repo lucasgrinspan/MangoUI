@@ -17,6 +17,16 @@
 body > div {
   padding-top: 1rem;
 }
+svg#logo {
+  height: 1.125rem;
+  vertical-align: top;
+  stroke: var(--text);
+  fill: var(--text);
+}
+nav a:hover #logo {
+  stroke: var(--link-hover);
+  fill: var(--link-hover);
+}
 
 #nav-header-container > button {
   display: none;

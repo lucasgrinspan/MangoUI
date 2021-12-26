@@ -5,7 +5,7 @@
 .container {
   margin-right: auto;
   margin-left: auto;
-  max-width: 1200px;
+  max-width: tokens.$content-width;
   width: 100%;
   padding-left: tokens.$cozy;
   padding-right: tokens.$cozy;
@@ -34,23 +34,11 @@
 // puts things in a neat row
 .stack-horizontal {
   display: flex;
-
-  > * {
-    margin-left: tokens.$cozy;
-
-    &:first-child {
-      margin-left: 0;
-    }
-  }
+  gap: tokens.$cozy;
 
   &-tight {
-    > * {
-      margin-left: tokens.$cozy;
-
-      &:first-child {
-        margin-left: 0;
-      }
-    }
+    display: flex;
+    gap: tokens.$tight;
   }
 }
 
@@ -58,24 +46,11 @@
 .stack-vertical {
   display: flex;
   flex-direction: column;
-
-  > * {
-    margin-top: tokens.$cozy;
-
-    &:first-child {
-      margin-top: 0;
-    }
-  }
+  gap: tokens.$cozy;
 
   &-tight {
     display: flex;
     flex-direction: column;
-    > * {
-      margin-top: tokens.$tight;
-
-      &:first-child {
-        margin-top: 0;
-      }
-    }
+    gap: tokens.$tight;
   }
 }

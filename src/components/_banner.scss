@@ -10,9 +10,16 @@ header:not(main header) {
   top: 0;
   left: 0;
   right: 0;
+  background-color: utils.v(surface);
+  width: 100%;
 
   nav {
-    background-color: utils.v(surface);
-    padding: tokens.$tight;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: tokens.$content-width;
+    width: 100%;
+    padding: tokens.$cozy;
+    display: flex;
+    justify-content: space-between;
   }
 }

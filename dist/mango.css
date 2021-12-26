@@ -1475,6 +1475,7 @@ nav[data-orientation=vertical] > ul li ul {
 }
 nav[data-orientation=vertical] > ul li ul a {
   padding-left: 2rem;
+  font-size: 1rem;
 }
 nav[data-orientation=vertical] ul {
   list-style: none;
@@ -1487,42 +1488,43 @@ table {
   border-spacing: 0;
   border-collapse: separate;
   border-radius: 10px;
-  table-layout: fixed;
   width: 100%;
 }
 table caption {
   caption-side: bottom;
   margin: 1rem;
+  margin-bottom: 0;
   font-weight: 600;
 }
 table th {
   background-color: var(--surface-selected);
-  border: 1px solid var(--primary);
   text-align: left;
   padding: 0.5rem 1rem;
 }
-table th + th {
-  border-left: none;
-}
 table td {
   padding: 0.5rem 1rem;
+}
+table tr > * {
   border-left: 1px solid var(--primary);
   border-right: 1px solid var(--primary);
   border-bottom: 1px solid var(--primary);
 }
-table td + td {
+table tr > * + * {
   border-left: none;
 }
-table thead th:first-child {
+table tr:first-child > * {
+  border-top: 1px solid var(--primary);
+}
+table tr:first-child > :first-child {
   border-top-left-radius: 10px;
 }
-table thead th:last-child {
+table tr:first-child > :last-child {
   border-top-right-radius: 10px;
 }
-table tbody tr:last-child td:first-child {
+table tr:last-child :first-child {
   border-bottom-left-radius: 10px;
 }
-table tbody tr:last-child td:last-child {
+table tr:last-child :last-child {
   border-bottom-right-radius: 10px;
 }
 table.striped tr:nth-child(even) td {

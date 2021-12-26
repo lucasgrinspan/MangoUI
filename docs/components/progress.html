@@ -1,0 +1,93 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/mango.css" />
+    <link rel="stylesheet" href="../styles/docs-page.css" />
+    <title>MangoUI | Progress</title>
+  </head>
+  <body>
+    <div class="flex flex-justify-center mt-comfortable">
+      <nav data-orientation="vertical" class="mr-comfortable">
+  <ul>
+      <li><a href="../design" >Design</a></li>
+      <li><a href="../getting-started" >Getting Started</a></li>
+      <li><a href="../components" >Components</a></li>
+        <li>
+          <ul>
+              <li><a href="../components/alert" >Alert</a></li>
+              <li><a href="../components/anchor" >Anchor</a></li>
+              <li><a href="../components/button" >Button</a></li>
+              <li><a href="../components/checkbox" >Checkbox</a></li>
+              <li><a href="../components/disclosure" >Disclosure</a></li>
+              <li><a href="../components/input" >Input</a></li>
+              <li><a href="../components/progress" aria-current="page">Progress</a></li>
+          </ul>
+        </li>
+  </ul>
+</nav>
+      <main class="content responsive">
+        <div class="section">
+  <h2>Progress</h2>
+  <dl>
+    <dt>Selector</dt>
+    <dd><code>progress</code></dd>
+  </dl>
+  <p>
+    The progress bar is used to show the progress or status of a task. The progress bar comes in two
+    variations: determinate and indeterminate. Use the determinate progress bar if you have access
+    to the progress of the task. Provide the <code>min</code>, <code>max</code>, and
+    <code>value</code> attributes to render the progress bar at the correct step. You can also
+    provide content inside of the <code>progress</code> as fallback content for browsers that don't
+    support the progress bar.
+  </p>
+  <p>
+    Use the indeterminate progress bar for tasks where the progress is not known. To render, omit
+    all of the attributes (<code>min</code>, <code>max</code>, and <code>value</code>).
+  </p>
+  <p>
+    To label the progress bars, it is better to use the <code>aria-labelledby</code> attribute
+    pointing to the label text. Using <code>label[for]</code> is sometimes recommended but it
+    unfortunately isn't consistent in how screen readers treat it. For example, VoiceOver does not
+    link the two.
+  </p>
+  <div class="card example shrink column">
+    <div>
+      <label id="progress-example">Ordering mangos:</label>
+      <progress min="0" max="100" value="75" aria-labelledby="progress-example">75%</progress>
+    </div>
+    <div>
+      <label id="progress-indeterminate-example">Downloading mangos</label>
+      <progress aria-labelled-by="progress-indeterminate-example"></progress>
+    </div>
+  </div>
+  <p>
+    The indeterminate progress bar respects the "prefers reduced motion" media query. It will switch
+    automatically depending on the user's preference, but you can use the
+    <code>.no-animation</code> class to force the animation-less variation as well.
+  </p>
+  <div class="card example shrink">
+    <label for="" id="no-animation-progress">Downloading mangos</label>
+    <progress aria-labelledby="no-animation-progress" class="no-animation"></progress>
+  </div>
+  <p>
+    In most cases, the progress bar will be used to indicate the status of another part of the page.
+    To describe other regions with the progress bar, use the <code>aria-describedby</code> attribute
+    pointing to the label of the progress element to semantically link the two.
+  </p>
+  <div class="card example shrink column">
+    <div>
+      <label id="progress-region-label">Downloading images</label>
+      <progress aria-labelledby="progress-region-label"></progress>
+    </div>
+    <section aria-labelledby="gallery-header" aria-describedby="progress-region-label">
+      <h2 id="gallery-header">Gallery</h2>
+    </section>
+  </div>
+</div>
+
+      </main>
+    </div>
+  </body>
+</html>

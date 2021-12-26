@@ -1294,6 +1294,11 @@ progress:indeterminate {
     animation: none;
   }
 }
+progress:indeterminate.no-animation {
+  background: repeating-linear-gradient(45deg, var(--page-background), var(--page-background) 0.5rem, var(--primary) 0.5rem, var(--primary) 1rem);
+  background-repeat: repeat;
+  animation: none;
+}
 
 @keyframes progressIndeterminate {
   0% {

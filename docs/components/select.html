@@ -1,0 +1,138 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/mango.css" />
+    <link rel="stylesheet" href="../styles/docs-page.css" />
+    <title>MangoUI | Select</title>
+  </head>
+  <body>
+    <div class="flex flex-justify-center mt-comfortable">
+      <nav data-orientation="vertical" class="mr-comfortable">
+  <ul>
+      <li><a href="../design" >Design</a></li>
+      <li><a href="../getting-started" >Getting Started</a></li>
+      <li><a href="../components" >Components</a></li>
+        <li>
+          <ul>
+              <li><a href="../components/alert" >Alert</a></li>
+              <li><a href="../components/anchor" >Anchor</a></li>
+              <li><a href="../components/button" >Button</a></li>
+              <li><a href="../components/checkbox" >Checkbox</a></li>
+              <li><a href="../components/disclosure" >Disclosure</a></li>
+              <li><a href="../components/input" >Input</a></li>
+              <li><a href="../components/progress" >Progress</a></li>
+              <li><a href="../components/radio" >Radio</a></li>
+              <li><a href="../components/select" aria-current="page">Select</a></li>
+          </ul>
+        </li>
+  </ul>
+</nav>
+      <main class="content responsive">
+        <div class="section">
+  <h1>Select</h1>
+  <dl>
+    <dt>Selector</dt>
+    <dd><code>select</code></dd>
+  </dl>
+  <p>
+    The select is a control that lets the user select a choice from a list of options. When using
+    the select, use a <code>label</code> with the <code>for</code> attribute referencing the select
+    to provide an accessible name for the control. To optionally create separate groups of options
+    in the select, you can use the <code>optgroup</code> element.
+  </p>
+  <div class="card example shrink">
+    <label for="select-example">Favorite color</label>
+    <select name="fave-color" id="select-example">
+      <optgroup label="Mango Colors">
+        <option value="mango-green">Mango Green</option>
+        <option value="mango-red">Mango Red</option>
+        <option value="mango-yellow">Mango Yellow</option>
+        <option value="mango-orange">Mango Orange</option>
+      </optgroup>
+      <optgroup label="Others">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+      </optgroup>
+    </select>
+  </div>
+  <p>
+    A radio group and a select can both be used for similar purposes - getting a selection from the
+    user. The differences between the two are mostly design related. A select puts emphasis on the
+    selected option while a radio group places emphasis equally. Selects are also better suited for
+    more options since each option in a radio group takes up screen space.
+  </p>
+  <h2>States</h2>
+  <div class="card column example shrink">
+    <select name="focus" class="focus">
+      <option value="focus">Focus</option>
+      <option value="option-2">Other option</option>
+    </select>
+    <select name="disabled" disabled>
+      <option value="disabled">Disabled</option>
+      <option value="option-2">Other option</option>
+    </select>
+    <select name="valid" aria-invalid="false">
+      <option value="valid">Valid</option>
+      <option value="option-2">Other option</option>
+    </select>
+    <select name="invalid" aria-invalid="true">
+      <option value="invalid">Invalid</option>
+      <option value="other-option">Other option</option>
+    </select>
+  </div>
+  <p>
+    The select will receive a red border and warning icon when invalid through the
+    <code>:invalid</code> pseudo-state. In most cases, the browser will automatically mark the field
+    as invalid when using
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#using_built-in_form_validation"
+      >built in form validation</a
+    >, but it can also be triggered manually by applying <code>aria-invalid="true"</code> to the
+    select. Like inputs, they are considered to be valid when not invalid. Unlike the input however,
+    there aren't too many ways for the user to mess up with the select, since the interface is
+    fairly straightforward. You can still use <code>aria-invalid="false"</code> to explicitly
+    communicate this however.
+  </p>
+  <h2>Multiple Selection</h2>
+  <p>
+    Mango UI also supports the little-known <code>&lt;select multiple /&gt;</code>. Avoid using this
+    variation when possible since it comes with poor usability. Users aren't typically familiar with
+    the keyboard shortcuts required to select multiple options. As an alternative, you can use
+    multiple checkboxes to achieve something similar.
+  </p>
+  <div class="card example shrink">
+    <label for="multiple-select-example">Choose all of your favorite colors</label>
+    <select id="" multiple>
+      <option>Mango Orange</option>
+      <option>Mango Red</option>
+      <option>Mango Green</option>
+      <option>Mango Yellow</option>
+      <option>Blue</option>
+      <option>Purple</option>
+    </select>
+  </div>
+  <h3>Mouse Users</h3>
+  <p>
+    Holding <kbd>Ctrl/Cmd</kbd>, you can toggle the selection of each item you click. Holding
+    <kbd>Shift</kbd> while clicking will select all of the items between the current target and the
+    last option that was clicked. Every other option outside of that range will be deselected.
+    Clicking without holding any key will select the target and deselect every other option.
+  </p>
+  <h3>Keyboard Users</h3>
+  <p>
+    Using the arrow keys while focused on a multiple select will move both the focus and the
+    selection, deselecting all other options. To select multiple contiguous items, use the arrow
+    keys and hold <kbd>Shift</kbd> to expand or shrink the selection. Selecting multiple
+    non-contiguous items is troublesome and not suported in Safari. On Chrome and Firefox, hold
+    <kbd>Cmd/Ctrl</kbd> while pressing an arrow key to move focus to the next option (the selection
+    remains). Then press <kbd>Enter</kbd> to toggle that option.
+  </p>
+</div>
+
+      </main>
+    </div>
+  </body>
+</html>

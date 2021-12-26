@@ -1,0 +1,100 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/mango.css" />
+    <link rel="stylesheet" href="../styles/docs-page.css" />
+    <title>MangoUI | Radio</title>
+  </head>
+  <body>
+    <div class="flex flex-justify-center mt-comfortable">
+      <nav data-orientation="vertical" class="mr-comfortable">
+  <ul>
+      <li><a href="../design" >Design</a></li>
+      <li><a href="../getting-started" >Getting Started</a></li>
+      <li><a href="../components" >Components</a></li>
+        <li>
+          <ul>
+              <li><a href="../components/alert" >Alert</a></li>
+              <li><a href="../components/anchor" >Anchor</a></li>
+              <li><a href="../components/button" >Button</a></li>
+              <li><a href="../components/checkbox" >Checkbox</a></li>
+              <li><a href="../components/disclosure" >Disclosure</a></li>
+              <li><a href="../components/input" >Input</a></li>
+              <li><a href="../components/progress" >Progress</a></li>
+              <li><a href="../components/radio" aria-current="page">Radio</a></li>
+          </ul>
+        </li>
+  </ul>
+</nav>
+      <main class="content responsive">
+        <div class="section">
+  <h2>Radio Group</h2>
+  <dl>
+    <dt>Selector</dt>
+    <dd><code>input[type="radio"] + label</code></dd>
+  </dl>
+  <p>
+    A radio group is a collection of options presented as radio inputs. They are used to collect
+    input from the user where they can only choose one option from the set. It's important not to
+    make an unselected radio group a valid value as users aren't able to return to reset the radio
+    buttons once they are selected. Instead, use the an extra option, labelled "None" or something
+    similar to make that an option. To this end it's usually good practice to
+    <a href="https://www.nngroup.com/articles/radio-buttons-default-selection/"
+      >select a radio button by default for the user.</a
+    >.
+  </p>
+  <p>
+    The radio buttons should be surrounded in a <code>&lt;fieldset /&gt;</code> to semantically and
+    visually group them. The first child of the <code>&lt;fieldset /&gt;</code> should then be a
+    <code>&lt;legend /&gt;</code> that provides a label for the radio group. Each radio button
+    should also have the same <code>name</code>.
+  </p>
+  <div class="card example shrink">
+    <fieldset>
+      <legend>Which dish would you like to demo?</legend>
+      <input type="radio" id="mango-cake-radio" name="radio-dishes" />
+      <label for="mango-cake-radio">Mango Cake </label>
+      <input type="radio" id="mango-salad-radio" name="radio-dishes" />
+      <label for="mango-salad-radio">Mango Quinoa Salad </label>
+      <input type="radio" id="mango-sorbet-radio" name="radio-dishes" />
+      <label for="mango-sorbet-radio">Mango Sorbet </label>
+    </fieldset>
+  </div>
+  <p>
+    A radio group and a select can both be used for similar purposes - getting a selection from the
+    user. The differences between the two are mostly design related. A select puts emphasis on the
+    selected option while a radio group places emphasis equally. Selects are also better suited for
+    more options since each option in a radio group takes up screen space.
+  </p>
+  <h2>States</h2>
+  <div class="card column example shrink">
+    <div>
+      <input type="radio" id="hover-radio" />
+      <label for="hover-radio" class="hover">Hover</label>
+    </div>
+    <div>
+      <input type="radio" id="focus-radio" class="focus" />
+      <label for="focus-radio">Focus</label>
+    </div>
+    <div>
+      <input type="radio" id="active-radio" />
+      <label for="active-radio" class="active">Active</label>
+    </div>
+    <div>
+      <input type="radio" id="checked-radio" checked />
+      <label for="checked-radio">Checked</label>
+    </div>
+    <div>
+      <input type="radio" id="disabled-radio" disabled />
+      <label for="disabled-radio">Disabled</label>
+    </div>
+  </div>
+  <p>Like other interactive controls, the radio button squishes slightly when clicked.</p>
+</div>
+
+      </main>
+    </div>
+  </body>
+</html>

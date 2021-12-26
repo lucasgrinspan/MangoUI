@@ -1334,15 +1334,15 @@ input[type=radio] + label::before {
   height: 1.125rem;
   background-color: var(--page-background);
 }
-input[type=radio] + label:hover::before {
+input[type=radio] + label:hover::before, input[type=radio] + label.hover::before {
   background-color: var(--surface-hover);
 }
-input[type=radio] + label:active {
+input[type=radio] + label:active, input[type=radio] + label.active {
   transform: scale(0.95);
 }
-input[type=radio]:focus + label::before {
-  outline: 2px solid var(--primary);
-  outline-offset: -1px;
+input[type=radio]:focus + label::before, input[type=radio].focus + label::before {
+  outline: none;
+  box-shadow: 0 0 0 3pt var(--primary-hover);
 }
 input[type=radio]:checked + label::after {
   --dimensions: 0.75rem;
@@ -1356,6 +1356,20 @@ input[type=radio]:checked + label::after {
   width: var(--dimensions);
   height: var(--dimensions);
   background-color: var(--primary);
+}
+input[type=radio]:disabled + label {
+  color: var(--disabled-text);
+}
+input[type=radio]:disabled + label::before {
+  background-color: var(--disabled-background-light);
+  border: 1px solid var(--disabled-text);
+  color: var(--disabled-text);
+}
+input[type=radio]:disabled + label:active {
+  transform: none;
+}
+input[type=radio]:disabled + label:hover {
+  cursor: not-allowed;
 }
 
 select {

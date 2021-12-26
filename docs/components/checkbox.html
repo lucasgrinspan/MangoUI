@@ -23,6 +23,7 @@
               <li><a href="../components/disclosure" >Disclosure</a></li>
               <li><a href="../components/input" >Input</a></li>
               <li><a href="../components/progress" >Progress</a></li>
+              <li><a href="../components/radio" >Radio</a></li>
           </ul>
         </li>
   </ul>
@@ -32,12 +33,13 @@
   <h2>Checkbox</h2>
   <dl>
     <dt>Selector</dt>
-    <dd><code>input[type="radio"] + label</code></dd>
+    <dd><code>input[type="checkbox"] + label</code></dd>
   </dl>
   <p>
     Checkboxes are used when the user must select any number of available options, including zero.
     If you have a form with multiple, related checkboxes, surround them with a
-    <code>&lt;fieldset /&gt;</code> tag to visually and semantically group them.
+    <code>&lt;fieldset /&gt;</code> tag to visually and semantically group them. When you do this,
+    make sure to also provide a <code>&lt;legend /&gt;</code> as the first child to label them.
   </p>
   <div class="card column example shrink">
     <fieldset>

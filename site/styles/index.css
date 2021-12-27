@@ -16,3 +16,16 @@
 #transition-wave {
   width: 100%;
 }
+
+#mangoui-logo {
+  width: 2.3rem;
+  height: 1.125rem;
+  vertical-align: top;
+  stroke: var(--text);
+  fill: var(--text);
+  transition: fill 150ms ease-in-out, stroke 150ms ease-in-out;
+}
+header nav a:hover #mangoui-logo {
+  fill: var(--link-hover);
+  stroke: var(--link-hover);
+}

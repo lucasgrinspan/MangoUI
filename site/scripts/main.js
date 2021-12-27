@@ -15,12 +15,17 @@ navToggleButton.addEventListener("click", () => {
   navToggleButton.innerText = targetMessage;
 });
 
-// theme toggle menu
+// theme handlers
+const root = document.getElementsByTagName("html")[0];
+document.getElementById(mangoUiTheme).ariaChecked = true;
+
 const themeButtons = document.querySelectorAll("#theme-picker-container button");
-const root = document.querySelector("html");
+
+// theme toggle menu
 Array.from(themeButtons).forEach((themeButton) => {
   themeButton.addEventListener("click", ({ target }) => {
     const theme = target.id;
     root.dataset.theme = theme;
+    localStorage.setItem("mango-theme", theme);
   });
 });

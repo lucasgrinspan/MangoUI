@@ -1,6 +1,33 @@
 @use "../utils.scss";
 @use "../tokens";
 
+@mixin use-checkbox {
+  &::before {
+    display: inline-block;
+    content: "";
+    vertical-align: top;
+    transition: tokens.$effect-transition;
+    box-sizing: content-box;
+
+    margin-right: tokens.$tight;
+    border: tokens.$border;
+    border-radius: tokens.$radius-small;
+    width: 1.125rem;
+    height: 1.125rem;
+    background-color: utils.v(page-background);
+  }
+  &:hover::before,
+  &.hover::before {
+    background-color: utils.v(surface-hover);
+  }
+}
+@mixin use-checkbox-checked {
+  @include tokens.use-icon;
+  font-size: 1.125rem;
+  content: tokens.$check;
+  background-color: utils.v(primary);
+}
+
 input[type="checkbox"] {
   position: absolute;
   opacity: 0;
@@ -12,28 +39,12 @@ input[type="checkbox"] {
     transition: tokens.$effect-transition;
     width: max-content;
 
-    &::before {
-      display: inline-block;
-      content: "";
-      vertical-align: top;
-      transition: tokens.$effect-transition;
-      box-sizing: content-box;
-
-      margin-right: tokens.$tight;
-      border: tokens.$border;
-      border-radius: tokens.$radius-small;
-      width: 1.125rem;
-      height: 1.125rem;
-      background-color: utils.v(page-background);
-    }
-    &:hover::before,
-    &.hover::before {
-      background-color: utils.v(surface-hover);
-    }
     &:active,
     &.active {
       transform: tokens.$squish;
     }
+
+    @include use-checkbox;
   }
 
   &:focus + label::before,
@@ -42,10 +53,7 @@ input[type="checkbox"] {
   }
 
   &:checked + label::before {
-    @include tokens.use-icon;
-    font-size: 1.125rem;
-    content: tokens.$check;
-    background-color: utils.v(primary);
+    @include use-checkbox-checked;
   }
 
   &:disabled + label {

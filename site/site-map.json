@@ -21,6 +21,7 @@
       { "title": "Checkbox", "slug": "checkbox" },
       { "title": "Disclosure", "slug": "disclosure" },
       { "title": "Input", "slug": "input" },
+      { "title": "Menu", "slug": "menu" },
       { "title": "Progress", "slug": "progress" },
       { "title": "Radio", "slug": "radio" },
       { "title": "Select", "slug": "select" },

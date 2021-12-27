@@ -11,6 +11,8 @@ nav[data-orientation="vertical"] {
 
   > ul li {
     border-top: tokens.$border;
+    margin-bottom: 0;
+    margin-top: 0;
 
     a {
       display: block;

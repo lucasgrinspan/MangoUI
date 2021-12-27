@@ -1,0 +1,110 @@
+<h1>Menu</h1>
+<dl>
+  <dt>Selector</dt>
+  <dd>
+    <code>button[aria-haspopup="menu"]</code>, <code>[role="menu"]</code>,
+    <code>button[role="menuitem"]</code>
+  </dd>
+  <dt>Requires JavaScript</dt>
+  <dd>
+    <code>[data-functionality="menu"]</code>
+  </dd>
+</dl>
+<p>
+  The menu is an interactive element that allows the user to select an action from a list of options. Unlike the select,
+  radio, or checkboxes, the menu doesn't hold values for form submission. Instead it usually performas an action on the
+  page. The component follows the recommendation of the <a
+    href="https://www.w3.org/TR/wai-aria-practices-1.2/#menu">WAI-ARIA authoring practices</a>, thus requiring the
+  <code>mango.js</code> file to manage the ARIA attributes and keyboard navigation. To provide a target for the script,
+  add a wrapping div with
+  the <code>data-functionality="menu"</code> attribute.
+</p>
+<p>
+  Follow the example below to properly construct the menu. The menu button should take an <code>aria-controls</code>
+  attribute pointing to the menu container. That container should take an <code>aria-labelledby</code> attribute
+  pointing to the menu button. Additionally, provide a starting <code>tabindex</code> of <code>-1</code> to allow the
+  script to handle focus management.
+</p>
+<div class="card example shrink">
+  <div data-functionality="menu">
+    <button aria-haspopup="menu" aria-controls="menu-example" aria-expanded="false" id="menu-button">Show
+      actions</button>
+    <div id="menu-example" role="menu" aria-labelledby="menu-button" hidden>
+      <button role="menuitem" tabindex="-1">Slice</button>
+      <button role="menuitem" tabindex="-1">Eat</button>
+      <button role="menuitem" tabindex="-1">Gift</button>
+      <button role="menuitem" tabindex="-1">Discard</button>
+    </div>
+  </div>
+</div>
+<h2>Variations</h2>
+<p>By using <code>role="menuitemcheckbox"</code> and <code>aria-checked="false"</code>, each menu item will follow a
+  checkbox pattern, where multiple items can be selected.</p>
+<div class="card example shrink">
+  <div data-functionality="menu">
+    <button aria-haspopup="menu" aria-controls="menu-checkbox" aria-expanded="false" id="menu-checkbox-example">Choose
+      activities
+    </button>
+    <div id="menu-checkbox" role="menu" aria-labelledby="menu-checkbox-example" hidden>
+      <button role="menuitemcheckbox" tabindex="-1" aria-checked="false">Bounce</button>
+      <button role="menuitemcheckbox" tabindex="-1" aria-checked="false">Rock</button>
+      <button role="menuitemcheckbox" tabindex="-1" aria-checked="false">Skate</button>
+      <button role="menuitemcheckbox" tabindex="-1" aria-checked="false">Roll</button>
+    </div>
+  </div>
+</div>
+<p>By using <code>role="menuitemradio"</code> and <code>aria-checked</code>, the menu container will follow a radio
+  group pattern, only allowing one selection. Since the selection can't typically be cleared, provide a default checked
+  option to let the user know that selection is permant or required.</p>
+<div class="card example shrink">
+  <div data-functionality="menu">
+    <button aria-haspopup="menu" aria-controls="menu-radio" aria-expanded="false" id="menu-radio-example">Choose theme
+    </button>
+    <div id="menu-radio" role="menu" aria-labelledby="menu-radio-example" hidden>
+      <button role="menuitemradio" tabindex="-1" aria-checked="true">Light</button>
+      <button role="menuitemradio" tabindex="-1" aria-checked="false">Dark</button>
+      <button role="menuitemradio" tabindex="-1" aria-checked="false">Vibes 😎</button>
+    </div>
+  </div>
+</div>
+<h2>Keyboard Navigation</h2>
+<p>
+  The <code>mango.js</code> script adds keyboard navigation that follows <a
+    href="https://www.w3.org/TR/wai-aria-practices-1.2/#keyboard-interaction-12">WAI-ARIA's recommendation</a>. If
+  providing the functionality yourself, make sure to include these interactions.
+</p>
+<ul>
+  <li>
+    Menu Button
+    <ul>
+      <li>Clicking or pressing <kbd>Space</kbd> or <kbd>Enter</kbd> toggles the menu</li>
+      <li>Upon opening the menu, focus is set on the first item</li>
+    </ul>
+  </li>
+  <li>
+    Menu Item
+    <ul>
+      <li>Pressing <kbd>Enter</kbd> activates the item and closes the menu for all three variations
+        <ul>
+          <li>On the checkbox menu item, the selection is toggled</li>
+          <li>On the radio menu item, selection is swapped to the item</li>
+        </ul>
+      </li>
+      <li>
+        Pressing <kbd>Space</kbd> activates the item and closes the menu only for the standard menu item.
+        <ul>
+          <li>On the checkbox menu item, the selection is toggled and the menu is kept open</li>
+          <li>On the radio menu item, selection is swapped to the item and the menu is kept open</li>
+        </ul>
+      </li>
+      <li>Pressing <kbd>Down Arrow</kbd> moves focus to the next item</li>
+      <li>Pressing <kbd>Up Arrow</kbd> moves focus to the previous item</li>
+      <li>Pressing <kbd>Home</kbd> moves focus to the first item</li>
+      <li>Pressing <kbd>End</kbd> moves focus to the last item</li>
+      <li>Pressing <kbd>Esc</kbd> closes the menu</li>
+      <li>Pressing <kbd>Tab</kbd> closes the menu and moves focus to the next focusable element on the page</li>
+    </ul>
+  </li>
+</ul>
+<p>Clicking on a menu item will select the item and close the menu for standard menu items. For checkbox and radio menu
+  items, the menu is kept open to provide feedback to the user of the change in selection.</p>

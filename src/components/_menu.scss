@@ -1,0 +1,91 @@
+@use "../tokens";
+@use "../utils.scss";
+@use "./checkbox";
+@use "./radio";
+
+// required for menu positioning
+[data-functionality="menu"] {
+  position: relative;
+  // the menu uses this div as the width, so it fit the width of the button
+  width: fit-content;
+}
+
+button[aria-haspopup="menu"] {
+  &::before {
+    @include tokens.use-icon;
+    font-size: 1.125rem;
+    margin-right: tokens.$tight;
+    content: tokens.$right-arrow;
+  }
+
+  &[aria-expanded="true"]::before {
+    content: tokens.$down-arrow;
+  }
+
+  + [role="menu"] {
+    position: absolute;
+    top: calc(100% + tokens.$tight);
+    border-radius: tokens.$radius;
+    border: tokens.$border;
+    z-index: 10;
+    background-color: utils.v(surface);
+    overflow: none;
+    box-shadow: tokens.$shadow-medium;
+    // stretches the width to be the size of the button
+    min-width: 100%;
+
+    // applies to all three variations
+    button {
+      text-align: left;
+      background-color: utils.v(surface);
+      width: 100%;
+      border-radius: 0;
+      border: none;
+      border-bottom: tokens.$border;
+
+      &:first-child {
+        border-radius: tokens.$radius tokens.$radius 0 0;
+      }
+
+      &:last-child {
+        border-bottom: none;
+        border-radius: 0 0 tokens.$radius tokens.$radius;
+      }
+
+      &:hover {
+        background-color: utils.v(surface-hover);
+      }
+
+      &:focus {
+        @include tokens.shadow-focus-ring-inset;
+      }
+
+      &:active {
+        // it deforms the border :(
+        transform: none;
+      }
+    }
+
+    // should show a checkbox
+    button[role="menuitemcheckbox"] {
+      @include checkbox.use-checkbox;
+
+      &[aria-checked="true"]::before {
+        @include checkbox.use-checkbox-checked;
+      }
+    }
+
+    // should show a radio button
+    button[role="menuitemradio"] {
+      position: relative;
+      @include radio.use-radio;
+
+      &[aria-checked="true"]::after {
+        @include radio.use-radio-checked;
+        // have to override these due to button dimensions
+        top: 0.6875rem; // 11 / 16
+        left: 1.1875rem; // 3 / 16
+      }
+    }
+  }
+}

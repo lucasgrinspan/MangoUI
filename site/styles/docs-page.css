@@ -4,7 +4,7 @@
   flex-wrap: wrap;
 }
 .example.shrink {
-  width: min(fit-content, calc(100% - 3rem));
+  width: fit-content;
 }
 .example.nowrap {
   flex-wrap: nowrap;

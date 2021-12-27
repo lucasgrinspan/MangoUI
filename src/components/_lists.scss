@@ -7,6 +7,16 @@ dl {
     margin-bottom: tokens.$squished;
   }
   dd {
-    margin-bottom: tokens.$squished;
+    margin-bottom: tokens.$tight;
+  }
+}
+
+ul {
+  li {
+    margin-bottom: tokens.$tight;
+    margin-top: tokens.$tight;
+  }
+  ul {
+    padding-left: tokens.$cozy;
   }
 }

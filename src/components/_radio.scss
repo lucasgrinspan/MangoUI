@@ -1,6 +1,41 @@
 @use "../utils.scss";
 @use "../tokens";
 
+@mixin use-radio {
+  &::before {
+    display: inline-block;
+    content: "";
+    vertical-align: top;
+    transition: tokens.$effect-transition;
+
+    margin-right: tokens.$tight;
+    border: tokens.$border;
+    border-radius: 50%;
+    width: 1.125rem;
+    height: 1.125rem;
+    background-color: utils.v(page-background);
+  }
+  &:hover::before,
+  &.hover::before {
+    background-color: utils.v(surface-hover);
+  }
+}
+@mixin use-radio-checked {
+  // 1.125 total width
+  // 0.1875 rem (left) + 0.1875 (right) + 0.75 (width) = 1.125
+  --dimensions: 0.75rem;
+  --position: 0.1875rem;
+  content: "";
+  position: absolute;
+  top: var(--position);
+  left: var(--position);
+  display: block;
+  border-radius: 50%;
+  width: var(--dimensions);
+  height: var(--dimensions);
+  background-color: utils.v(primary);
+}
+
 input[type="radio"] {
   position: absolute;
   opacity: 0;
@@ -12,23 +47,8 @@ input[type="radio"] {
     transition: tokens.$effect-transition;
     width: max-content;
 
-    &::before {
-      display: inline-block;
-      content: "";
-      vertical-align: top;
-      transition: tokens.$effect-transition;
+    @include use-radio;
 
-      margin-right: tokens.$tight;
-      border: tokens.$border;
-      border-radius: 50%;
-      width: 1.125rem;
-      height: 1.125rem;
-      background-color: utils.v(page-background);
-    }
-    &:hover::before,
-    &.hover::before {
-      background-color: utils.v(surface-hover);
-    }
     &:active,
     &.active {
       transform: tokens.$squish;
@@ -41,19 +61,7 @@ input[type="radio"] {
   }
 
   &:checked + label::after {
-    // 1.125 total width
-    // 0.1875 rem (left) + 0.1875 (right) + 0.75 (width) = 1.125
-    --dimensions: 0.75rem;
-    --position: 0.1875rem;
-    content: "";
-    position: absolute;
-    top: var(--position);
-    left: var(--position);
-    display: block;
-    border-radius: 50%;
-    width: var(--dimensions);
-    height: var(--dimensions);
-    background-color: utils.v(primary);
+    @include use-radio-checked;
   }
 
   &:disabled + label {

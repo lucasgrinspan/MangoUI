@@ -52,36 +52,28 @@ class Menu {
 
   // toggle the selection. If "enter" was pressed, close the menu
   handleCheckboxSelection = (evt) => {
-    const { target, code } = evt;
+    const { target } = evt;
     const isSelected = target.ariaChecked === "true";
     target.ariaChecked = !isSelected;
 
-    if (code === "Enter") {
-      this.closeMenu();
-    } else {
-      this.focusItem(target);
-    }
+    this.focusItem(target);
   };
 
   // selection is enabled and aria-checked is cleared on all other
   // items. If "enter" was pressed, close the menu as well
   handleRadioSelection = (evt) => {
-    const { target, code } = evt;
+    const { target } = evt;
 
     this.items.forEach((item) => (item.ariaChecked = false));
     target.ariaChecked = true;
 
-    if (code === "Enter") {
-      this.closeMenu();
-    } else {
-      this.focusItem(target);
-    }
+    this.focusItem(target);
   };
 
   // there is different behavior depending on whether Space or Enter was
   // used for the different types of menu items: normal, checkbox, radio
-  handleItemSelect = (evt, cancelClick = false) => {
-    const role = evt.target.role;
+  handleItemSelect = (evt) => {
+    const role = evt.target.getAttribute("role");
     if (role === checkboxRole) {
       this.handleCheckboxSelection(evt);
     } else if (role === radioRole) {
@@ -89,14 +81,6 @@ class Menu {
     } else {
       // the menu should close after using a regular menuitem
       this.closeMenu();
-    }
-
-    // The 'click' event doesn't let you distinguish between Space and Enter.
-    // This is one of the few cases where that's important, so if we listen
-    // to those keys in keydown, we have to cancel the subsequent 'click'
-    // to prevent this function from executing twice
-    if (cancelClick) {
-      evt.preventDefault();
     }
   };
 
@@ -121,10 +105,6 @@ class Menu {
 
     let targetNode;
     switch (code) {
-      case "Space":
-      case "Enter":
-        // handle the selection keys for special behavior
-        return this.handleItemSelect(event, true);
       case "Escape":
         return this.closeMenu();
       case "Tab":
@@ -137,13 +117,15 @@ class Menu {
         break;
       case "Home":
         targetNode = this.items[0];
+        break;
       case "End":
         targetNode = this.items[this.items.length - 1];
+        break;
       default:
         return;
     }
 
-    // we don't want to cancel any other actions, so we call it here
+    // we only want to prevent default of the arrow keys
     event.preventDefault();
 
     this.focusItem(targetNode);

@@ -14,3 +14,13 @@ navToggleButton.addEventListener("click", () => {
   navToggleButton.classList.toggle("icon-down-arrow", !isExpanded);
   navToggleButton.innerText = targetMessage;
 });
+
+// theme toggle menu
+const themeButtons = document.querySelectorAll("#theme-picker-container button");
+const root = document.querySelector("html");
+Array.from(themeButtons).forEach((themeButton) => {
+  themeButton.addEventListener("click", ({ target }) => {
+    const theme = target.id;
+    root.dataset.theme = theme;
+  });
+});

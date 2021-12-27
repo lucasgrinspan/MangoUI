@@ -20,9 +20,10 @@ header:not(main header) {
     margin-left: auto;
     max-width: tokens.$content-width;
     width: 100%;
-    padding: tokens.$cozy;
+    padding: tokens.$tight;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     a {
       // my reasoning is that links are easily identifiable in a top nav

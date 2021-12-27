@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server -s & npm run build:watch",
-    "build": "npm run build:icons && npm run build:docs && npm run build:styles",
+    "build": "npm run build:icons && npm run build:docs && npm run build:styles && npm run build:js",
     "build:styles": "sass src/main.scss dist/mango.scss",
     "build:js": "webpack --config webpack.config.js",
     "build:icons": "fantasticon",

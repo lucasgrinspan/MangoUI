@@ -1252,9 +1252,10 @@ header:not(main header) nav {
   margin-left: auto;
   max-width: 1200px;
   width: 100%;
-  padding: 1rem;
+  padding: 0.5rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 header:not(main header) nav a {
   text-decoration: none;
@@ -1741,4 +1742,4 @@ img {
   height: auto;
 }
 
-/*# sourceMappingURL=mango.scss.map */
+/*# sourceMappingURL=mango.css.map */

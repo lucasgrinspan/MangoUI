@@ -39,6 +39,19 @@
 
           Mango UI
         </a>
+        <div data-functionality="menu">
+          <button
+            aria-haspopup="menu"
+            aria-controls="theme-picker-container"
+            aria-expanded="false"
+            id="theme-picker-button"
+          >Choose theme</button>
+          <div role="menu" id="theme-picker-container" aria-labelledby="theme-picker-button" hidden>
+            <button role="menuitemradio" tabindex="-1" aria-checked="false">Sunset</button>
+            <button role="menuitemradio" tabindex="-1" aria-checked="false">Mango Wine</button>
+            <button role="menuitemradio" tabindex="-1" aria-checked="false">Sprout</button>
+          </div>
+        </div>
       </nav>
     </header>
     <div class="container">

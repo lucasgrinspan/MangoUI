@@ -1,191 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MangoUI Components</title>
-    <link rel="stylesheet" href="./dist/mango.css" />
-  </head>
-  <body>
-    <div class="container stack-vertical pt-cozy pb-cozy">
-      <div class="card">
-        <h1 style="margin-bottom: 0">Mango UI</h1>
-      </div>
-      <div class="card">
-        <h2>Buttons</h2>
-        <div class="row">
-          <button>Eat mango</button>
-          <button class="outline">Save for later</button>
-          <button class="ghost">Exit</button>
-        </div>
-      </div>
-      <div class="card">
-        <h2>Checkbox</h2>
-        <div class="stack-vertical">
-          <fieldset>
-            <legend>Which dishes you like to demo?</legend>
-            <input type="checkbox" id="mango-cake" />
-            <label for="mango-cake">Mango Cake </label>
-            <input type="checkbox" id="mango-salad" />
-            <label for="mango-salad">Mango Quinoa Salad </label>
-            <input type="checkbox" id="mango-sorbet" />
-            <label for="mango-sorbet">Mango Sorbet </label>
-          </fieldset>
 
-          <div>
-            <input type="checkbox" id="checkbox-test" />
-            <label for="checkbox-test"> A checkbox on its own </label>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <h2>Radio Inputs</h2>
-        <fieldset>
-          <legend>Which dish would you like to demo?</legend>
-          <input type="radio" id="mango-cake-radio" name="radio-dishes" />
-          <label for="mango-cake-radio">Mango Cake </label>
-          <input type="radio" id="mango-salad-radio" name="radio-dishes" />
-          <label for="mango-salad-radio">Mango Quinoa Salad </label>
-          <input type="radio" id="mango-sorbet-radio" name="radio-dishes" />
-          <label for="mango-sorbet-radio">Mango Sorbet </label>
-        </fieldset>
-      </div>
-      <div class="card">
-        <h2>Links</h2>
-        <a href="#">Mango Recipes</a>
-        |
-        <a href="#">Mango Fan Club</a>
-        |
-        <a href="#">Mangology</a>
-      </div>
-      <div class="card">
-        <h2>Alert</h2>
-        <div class="stack-vertical">
-          <div role="alert">Mangos are a great source of Vitamin C!</div>
-          <div role="alert" class="success">3 mangos successfully ordered.</div>
-          <div role="alert" class="warning">You have 2 mangos left.</div>
-          <div role="alert" class="danger">You have no mangos left.</div>
-        </div>
-      </div>
-      <div class="card">
-        <h2>Input</h2>
-        <div class="field">
-          <label for="input-test">Name your mango:</label>
-          <input type="text" id="input-test" />
-        </div>
-      </div>
-      <div class="card">
-        <h2>Select</h2>
-        <div class="field">
-          <label for="select-test">What's your favorite kind of mango?</label>
-          <select id="select-test">
-            <option>Honey</option>
-            <option>Francis</option>
-            <option>Haden</option>
-            <option>Keitt</option>
-          </select>
-        </div>
-      </div>
-      <div class="card">
-        <h2>Disclosure</h2>
-        <div class="stack-vertical">
-          <div class="disclosure-group">
-            <details open>
-              <summary>National Mango Recognition</summary>
-              The Mango is the national fruit of Pakistan, India, and the Philippines.
-            </details>
-            <details>
-              <summary>National Mango Recognition</summary>
-              The Mango is the national fruit of Pakistan, India, and the Philippines.
-            </details>
-            <details>
-              <summary>National Mango Recognition</summary>
-              The Mango is the national fruit of Pakistan, India, and the Philippines.
-            </details>
-          </div>
-          <details>
-            <summary>A disclosure on its own</summary>
-            Hello!
-          </details>
-        </div>
-      </div>
-      <div class="card">
-        <h2>Table</h2>
-        <table>
-          <caption>
-            Yearly mango exports for countries
-          </caption>
-          <tr>
-            <th scope="col">Country</th>
-            <th scope="col">Market Share</th>
-            <th scope="col">Export Value</th>
-            <th scope="col">YoY Growth</th>
-          </tr>
-          <tr>
-            <td>Thailand</td>
-            <td>15.25%</td>
-            <td>$570.65M</td>
-            <td>-8.74%</td>
-          </tr>
-          <tr>
-            <td>Mexico</td>
-            <td>12.29%</td>
-            <td>$459.8M</td>
-            <td>+3.15%</td>
-          </tr>
-          <tr>
-            <td>Netherlands</td>
-            <td>11.1%</td>
-            <td>$415.6M</td>
-            <td>+13.08%</td>
-          </tr>
-          <tr>
-            <td>Peru</td>
-            <td>11.1%</td>
-            <td>$415.5M</td>
-            <td>+51.88%</td>
-          </tr>
-          <tr>
-            <td>Brazil</td>
-            <td>6.81%</td>
-            <td>$254.96M</td>
-            <td>+11.39%</td>
-          </tr>
-        </table>
-      </div>
-      <div class="card">
-        <h2>Progress Bar</h2>
-        <div class="stack-vertical">
-          <div>
-            <label for="indeterminate-progress">Loading mangos...</label>
-            <progress id="indeterminate-progress"></progress>
-          </div>
-          <div>
-            <label for="determinate-progress">30 out of 100 mangos loaded</label>
-            <progress value="30" max="100" id="determinate-progress">30%</progress>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <h2>Side Navigation</h2>
-        <nav data-orientation="vertical">
-          <ul>
-            <li><a href="#">First Page</a></li>
-            <li><a href="#" aria-current="page">Second Page</a></li>
-            <li>
-              <a href="#">Third Page</a>
-              <ul>
-                <li><a href="#">First Subpage</a></li>
-                <li><a href="#">Second Subpage</a></li>
-                <li><a href="#">Third Subpage</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Fourth Page</a></li>
-            <li><a href="#">Fifth Page</a></li>
-          </ul>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MangoUI Components</title>
+  <link rel="stylesheet" href="./dist/mango.css" />
+</head>
+
+<body>
+  <div class="container stack-vertical pt-cozy pb-cozy">
+    <div class="card">
+      <h1 style="margin-bottom: 0">Mango UI</h1>
+    </div>
+    <div class="card">
+      <h2>Buttons</h2>
+      <div class="row">
+        <button>Eat mango</button>
+        <button class="outline">Save for later</button>
+        <button class="flat">Exit</button>
       </div>
     </div>
-  </body>
+    <div class="card">
+      <h2>Checkbox</h2>
+      <div class="stack-vertical">
+        <fieldset>
+          <legend>Which dishes you like to demo?</legend>
+          <input type="checkbox" id="mango-cake" />
+          <label for="mango-cake">Mango Cake </label>
+          <input type="checkbox" id="mango-salad" />
+          <label for="mango-salad">Mango Quinoa Salad </label>
+          <input type="checkbox" id="mango-sorbet" />
+          <label for="mango-sorbet">Mango Sorbet </label>
+        </fieldset>
+
+        <div>
+          <input type="checkbox" id="checkbox-test" />
+          <label for="checkbox-test"> A checkbox on its own </label>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Radio Inputs</h2>
+      <fieldset>
+        <legend>Which dish would you like to demo?</legend>
+        <input type="radio" id="mango-cake-radio" name="radio-dishes" />
+        <label for="mango-cake-radio">Mango Cake </label>
+        <input type="radio" id="mango-salad-radio" name="radio-dishes" />
+        <label for="mango-salad-radio">Mango Quinoa Salad </label>
+        <input type="radio" id="mango-sorbet-radio" name="radio-dishes" />
+        <label for="mango-sorbet-radio">Mango Sorbet </label>
+      </fieldset>
+    </div>
+    <div class="card">
+      <h2>Links</h2>
+      <a href="#">Mango Recipes</a>
+      |
+      <a href="#">Mango Fan Club</a>
+      |
+      <a href="#">Mangology</a>
+    </div>
+    <div class="card">
+      <h2>Alert</h2>
+      <div class="stack-vertical">
+        <div role="alert">Mangos are a great source of Vitamin C!</div>
+        <div role="alert" class="success">3 mangos successfully ordered.</div>
+        <div role="alert" class="warning">You have 2 mangos left.</div>
+        <div role="alert" class="danger">You have no mangos left.</div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Input</h2>
+      <div class="field">
+        <label for="input-test">Name your mango:</label>
+        <input type="text" id="input-test" />
+      </div>
+    </div>
+    <div class="card">
+      <h2>Select</h2>
+      <div class="field">
+        <label for="select-test">What's your favorite kind of mango?</label>
+        <select id="select-test">
+          <option>Honey</option>
+          <option>Francis</option>
+          <option>Haden</option>
+          <option>Keitt</option>
+        </select>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Disclosure</h2>
+      <div class="stack-vertical">
+        <div class="disclosure-group">
+          <details open>
+            <summary>National Mango Recognition</summary>
+            The Mango is the national fruit of Pakistan, India, and the Philippines.
+          </details>
+          <details>
+            <summary>National Mango Recognition</summary>
+            The Mango is the national fruit of Pakistan, India, and the Philippines.
+          </details>
+          <details>
+            <summary>National Mango Recognition</summary>
+            The Mango is the national fruit of Pakistan, India, and the Philippines.
+          </details>
+        </div>
+        <details>
+          <summary>A disclosure on its own</summary>
+          Hello!
+        </details>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Table</h2>
+      <table>
+        <caption>
+          Yearly mango exports for countries
+        </caption>
+        <tr>
+          <th scope="col">Country</th>
+          <th scope="col">Market Share</th>
+          <th scope="col">Export Value</th>
+          <th scope="col">YoY Growth</th>
+        </tr>
+        <tr>
+          <td>Thailand</td>
+          <td>15.25%</td>
+          <td>$570.65M</td>
+          <td>-8.74%</td>
+        </tr>
+        <tr>
+          <td>Mexico</td>
+          <td>12.29%</td>
+          <td>$459.8M</td>
+          <td>+3.15%</td>
+        </tr>
+        <tr>
+          <td>Netherlands</td>
+          <td>11.1%</td>
+          <td>$415.6M</td>
+          <td>+13.08%</td>
+        </tr>
+        <tr>
+          <td>Peru</td>
+          <td>11.1%</td>
+          <td>$415.5M</td>
+          <td>+51.88%</td>
+        </tr>
+        <tr>
+          <td>Brazil</td>
+          <td>6.81%</td>
+          <td>$254.96M</td>
+          <td>+11.39%</td>
+        </tr>
+      </table>
+    </div>
+    <div class="card">
+      <h2>Progress Bar</h2>
+      <div class="stack-vertical">
+        <div>
+          <label for="indeterminate-progress">Loading mangos...</label>
+          <progress id="indeterminate-progress"></progress>
+        </div>
+        <div>
+          <label for="determinate-progress">30 out of 100 mangos loaded</label>
+          <progress value="30" max="100" id="determinate-progress">30%</progress>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Side Navigation</h2>
+      <nav data-orientation="vertical">
+        <ul>
+          <li><a href="#">First Page</a></li>
+          <li><a href="#" aria-current="page">Second Page</a></li>
+          <li>
+            <a href="#">Third Page</a>
+            <ul>
+              <li><a href="#">First Subpage</a></li>
+              <li><a href="#">Second Subpage</a></li>
+              <li><a href="#">Third Subpage</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Fourth Page</a></li>
+          <li><a href="#">Fifth Page</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</body>
+
 </html>

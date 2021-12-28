@@ -116,10 +116,45 @@
           </div>
         </div>
         <main>
-          <div>
-  <h1>Components</h1>
+          <h1>Components</h1>
+<p>
+  Component styles are provided through the <code>mango.css</code> file, using minimal class names to enforce semantic
+  HTML. Across the Internet, a common accessibility issue is that the visuals of a component don't match the semantics.
+  For example, some
+  component libraries expose a <code>.selected</code> class that will style a component in the selected state.
+  Developers will apply that class without updating the semantics in the HTML as well
+  (<code>aria-selected="true"</code>). Screen readers can't perceive the different classes applied and are now unable to
+  properly use the component.
+</p>
+<p>
+  The strength of Mango UI is that it tightly couples the styling with the semantics. Instead of using a
+  <code>.selected</code> class, the stylesheet takes advantage of CSS selectors to target components with the relevant
+  ARIA attributes. For example, to style an active nav link, use <code>&lt;a aria-current="true" /&gt;</code> or to
+  style a menu button, use <code>&lt;button aria-haspopup="menu" /&gt;</code>. No other class names are required!
+</p>
+<p>
+  In each component page, the selectors required are listed at the start to show the expected markup or you can inspect
+  the example boxes, which are always shown in a slightly darker background, like so:
+</p>
+<div class="card example shrink">
+  <details>
+    <summary>How can you tell if a tree is a dogwood tree?</summary>
+    By the bark.
+  </details>
 </div>
-
+<p>
+  Some components use JavaScript to handle things like focus management and ARIA attributes. If so, the page will
+  indicate that you have to include the <code>mango.js</code> file as well. If desired, you can also use your own
+  implementation as long as you follow the ARIA semantics. None of the styles are ever provided in the
+  JavaScript file, making it easy to replace functionality.
+</p>
+<p>
+  Anyways, thanks for checking out Mango UI! Check out the <a
+    href="https://github.com/lucasgrinspan/MangoUI/tree/main/src/components"><code>src/components</code></a> folder on
+  GitHub to see all of the SCSS implementations. The JavaScript is available in the <a
+    href="https://github.com/lucasgrinspan/MangoUI/tree/main/src/js"><code>src/js</code></a> directory. Feel free to
+  raise any issues or PRs in the repository. Remember, it takes two to mango 😄
+</p>
         </main>
       </div>
     </div>

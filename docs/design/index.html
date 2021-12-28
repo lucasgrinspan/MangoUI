@@ -116,30 +116,154 @@
           </div>
         </div>
         <main>
-          <div>
-  <h1>Miami Mangos</h1>
-  <p>
-    Growing up, I had a mango tree. So did some of my friends. Late summer rained endless mangos
-    onto my backyard and mango vendors would line some of the roads nearby. A visit to a friend's
-    house could start with abuela's mango smoothie and end with mango smiles.
-  </p>
-  <h2>Design</h2>
-  <p>
-    MangoUI started as an experiment to transfer these experiences to a website. The colors are
-    lifted directly from the fruit. Controls depress slightly when clicked, similar to pressing a
-    ripe mango. The fonts, icons, and components are designed to only be round.
-  </p>
-  <div>
-    <img
-      src="../assets/mango-colors.png"
-      alt="A mango showing colors of red, orange, and green"
-      loading="lazy"
-      style="width: 65%; margin: auto; display: block"
-      class="rounded"
-    />
+          <h1>Miami Mangos</h1>
+<p>
+  Growing up, I had a mango tree. So did some of my friends. Late summer rained endless mangos
+  onto my backyard and mango vendors would line some of the roads nearby. A visit to a friend's
+  house could start with abuela's mango smoothie and end with mango smiles.
+</p>
+<p>Mango UI started as an experiment to transfer these experiences to a website. Using the fruit as inspiration, I
+  came up with deisgn tokens that felt to me most like the freshness the fruit exudes.</p>
+<h2>Color</h2>
+<p>
+  The colors are lifted directly from a mango I found at Publix. Lightening and darkening the tones let me construct
+  the rest of the palette as well.
+</p>
+<div>
+  <img src="../assets/mango-colors.png" alt="A mango showing colors of red, orange, and green" loading="lazy"
+    style="width: 65%; margin: 1rem auto; display: block" class="rounded" />
+</div>
+<p>
+  Mango UI comes in three themes, sunset (orange), mango wine (red), and succulent (green).
+</p>
+<div class="palette-example">
+  <div class="background-orange">Sunset</div>
+  <div class="background-red">Mango Wine</div>
+  <div class="background-green">Succulent</div>
+  <div class="background-orange-white"></div>
+  <div class="background-red-white"></div>
+  <div class="background-green-white"></div>
+  <div class="background-orange-lightest"></div>
+  <div class="background-red-lightest"></div>
+  <div class="background-green-lightest"></div>
+  <div class="background-orange-lighter"></div>
+  <div class="background-red-lighter"></div>
+  <div class="background-green-lighter"></div>
+  <div class="background-orange-light"></div>
+  <div class="background-red-light"></div>
+  <div class="background-green-light"></div>
+  <div class="background-orange"></div>
+  <div class="background-red"></div>
+  <div class="background-green"></div>
+  <div class="background-orange-darker"></div>
+  <div class="background-red-darker"></div>
+  <div class="background-green-darker"></div>
+  <div class="background-orange-darkest"></div>
+  <div class="background-red-darkest"></div>
+  <div class="background-green-darkest"></div>
+  <div class="background-orange-black"></div>
+  <div class="background-red-black"></div>
+  <div class="background-green-black"></div>
+</div>
+<h2>Spacing</h2>
+<p>Mango UI works in increments of 0.5 or 0.25 <code>rem</code>. There are five spacings:</p>
+<div class="example shrink card row-comfortable">
+  <div class="flex flex-column flex-align-center">
+    <div>Squished</div>
+    <div class="squished-square background-text mt-cozy"></div>
+  </div>
+  <div class="flex flex-column flex-align-center">
+    <div>Tight</div>
+    <div class="tight-square background-text mt-cozy"></div>
+  </div>
+  <div class="flex flex-column flex-align-center">
+    <div>Cozy</div>
+    <div class="cozy-square background-text mt-cozy"></div>
+  </div>
+  <div class="flex flex-column flex-align-center">
+    <div>Comfortable</div>
+    <div class="comfortable-square background-text mt-cozy"></div>
+  </div>
+  <div class="flex flex-column flex-align-center">
+    <div style="width: max-content">Socially Distanced</div>
+    <div class="socially-distanced-square background-text mt-cozy"></div>
   </div>
 </div>
-
+<p>Typically, <code>tight</code> spacing is used for internal paddings and <code>cozy</code> is used for space between
+  components. All of the spacings are available in classes with the <code>.{m/p}{side}-{spacing}</code> syntax, where
+  side
+  is a single letter and spacing is the amount of spacing. For example <code>mt-cozy pb-comfortable</code> would add
+  <code>cozy</code> spacing above and <code>comfortable</code> padding below.
+</p>
+<h2>Motion</h2>
+<p>All motion and transitions are timed to take 150ms to keep changes snappy and quick. Additionally, most interactive
+  controls squish when clicked or tapped, mimicking the softness of a ripe mango. This is always a 95% scale transform.
+  Some interactive elements don't squish since I didn't want to have to complicate the HTML markup required to achieve
+  the squish.
+</p>
+<h2>Icons</h2>
+<p>
+  The icons were designed by me and can be used with the <code>icon icon-{name}</code> classes. They're intended to be
+  small, cute, and fairly round with thick strokes.
+</p>
+<div class="card example icons-example">
+  <div class="flex flex-column flex-align-center">
+    <span class="icon icon-accessibility"></span>
+    <code>accessibility</code>
+  </div>
+  <div class="flex flex-column flex-align-center">
+    <span class="icon icon-check-circle"></span>
+    <code>check-circle</code>
+  </div>
+  <div class="flex flex-column flex-align-center">
+    <span class="icon icon-check"></span>
+    <code>check</code>
+  </div>
+  <div class="flex flex-column flex-align-center">
+    <span class="icon icon-code"></span>
+    <code>code</code>
+  </div>
+  <div class="flex flex-column flex-align-center">
+    <span class="icon icon-down-arrow"></span>
+    <code>down-arrow</code>
+  </div>
+  <div class="flex flex-column flex-align-center">
+    <span class="icon icon-download"></span>
+    <code>download</code>
+  </div>
+  <div class="flex flex-column flex-align-center">
+    <span class="icon icon-info-circle"></span>
+    <code>info-circle</code>
+  </div>
+  <div class="flex flex-column flex-align-center">
+    <span class="icon icon-left-arrow"></span>
+    <code>left-arrow</code>
+  </div>
+  <div class="flex flex-column flex-align-center">
+    <span class="icon icon-lock"></span>
+    <code>lock</code>
+  </div>
+  <div class="flex flex-column flex-align-center">
+    <span class="icon icon-right-arrow"></span>
+    <code>right-arrow</code>
+  </div>
+  <div class="flex flex-column flex-align-center">
+    <span class="icon icon-sparkle"></span>
+    <code>sparkle</code>
+  </div>
+  <div class="flex flex-column flex-align-center">
+    <span class="icon icon-up-arrow"></span>
+    <code>up-arrow</code>
+  </div>
+  <div class="flex flex-column flex-align-center">
+    <span class="icon icon-upload"></span>
+    <code>upload</code>
+  </div>
+  <div class="flex flex-column flex-align-center">
+    <span class="icon icon-warning"></span>
+    <code>warning</code>
+  </div>
+</div>
         </main>
       </div>
     </div>

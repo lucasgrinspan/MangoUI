@@ -1,7 +1,13 @@
 {
   "name": "mango-ui",
   "version": "1.0.0",
+  "author": "Lucas Grinspan",
   "description": "A fresh design system",
+  "homepage": "https://lucasgrinspan.github.io/MangoUI/docs/",
+  "files": [
+    "dist",
+    "assets"
+  ],
   "main": "index.js",
   "scripts": {
     "start": "http-server -s & npm run build:styles:watch",
@@ -14,7 +20,6 @@
     "build:styles:watch": "sass src/main.scss dist/mango.css --watch",
     "build:docs:watch": "nodemon --watch site -e html,hbs,js,json,css,svg site/build.js"
   },
-  "author": "Lucas Grinspan",
   "license": "MIT",
   "devDependencies": {
     "fantasticon": "^1.2.3",

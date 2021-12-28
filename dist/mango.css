@@ -1007,6 +1007,8 @@ html, html[data-theme=sunset] {
   --text: #322000;
   --code-text: #651a1a;
   --code-background: #ffecec;
+  --block-code-text: #ffecec;
+  --block-code-backgrond: #4c1414;
   --kbd-text: #0f3059;
   --kbd-background: #e9f2fc;
   --disabled-text: #838383;
@@ -1052,6 +1054,8 @@ html[data-theme=mango-wine] {
   --text: #2f1c1c;
   --code-text: #651a1a;
   --code-background: #ffecec;
+  --block-code-text: #ffecec;
+  --block-code-backgrond: #4c1414;
   --kbd-text: #0f3059;
   --kbd-background: #e9f2fc;
   --disabled-text: #838383;
@@ -1097,6 +1101,8 @@ html[data-theme=succulent] {
   --text: #262a05;
   --code-text: #651a1a;
   --code-background: #ffecec;
+  --block-code-text: #e9f9e9;
+  --block-code-backgrond: #072607;
   --kbd-text: #0f3059;
   --kbd-background: #e9f2fc;
   --disabled-text: #838383;
@@ -1127,6 +1133,7 @@ html[data-theme=succulent] {
   width: 100%;
   max-width: 100%;
   flex: 1 0 0%;
+  min-width: 0;
 }
 
 .col-shrink {
@@ -1162,6 +1169,10 @@ html[data-theme=succulent] {
   gap: 1rem;
 }
 
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
 .flex-column {
   flex-direction: column;
 }
@@ -1195,6 +1206,10 @@ html[data-theme=succulent] {
   flex-basis: 100%;
 }
 
+.flex-basis-auto {
+  flex-basis: auto;
+}
+
 .field {
   display: flex;
   flex-direction: column;
@@ -1206,6 +1221,10 @@ html[data-theme=succulent] {
 
 .fluid {
   width: 100% !important;
+}
+
+.w-max-content {
+  width: max-content !important;
 }
 
 :active.no-squish {
@@ -1404,6 +1423,16 @@ button > span[role=alert]::before,
 a code {
   text-decoration-color: var(--code-text);
   text-decoration: underline;
+}
+
+pre {
+  max-width: 100%;
+  overflow-x: scroll;
+  background-color: var(--block-code-backgrond);
+  color: var(--block-code-text);
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1rem;
 }
 
 code {

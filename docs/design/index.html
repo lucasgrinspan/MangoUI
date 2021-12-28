@@ -167,25 +167,25 @@
 </div>
 <h2>Spacing</h2>
 <p>Mango UI works in increments of 0.5 or 0.25 <code>rem</code>. There are five spacings:</p>
-<div class="example shrink card row-comfortable">
-  <div class="flex flex-column flex-align-center">
+<div class="example card row-comfortable">
+  <div class="flex flex-column flex-align-center flex-basis-auto w-max-content">
     <div>Squished</div>
     <div class="squished-square background-text mt-cozy"></div>
   </div>
-  <div class="flex flex-column flex-align-center">
+  <div class="flex flex-column flex-align-center flex-basis-auto w-max-content">
     <div>Tight</div>
     <div class="tight-square background-text mt-cozy"></div>
   </div>
-  <div class="flex flex-column flex-align-center">
+  <div class="flex flex-column flex-align-center flex-basis-auto w-max-content">
     <div>Cozy</div>
     <div class="cozy-square background-text mt-cozy"></div>
   </div>
-  <div class="flex flex-column flex-align-center">
+  <div class="flex flex-column flex-align-center flex-basis-auto w-max-content">
     <div>Comfortable</div>
     <div class="comfortable-square background-text mt-cozy"></div>
   </div>
-  <div class="flex flex-column flex-align-center">
-    <div style="width: max-content">Socially Distanced</div>
+  <div class="flex flex-column flex-align-center flex-basis-auto w-max-content">
+    <div>Socially Distanced</div>
     <div class="socially-distanced-square background-text mt-cozy"></div>
   </div>
 </div>
@@ -194,12 +194,6 @@
   side
   is a single letter and spacing is the amount of spacing. For example <code>mt-cozy pb-comfortable</code> would add
   <code>cozy</code> spacing above and <code>comfortable</code> padding below.
-</p>
-<h2>Motion</h2>
-<p>All motion and transitions are timed to take 150ms to keep changes snappy and quick. Additionally, most interactive
-  controls squish when clicked or tapped, mimicking the softness of a ripe mango. This is always a 95% scale transform.
-  Some interactive elements don't squish since I didn't want to have to complicate the HTML markup required to achieve
-  the squish.
 </p>
 <h2>Icons</h2>
 <p>
@@ -264,6 +258,12 @@
     <code>warning</code>
   </div>
 </div>
+<h2>Motion</h2>
+<p>All motion and transitions are timed to take 150ms to keep changes snappy and quick. Additionally, most interactive
+  controls squish when clicked or tapped, mimicking the softness of a ripe mango. This is always a 95% scale transform.
+  Some interactive elements don't squish since I didn't want to have to complicate the HTML markup required to achieve
+  the squish.
+</p>
         </main>
       </div>
     </div>

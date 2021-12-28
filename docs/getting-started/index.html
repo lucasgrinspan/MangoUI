@@ -116,8 +116,22 @@
           </div>
         </div>
         <main>
-          <p>Getting started</p>
-
+          <h1>Installation</h1>
+<p>Integrating Mango UI is pretty simple, and can be installed with NPM or with a CDN.</p>
+<h2>CDN</h2>
+<p>The easiest way to install Mango UI is to use a CDN like <a href="https://www.jsdelivr.com">jsDelivr</a>. In your
+  HTML, add a <code>link</code> and <code>script</code> tag to load the components.</p>
+<pre>&lt;!-- place this in your head tag --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mango-ui-components@1.0.0/dist/mango.css" /&gt;
+  
+&lt;!-- place this at the end of your body tag --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/mango-ui-components@1.0.0/dist/mango.js"&gt;&lt;/script&gt;</pre>
+<h2>NPM</h2>
+<p>First, install the package with</p>
+<pre>npm install mango-ui-components</pre>
+Then you can include the files with an import statement if your JavaScript builder supports that:
+<pre>import 'node_modules/mango-ui-components/dist/mango.css';
+</pre>
         </main>
       </div>
     </div>

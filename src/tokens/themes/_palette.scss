@@ -1,31 +1,35 @@
+@use "../../utils.scss";
+
 // Mango Colors
-
-$mango-orange-white: #fef6e6;
-$mango-orange-lightest: #feeccc;
-$mango-orange-lighter: #fcd180;
-$mango-orange-light: #fabe4d;
-$mango-orange: #f8a200; //base
-$mango-orange-darker: #df9200;
-$mango-orange-darkest: #c68200;
-$mango-orange-black: #322000;
-
-$mango-red-white: #fdf3f3;
-$mango-red-lightest: #f7e3e3;
-$mango-red-lighter: #f4c3c3;
-$mango-red-light: #f2baba;
-$mango-red: #e98a8a;
-$mango-red-darker: #d27c7c;
-$mango-red-darkest: #ba6e6e;
-$mango-red-black: #2f1c1c;
-
-$mango-green-white: #f8fae8;
-$mango-green-lightest: #eaeec1;
-$mango-green-lighter: #d7e17a;
-$mango-green-light: #cbd854;
-$mango-green: #bdd01a;
-$mango-green-darker: #aabb17;
-$mango-green-darkest: #849212;
-$mango-green-black: #262a05;
+$mango: (
+  // sunset theme
+  orange-white: #fef6e6,
+  orange-lightest: #feeccc,
+  orange-lighter: #fcd180,
+  orange-light: #fabe4d,
+  orange: #f8a200,
+  orange-darker: #df9200,
+  orange-darkest: #c68200,
+  orange-black: #322000,
+  // mango wine theme
+  red-white: #fdf3f3,
+  red-lightest: #f7e3e3,
+  red-lighter: #f4c3c3,
+  red-light: #f2baba,
+  red: #e98a8a,
+  red-darker: #d27c7c,
+  red-darkest: #ba6e6e,
+  red-black: #2f1c1c,
+  // succulent
+  green-white: #f8fae8,
+  green-lightest: #eaeec1,
+  green-lighter: #d7e17a,
+  green-light: #cbd854,
+  green: #bdd01a,
+  green-darker: #aabb17,
+  green-darkest: #849212,
+  green-black: #262a05
+);
 
 // UI Colors
 
@@ -67,3 +71,19 @@ $gray-3: #838383;
 $gray-2: #b5b5b5;
 $gray-1: #dedede;
 $white: #ffffff;
+
+@each $name, $color in $mango {
+  .color-#{$name} {
+    color: $color;
+  }
+  .background-#{$name} {
+    background-color: $color;
+  }
+}
+
+.color-text {
+  color: utils.v(text);
+}
+.background-text {
+  background-color: utils.v(text);
+}

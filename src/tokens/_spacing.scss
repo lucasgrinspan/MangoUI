@@ -24,6 +24,11 @@ $schemes: (
 );
 
 @each $name, $spacing in $spacings {
+  // this one's just for demo purposes
+  .#{$name}-square {
+    width: $spacing;
+    height: $spacing;
+  }
   @each $scheme, $class in $schemes {
     .#{$class}-#{$name} {
       #{$scheme}: $spacing !important;

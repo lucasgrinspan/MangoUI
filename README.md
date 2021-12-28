@@ -58,3 +58,7 @@ import "node_modules/mango-ui-components/dist/mango.css";
 ├── site/                         # Mini repo for building the docs site
 └── assets/                       # Fonts and icons held here
 ```
+
+## Future Work
+
+I'd mostly like to use this project to learn more about accessibility and web design. There are a few common web patterns that aren't possible without JavaScript that I haven't gotten to yet. Specificially, it would be cool if I could complete the components listed in [ARIA's design patterns](https://www.w3.org/TR/wai-aria-practices-1.2/#aria_ex).

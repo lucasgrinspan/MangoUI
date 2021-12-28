@@ -57,9 +57,10 @@ button,
     }
   }
 
-  &.ghost {
+  &.flat {
     @extend .outline;
-    border: none;
+    // getting rid of the border would make these buttons 2px smaller
+    border-color: transparent;
   }
 
   &.icon::before {

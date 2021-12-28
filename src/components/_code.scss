@@ -7,6 +7,11 @@
   font-size: 0.9rem;
 }
 
+a code {
+  text-decoration-color: utils.v(code-text);
+  text-decoration: underline;
+}
+
 code {
   @include inline-text-modifier;
   background-color: utils.v(code-background);

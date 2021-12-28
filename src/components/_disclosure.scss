@@ -12,6 +12,7 @@ details {
     margin: 0 -#{tokens.$tight}; // make it sit flush to prevent double padding
     cursor: pointer;
     list-style: none;
+    border-radius: tokens.$radius;
     font-weight: map-get($map: tokens.$font-weights, $key: bold);
 
     &:hover {
@@ -36,6 +37,8 @@ details {
       border-bottom: tokens.$border;
       margin-bottom: tokens.$tight;
       background-color: utils.v(surface-selected);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
 
       &::before {
         content: tokens.$down-arrow;
@@ -47,6 +50,10 @@ details {
   .disclosure-group & {
     border-radius: 0;
     border-top: none;
+
+    summary {
+      border-radius: 0;
+    }
 
     &:first-child {
       border-radius: tokens.$radius tokens.$radius 0 0;
@@ -60,7 +67,7 @@ details {
     &:last-child {
       border-radius: 0 0 tokens.$radius tokens.$radius;
 
-      summary {
+      &:not([open]) summary {
         border-radius: 0 0 tokens.$radius tokens.$radius;
       }
     }

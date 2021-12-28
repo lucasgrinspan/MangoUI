@@ -15,3 +15,46 @@ This way, the developer is forced to use descriptive HTML and the styles applied
 On top of this, I wanted to practice web design and creating a cohesive design skills. Using the colors of a mango as inspiration, I created a few themes.
 
 ![The colors of a mango](site/assets/mango-colors.png)
+
+## Usage
+
+You can check out the [installation guide](https://lucasgrinspan.github.io/MangoUI/docs/getting-started/) but you can use the jsDelivr CDN or install the project in NPM (`npm install mango-ui-components`).
+
+### CDN
+
+```html
+<!-- place this in your head tag -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/mango-ui-components@1.0.0/dist/mango.css"
+/>
+
+<!-- place this at the end of your body tag -->
+<script src="https://cdn.jsdelivr.net/npm/mango-ui-components@1.0.0/dist/mango.js"></script>
+```
+
+### NPM
+
+```js
+import "node_modules/mango-ui-components/dist/mango.css";
+```
+
+## Project
+
+```
+.
+│
+├── src/                          # all styles and scripts for components
+│   ├── components/               # SCSS files for component styles
+│   ├── helpers/                  # SCSS files for helper classes
+│   ├── js/                       # JS files for components
+│   ├── tokens/                   # Design tokens that components/ uses
+│   │   ├── themes/               # Holds the Mango UI themes (SCSS)
+│   │   │   ├── _palette.scss     # Definition of all of the colors
+│   │   │   └── ...               # SCSS files that link tokens to components
+│   │   └── ...                   # Other design token files
+│   ├── main.scss                 # Builds the mango.css stylesheet
+│   └── utils.scss                # Holds utility functions for referencing colors
+├── site/                         # Mini repo for building the docs site
+└── assets/                       # Fonts and icons held here
+```

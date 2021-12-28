@@ -25,3 +25,6 @@ $input-border: 1px solid utils.v(input-border);
 .rounded-small {
   border-radius: $radius-small;
 }
+.rounded-circle {
+  border-radius: 50%;
+}

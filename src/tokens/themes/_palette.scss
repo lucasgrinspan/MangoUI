@@ -73,6 +73,9 @@ $gray-1: #dedede;
 $white: #ffffff;
 
 @each $name, $color in $mango {
+  .color-icon-#{$name}::before {
+    color: $color;
+  }
   .color-#{$name} {
     color: $color;
   }

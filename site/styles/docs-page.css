@@ -25,15 +25,17 @@
 }
 .palette-example * {
   width: 100%;
-  height: 3rem;
+  min-height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   font-size: 1.5rem;
+  padding: 0.25rem;
 }
 .icons-example {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   gap: 2rem;
 }
 

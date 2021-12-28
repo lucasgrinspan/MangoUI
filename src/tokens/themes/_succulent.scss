@@ -41,6 +41,8 @@
     text: map-get(palette.$mango, green-black),
     code-text: palette.$red-darkest,
     code-background: palette.$red-white,
+    block-code-text: palette.$green-white,
+    block-code-backgrond: palette.$green-black,
     kbd-text: palette.$blue-darkest,
     kbd-background: palette.$blue-white,
     disabled-text: palette.$gray-3,

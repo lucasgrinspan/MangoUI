@@ -6,6 +6,9 @@
 .flex-grap-cozy {
   gap: tokens.$cozy;
 }
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
 .flex-column {
   flex-direction: column;
 }
@@ -30,4 +33,7 @@
 }
 .flex-basis-100 {
   flex-basis: 100%;
+}
+.flex-basis-auto {
+  flex-basis: auto;
 }

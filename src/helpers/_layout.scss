@@ -25,6 +25,7 @@
   width: 100%;
   max-width: 100%;
   flex: 1 0 0%;
+  min-width: 0;
 }
 .col-shrink {
   flex: 0 0 auto;

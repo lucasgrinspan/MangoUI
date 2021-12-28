@@ -18,6 +18,9 @@
 .fluid {
   width: 100% !important;
 }
+.w-max-content {
+  width: max-content !important;
+}
 
 :active.no-squish {
   transform: scale(1) !important;

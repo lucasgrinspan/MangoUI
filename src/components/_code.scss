@@ -12,6 +12,18 @@ a code {
   text-decoration: underline;
 }
 
+// block
+pre {
+  max-width: 100%;
+  overflow-x: scroll;
+  background-color: utils.v(block-code-backgrond);
+  color: utils.v(block-code-text);
+  padding: tokens.$cozy;
+  border-radius: tokens.$radius;
+  font-size: 1rem;
+}
+
+// inline
 code {
   @include inline-text-modifier;
   background-color: utils.v(code-background);

@@ -17,7 +17,9 @@ navToggleButton?.addEventListener("click", () => {
 
 // theme handlers
 const root = document.getElementsByTagName("html")[0];
-document.getElementById(mangoUiTheme).ariaChecked = true;
+const themeMenuItem = document.getElementById(mangoUiTheme) || document.getElementById("sunset");
+
+themeMenuItem.ariaChecked = true;
 
 const themeButtons = document.querySelectorAll("#theme-picker-container button");
 

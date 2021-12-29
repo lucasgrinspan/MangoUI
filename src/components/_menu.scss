@@ -33,6 +33,7 @@ button[aria-haspopup="menu"] {
     box-shadow: tokens.$shadow-medium;
     // stretches the width to be the size of the button
     min-width: 100%;
+    width: max-content;
 
     // applies to all three variations
     button {

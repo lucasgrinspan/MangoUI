@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../dist/mango.css" />
     <link rel="stylesheet" href="../styles/docs-page.css" />
-    <title>MangoUI | Getting Started</title>
+    <title>MangoUI | Tabs</title>
     <script>
       const { localStorage } = window; const mangoUiTheme = localStorage.getItem("mango-theme") ||
       "sunset"; document.querySelector('html').dataset.theme = mangoUiTheme;
@@ -91,7 +91,7 @@
         <a href="../design" >Design</a>
       </li>
       <li>
-        <a href="../getting-started" aria-current="page">Getting Started</a>
+        <a href="../getting-started" >Getting Started</a>
       </li>
       <li>
         <a href="../components" >Components</a>
@@ -109,7 +109,7 @@
                 <li><a href="../components/select" >Select</a></li>
                 <li><a href="../components/sidenav" >Side Navigation</a></li>
                 <li><a href="../components/table" >Table</a></li>
-                <li><a href="../components/tabs" >Tabs</a></li>
+                <li><a href="../components/tabs" aria-current="page">Tabs</a></li>
             </ul>
       </li>
   </ul>
@@ -117,22 +117,108 @@
           </div>
         </div>
         <main>
-          <h1>Installation</h1>
-<p>Integrating Mango UI is pretty simple, and can be installed with NPM or with a CDN.</p>
-<h2>CDN</h2>
-<p>The easiest way to install Mango UI is to use a CDN like <a href="https://www.jsdelivr.com">jsDelivr</a>. In your
-  HTML, add a <code>link</code> and <code>script</code> tag to load the components.</p>
-<pre>&lt;!-- place this in your head tag --&gt;
-&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mango-ui-components@1.0.0/dist/mango.css" /&gt;
-  
-&lt;!-- place this at the end of your body tag --&gt;
-&lt;script src="https://cdn.jsdelivr.net/npm/mango-ui-components@1.0.0/dist/mango.js"&gt;&lt;/script&gt;</pre>
-<h2>NPM</h2>
-<p>First, install the package with</p>
-<pre>npm install mango-ui-components</pre>
-Then you can include the files with an import statement if your JavaScript builder supports that:
-<pre>import 'node_modules/mango-ui-components/dist/mango.css';
-</pre>
+          <h1>Tabs</h1>
+<dl>
+  <dt>Selector</dt>
+  <dd>
+    <code>[role="tablist"]</code>, <code>button[role="tab"]</code>,
+    <code>[role="tabpanel"]</code>
+  </dd>
+  <dt>Requires JavaScript</dt>
+  <dd>
+    <code>[data-functionality="tabs"]</code>
+  </dd>
+</dl>
+<p>
+  Use tabs to allow the user to explore different views. The markup requires ARIA attributes on 3
+  separate elements. The tab list is marked as <code>role="tablist"</code> and contains the tabs
+  (<code>role="tab"</code>). Each tab button points to its related tab panel, which is marked with
+  <code>role="tabpanel"</code>. This component requires JavaScript to handle the ARIA attributes and
+  keyboard navigation, which is based on the
+  <a href="https://www.w3.org/TR/wai-aria-practices-1.2/#tabpanel">W3C's recommendation</a>.
+</p>
+<p>
+  The tab list acts as a single tab stop, essentially becoming a widget. Only the activated tab is
+  focusable. The arrow keys are used to activate the others tabs in the list. To ease navigation,
+  activated tab panels are given a <code>tabindex="0"</code> to provide a consistent destination
+  after tabbing through the tab list.
+</p>
+<div class="card example shrink" data-functionality="tabs">
+  <h3 id="chess-openings-heading">Chess Openings</h3>
+  <div role="tablist" aria-labelledby="chess-openings-heading">
+    <button
+      id="queens-gambit-tab"
+      role="tab"
+      aria-controls="queens-gambit-panel"
+      aria-selected="true"
+    >
+      Queen's Gambit
+    </button>
+    <button
+      id="kings-gambit-tab"
+      role="tab"
+      aria-controls="kings-gambit-panel"
+      aria-selected="false"
+      tabindex="-1"
+    >
+      King's Gambit
+    </button>
+    <button
+      id="benko-gambit-tab"
+      role="tab"
+      aria-controls="benko-gambit-panel"
+      aria-selected="false"
+      tabindex="-1"
+    >
+      Benko Gambit
+    </button>
+  </div>
+  <div role="tabpanel" id="queens-gambit-panel" aria-labelledby="queens-gambit-tab" tabindex="0">
+    White begins by playing d4 and black responds with d5. The Queen's gambit occurs when white
+    plays c4, challenging black's center.
+  </div>
+  <div
+    role="tabpanel"
+    id="kings-gambit-panel"
+    aria-labelledby="kings-gambit-tab"
+    tabindex="0"
+    hidden
+  >
+    The King's Gambit is an exciting opening. After 1. e4 e5, white plays f4, launching an attack!
+    Black has to know how to defend carefully to weather the storm.
+  </div>
+  <div
+    role="tabpanel"
+    id="benko-gambit-panel"
+    aria-labelledby="benko-gambit-tab"
+    tabindex="0"
+    hidden
+  >
+    This is an interesting variation in the Benoni Defense, where black plays b5 on move three.
+    Filled with tons of theory, there's always a line to catch your opponent unprepared
+  </div>
+</div>
+<h2>Keyboard Navigation</h2>
+<p>
+  The Mango UI tabs follow
+  <a href="https://www.w3.org/TR/wai-aria-practices-1.2/examples/tabs/tabs-1/tabs.html"
+    >automatic activation</a
+  >, where each tab activates once it gets focus. This was done to keep the interface feeling snappy
+  and responsive. When focused on a tab:
+</p>
+<ul>
+  <li>
+    Press the <kbd>Left Arrow</kbd> and <kbd>Right Arrow</kbd> to activate the next and previous
+    tabs respectively
+  </li>
+  <li>Press <kbd>Home</kbd> to activate the first tab</li>
+  <li>Press <kbd>End</kbd> to activate the last tab</li>
+  <li>
+    Press <kbd>Tab</kbd> to move to the next tab stop on the page after the tab list, which should
+    be the tab panel.
+  </li>
+</ul>
+
         </main>
       </div>
     </div>

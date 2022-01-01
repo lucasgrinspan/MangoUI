@@ -1,0 +1,59 @@
+@use "../utils.scss";
+@use "../tokens";
+
+[role="tablist"] {
+  width: 100%;
+  display: flex;
+  overflow-x: scroll;
+  border-radius: tokens.$radius tokens.$radius 0 0;
+
+  button[role="tab"] {
+    flex-grow: 1;
+    border-radius: 0;
+    background-color: utils.v(surface);
+    position: relative;
+    border-bottom: none;
+    border-left: none;
+    padding: tokens.$cozy;
+
+    &:hover {
+      background-color: utils.v(surface-hover);
+    }
+    &:active {
+      transform: none;
+    }
+
+    &[aria-selected="true"] {
+      background-color: utils.v(surface-selected);
+      font-weight: bold;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background-color: utils.v(primary-hover);
+      }
+    }
+
+    &:first-child {
+      border-top-left-radius: tokens.$radius;
+      border-left: tokens.$border;
+    }
+    &:last-child {
+      border-top-right-radius: tokens.$radius;
+    }
+  }
+}
+
+[role="tabpanel"] {
+  border: tokens.$border;
+  padding: tokens.$cozy;
+  border-radius: 0 0 tokens.$radius tokens.$radius;
+
+  &:focus {
+    @include tokens.shadow-focus-ring-inset;
+  }
+}

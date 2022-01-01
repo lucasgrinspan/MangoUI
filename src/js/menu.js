@@ -144,5 +144,4 @@ class Menu {
 
 module.exports = {
   Menu,
-  name: "menu",
 };

@@ -26,7 +26,8 @@
       { "title": "Radio", "slug": "radio" },
       { "title": "Select", "slug": "select" },
       { "title": "Side Navigation", "slug": "sidenav" },
-      { "title": "Table", "slug": "table" }
+      { "title": "Table", "slug": "table" },
+      { "title": "Tabs", "slug": "tabs" }
     ]
   },
   { "name": "index.html", "type": "copy" },

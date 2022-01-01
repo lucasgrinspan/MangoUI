@@ -50,6 +50,14 @@
           </div>
           <div id="component-grid" aria-hidden="true">
             <div role="alert" class="success no-icon">Hey there!</div>
+            <div data-functionality="tabs">
+              <div role="tablist">
+                <button role="tab" aria-controls="showcase" aria-selected="true">Fri</button>
+                <button role="tab" aria-controls="showcase" aria-selected="false">Sat</button>
+                <button role="tab" aria-controls="showcase" aria-selected="false">Sun</button>
+              </div>
+              <div role="tabpanel" id="showcase" class="hidden"></div>
+            </div>
             <div class="subgrid">
               <div class="stack-vertical-tight">
                 <button>Mango</button>

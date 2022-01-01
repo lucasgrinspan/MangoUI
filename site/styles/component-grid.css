@@ -7,7 +7,16 @@
   max-height: 340px;
 }
 
-#component-grid [role="alert"] {
+#component-grid [role="tab"] {
+  border-bottom: 1px solid var(--primary);
+}
+#component-grid [role="tab"]:first-child {
+  border-bottom-left-radius: 10px;
+}
+#component-grid [role="tab"]:last-child {
+  border-bottom-right-radius: 10px;
+}
+#component-grid [role="alert"].warning {
   grid-column: span 2;
 }
 

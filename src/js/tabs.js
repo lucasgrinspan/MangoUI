@@ -6,7 +6,7 @@ const tabButtonQuery = 'button[role="tab"]';
 const tabPanelQuery = '[role="tabpanel"]';
 
 class Tabs {
-  static name = "tabs";
+  static componentName = "tabs";
   tabs;
   panels;
 

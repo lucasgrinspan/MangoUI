@@ -6,9 +6,9 @@ window.addEventListener("DOMContentLoaded", () => {
     const component = node.dataset.functionality;
 
     switch (component) {
-      case Menu.name:
+      case Menu.componentName:
         return new Menu(node);
-      case Tabs.name:
+      case Tabs.componentName:
         return new Tabs(node);
 
       default:

@@ -7,7 +7,7 @@ const checkboxRole = "menuitemcheckbox";
 const radioRole = "menuitemradio";
 
 class Menu {
-  static name = "menu";
+  static componentName = "menu";
   componentTarget;
   button;
   itemContainer;
